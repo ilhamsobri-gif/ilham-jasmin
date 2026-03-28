@@ -11,8 +11,7 @@
         /* --- INTEGRASI FON CINTARINI --- */
         @font-face {
             font-family: 'Cintarini';
-            /* Pastikan fail Cintarini.ttf berada dalam folder yang sama dengan kod ini */
-            src: url('Cintarini.ttf') format('truetype'); [cite: 9, 12]
+            src: url('Cintarini.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -37,10 +36,10 @@
             animation: fadeIn 2s; width: 80%; max-width: 500px;
         }
 
-        /* Nama pada Welcome Screen menggunakan Cintarini */
+        /* Menggunakan fon asal untuk nama di Welcome Screen */
         .welcome-names {
-            font-family: 'Cintarini', cursive;
-            font-size: 3.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
             margin: 10px 0;
             color: white;
         }
@@ -59,10 +58,10 @@
             padding: 80px 20px; color: white;
         }
 
-        /* Nama pada Header menggunakan Cintarini */
+        /* Menggunakan fon asal untuk nama di Header */
         .header-names {
-            font-family: 'Cintarini', cursive;
-            font-size: 3.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
             margin: 10px 0;
             color: white;
         }
@@ -75,10 +74,10 @@
         
         .details-box { border: 2px solid #eebbc3; margin-top: -50px; }
 
-        /* Nama Pengantin Utama menggunakan Cintarini */
+        /* NAMA PENGANTIN: Menggunakan Cintarini tetapi saiz dikecilkan */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
-            font-size: 4rem;
+            font-size: 2.8rem; /* Saiz dikurangkan daripada 4rem */
             color: #2c3e50;
             line-height: 1.2;
             margin: 20px 0;
@@ -102,7 +101,7 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
-            .bride-groom-names { font-size: 2.8rem; }
+            .bride-groom-names { font-size: 2.2rem; } /* Saiz lebih kecil untuk mobile */
             .header-names { font-size: 2.5rem; }
             .white-box { padding: 25px; }
         }
@@ -151,7 +150,7 @@
 
                 <h2 class="bride-groom-names">
                     Mohamad Ilham Bin Mohd Sobri<br>
-                    <span style="font-size: 1.1rem; font-family: 'Lato'; color: #888; font-style: italic;">dengan pilihan hatinya</span><br>
+                    <span style="font-size: 1.1rem; font-family: 'Lato'; color: #888; font-style: italic; vertical-align: middle;">dengan pilihan hatinya</span><br>
                     Jasmin Binti Sahminan
                 </h2>
 
@@ -203,7 +202,7 @@
         </div>
 
         <footer style="padding: 40px; background: rgba(255, 238, 242, 0.9);">
-            <p style="font-family: 'Cintarini', cursive; font-size: 1.5rem;">#IlhamuntukJasmin</p>
+            <p>#IlhamuntukJasmin <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
             <p style="font-size: 0.8rem; color: #aaa;">Dicipta dengan kasih sayang</p>
         </footer>
     </div>
