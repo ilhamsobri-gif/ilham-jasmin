@@ -4,109 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Walimatulurus Ilham & Jasmin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        :root {
-            --champagne-gold: #b28d42; /* Warna Champagne Gold mengikut imej */
-            --dark-gold: #8e6d2a;
-            --soft-cream: #f9f6f0;
-        }
-
+        /* --- CSS STYLES --- */
         body {
             margin: 0; padding: 0; font-family: 'Lato', sans-serif;
-            background-color: var(--soft-cream);
-            background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png'); /* Tekstur halus */
+            background-color: #ffeef2; background-image: url('background.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
             color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
         }
 
         #welcome-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(249, 246, 240, 0.9), rgba(249, 246, 240, 0.9)), url('background.png');
-            background-size: cover; z-index: 9999; display: flex; flex-direction: column; 
-            justify-content: center; align-items: center; transition: opacity 1s ease-out;
+            background-image: url('welcome-bg.png'); background-size: cover; background-position: center;
+            z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: opacity 1s ease-out;
         }
         
         .welcome-content {
-            padding: 40px; text-align: center; border: 1px solid var(--champagne-gold);
-            background: white; border-radius: 2px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white;
+            animation: fadeIn 2s; width: 80%; max-width: 500px;
         }
-
+        
         .open-btn {
-            background-color: var(--champagne-gold); color: white; padding: 12px 35px;
-            border-radius: 5px; font-size: 1rem; cursor: pointer; border: none;
-            margin-top: 20px; font-family: 'Playfair Display', serif; text-transform: uppercase;
-            letter-spacing: 2px; transition: 0.3s;
+            background-color: #eebbc3; color: #2c3e50; padding: 15px 40px;
+            border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none;
+            margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounce 2s infinite;
         }
 
         header {
-            padding: 60px 20px; background-color: white;
-            border-bottom: 1px solid #eee;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            padding: 80px 20px; color: white;
         }
 
-        .ornament { width: 150px; margin: 10px auto; opacity: 0.7; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; letter-spacing: 2px; }
+        h2 { font-family: 'Playfair Display', serif; color: #d4af37; font-size: 1.8rem; margin-bottom: 15px; }
+        .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
+        .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
 
-        h1.main-name { 
-            font-family: 'Playfair Display', serif; 
-            color: var(--champagne-gold); 
-            font-size: 2.2rem; 
-            font-weight: 700;
-            margin: 20px 0;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .parents-name { 
-            font-size: 1rem; 
-            font-weight: 400; 
-            color: #555; 
-            margin: 2px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .container { max-width: 700px; margin: 0 auto; padding: 40px 15px; }
-
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; box-sizing: border-box; }
         .white-box {
-            background-color: white; padding: 50px 30px; 
-            margin-bottom: 30px; width: 100%; box-sizing: border-box;
-            border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px; padding: 40px; margin-bottom: 30px; width: 100%; box-sizing: border-box;
         }
-
-        .invitation-text {
-            font-style: italic; font-family: 'Playfair Display', serif;
-            color: #666; font-size: 1rem; margin: 25px 0;
-        }
-
-        .info-row {
-            display: flex; justify-content: center; align-items: center;
-            gap: 10px; margin: 10px 0; font-weight: bold; color: #333;
-            text-transform: uppercase; font-size: 0.9rem;
-        }
-
+        
+        .details-box { border: 2px solid #eebbc3; margin-top: -50px; }
         .btn {
             display: inline-block; margin: 10px 5px; padding: 12px 25px;
-            background-color: var(--champagne-gold); color: white; text-decoration: none;
-            border-radius: 20px; font-size: 0.85rem; font-weight: bold; transition: 0.3s;
+            background-color: #2c3e50; color: white; text-decoration: none;
+            border-radius: 50px; font-weight: bold; transition: 0.3s; font-size: 0.9rem;
         }
+        .btn:hover { background-color: #d4af37; }
 
-        .btn:hover { background-color: var(--dark-gold); }
+        .schedule-table { width: 100%; margin: 20px 0; border-collapse: collapse; }
+        .schedule-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+        .time { font-weight: bold; color: #2c3e50; width: 30%; }
 
         .music-control {
-            position: fixed; bottom: 20px; left: 20px; background-color: white;
-            width: 45px; height: 45px; border-radius: 50%; display: flex;
+            position: fixed; bottom: 20px; right: 20px; background-color: #fff;
+            width: 50px; height: 50px; border-radius: 50%; display: flex;
             align-items: center; justify-content: center; cursor: pointer;
-            z-index: 1000; border: 1px solid var(--champagne-gold); color: var(--champagne-gold);
+            z-index: 1000; border: 2px solid #eebbc3;
         }
 
-        hr.gold-line {
-            width: 60%; border: 0; border-top: 1px solid #dcd0b8; margin: 30px auto;
-        }
+        @keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
-            h1.main-name { font-size: 1.6rem; }
-            .white-box { padding: 35px 20px; }
+            h1 { font-size: 2.2rem; }
+            .white-box { padding: 25px; }
         }
     </style>
 </head>
@@ -114,100 +85,161 @@
 
     <div id="welcome-screen">
         <div class="welcome-content">
-            <p style="letter-spacing: 3px; font-size: 0.8rem; color: #888;">WALIMATULURUS</p>
-            <h1 style="font-family: 'Playfair Display', serif; color: var(--champagne-gold); margin: 10px 0;">Ilham & Jasmin</h1>
-            <button class="open-btn" onclick="enterSite()">Buka Undangan</button>
+            <p style="letter-spacing: 2px;">WALIMATULURUS</p>
+            <h1 style="font-size: 2.5rem;">Ilham & Jasmin</h1>
+            <p>28 Jun 2026</p>
+            <button class="open-btn" onclick="enterSite()">Buka Undangan <i class="fas fa-envelope-open"></i></button>
         </div>
     </div>
 
     <div id="main-content">
         <header>
-            <img src="https://cdn-icons-png.flaticon.com/512/3233/3233997.png" class="ornament" alt="ornament">
-            <p style="font-size: 0.85rem; letter-spacing: 1px;">ASSALAMUALAIKUM W.B.T & Salam Sejahtera</p>
-            
-            <div style="margin: 30px 0;">
-                <p class="parents-name">MOHD SOBRI BIN MOKHTAR</p>
-                <p class="parents-name">& NORULHIDAYAH BINTI ABDUL AZIZ</p>
-                <p style="font-style: italic; color: var(--champagne-gold); margin: 5px 0; font-family: 'Playfair Display', serif;">serta</p>
-                <p class="parents-name">SAHMINAN BIN SIRAT</p>
-                <p class="parents-name">& INTAN JUNAIDAH BINTI ZULIADIN</p>
-            </div>
-
-            <p class="invitation-text">
-                Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
-            </p>
-
-            <h1 class="main-name">MOHAMAD ILHAM BIN MOHD SOBRI</h1>
-            <p style="font-style: italic; font-family: 'Playfair Display', serif; color: #888;">dengan pilihan hatinya</p>
-            <h1 class="main-name">JASMIN BINTI SAHMINAN</h1>
-
-            <hr class="gold-line">
-
-            <div class="info-row">
-                <i class="far fa-calendar-alt" style="color: var(--champagne-gold);"></i>
-                <span>AHAD, 28 JUN 2026</span>
-            </div>
-            
-            <div style="margin: 20px 0;">
-                <p style="font-size: 0.9rem; margin-bottom: 5px;"><i class="fas fa-map-marker-alt" style="color: var(--champagne-gold);"></i> <strong>LOKASI MAJLIS:</strong></p>
-                <p style="margin: 0; font-size: 0.95rem; color: #555;">Zahra Event Hall by The Chef Table,<br>
-                13, Lor 1, Tabuan Jaya, 93350 Kuching, Sarawak</p>
-            </div>
-
-            <div style="margin-top: 30px;">
-                <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="btn"><i class="fas fa-edit"></i> Sila RSVP Di Sini</a>
-                <a href="https://maps.app.goo.gl/YourActualGoogleMapsLink" class="btn"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+            <p class="subtitle">Walimatulurus</p>
+            <h1>Ilham & Jasmin</h1>
+            <div id="timer" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
+                <div class="time-box"><span id="days">0</span><br><small>Hari</small></div>
+                <div class="time-box"><span id="hours">0</span><br><small>Jam</small></div>
+                <div class="time-box"><span id="minutes">0</span><br><small>Min</small></div>
+                <div class="time-box"><span id="seconds">0</span><br><small>Saat</small></div>
             </div>
         </header>
 
         <div class="container">
+            <div class="white-box details-box">
+                <p>ASSALAMUALAIKUM W.B.T & Salam Sejahtera</p>
+                
+                <div class="parents-section" style="margin: 30px 0;">
+                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR</p>
+                    <p class="parents-name">& NORULHIDAYAH BINTI ABDUL AZIZ</p>
+                    <p class="and-text">serta</p>
+                    <p class="parents-name">SAHMINAN BIN SIRAT</p>
+                    <p class="parents-name">& INTAN JUNAIDAH BINTI ZULIADIN</p>
+                </div>
+
+                <p style="font-style: italic; color: #666; font-size: 0.95rem; margin: 0 10px;">
+                    Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
+                </p>
+
+                <h2 style="font-size: 2.1rem; color: #2c3e50; margin: 30px 0;">
+                    MOHAMAD ILHAM BIN MOHD SOBRI<br>
+                    <span style="font-size: 1.1rem; font-family: 'Lato'; color: #888; font-style: italic;">dengan pilihan hatinya</span><br>
+                    JASMIN BINTI SAHMINAN
+                </h2>
+
+                <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
+
+                <div style="margin-bottom: 25px;">
+                    <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
+                    <p style="margin: 5px 0;"><strong><i class="fas fa-map-marker-alt"></i> LOKASI MAJLIS:</strong><br>
+                    Zahra Event Hall by The Chef Table,<br>
+                    13, Lor 1, Tabuan Jaya, 93350 Kuching, Sarawak</p>
+                </div>
+                
+                <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="btn" target="_blank"><i class="fas fa-edit"></i> Sila RSVP Di Sini</a>
+                <a href="https://www.google.com/maps/search/Zahra+Event+Hall+by+The+Chef+Table+Kuching" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+            </div>
+
             <div class="white-box">
-                <h3 style="font-family: 'Playfair Display', serif; color: var(--champagne-gold); text-transform: uppercase; letter-spacing: 2px;">Atur Cara Majlis</h3>
-                <div style="margin-top: 20px; text-align: left; max-width: 300px; margin-left: auto; margin-right: auto;">
-                    <p><strong>11:00 AM :</strong> Jamuan Makan</p>
-                    <p><strong>12:30 PM :</strong> Ketibaan Pengantin</p>
-                    <p><strong>04:00 PM :</strong> Majlis Bersurai</p>
+                <h3>Atur Cara Majlis</h3>
+                <table class="schedule-table">
+                    <tr>
+                        <td class="time">11:00 AM</td>
+                        <td>Ketibaan Jemputan & Jamuan Makan</td>
+                    </tr>
+                    <tr>
+                        <td class="time">12:30 PM</td>
+                        <td>Ketibaan Pengantin (Bersanding)</td>
+                    </tr>
+                    <tr>
+                        <td class="time">01:00 PM</td>
+                        <td>Sesi Memotong Kek & Bergambar</td>
+                    </tr>
+                    <tr>
+                        <td class="time">04:00 PM</td>
+                        <td>Majlis Bersurai</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="white-box gift-box">
+                <h3>Salam Restu</h3>
+                <p>Kehadiran anda adalah hadiah terbesar buat kami. Namun jika ingin memberi tanda ingatan:</p>
+                <div style="margin-top: 15px;">
+                    <img src="qrcode.jpg" alt="DuitNow QR" style="width: 180px; border: 5px solid #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                </div>
+                <div class="bank-details" style="margin-top: 15px; background: #fdf2f4; padding: 15px; border-radius: 8px;">
+                    <strong>Maybank / DuitNow</strong><br>
+                    MOHAMAD ILHAM / JASMIN<br>
+                    Terima Kasih <i class="fas fa-heart" style="color: #eebbc3;"></i>
                 </div>
             </div>
 
-            <div class="white-box" style="border-top: 3px solid var(--soft-cream);">
-                <h3 style="font-family: 'Playfair Display', serif; color: var(--champagne-gold);">Salam Restu</h3>
-                <p style="font-size: 0.9rem; color: #777;">Tanda ingatan ikhlas daripada anda:</p>
-                <img src="qrcode.jpg" alt="QR Code" style="width: 180px; margin: 15px 0; border: 1px solid #eee; padding: 10px;">
-                <p style="font-size: 0.85rem; font-weight: bold; color: var(--champagne-gold);">MAYBANK / DUITNOW</p>
+            <div class="white-box wishes-container">
+                <h3>Ucapan & Doa</h3>
+                <div class="wishes-list" id="wishes-list" style="max-height: 250px; overflow-y: auto; text-align: left; padding: 15px; border: 1px solid #eee; background: #fff; border-radius: 5px;">
+                    <div class="loading-text">Memuat turun ucapan...</div>
+                </div>
+                <a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="btn" target="_blank">Hantar Ucapan</a>
             </div>
         </div>
 
-        <footer style="padding: 50px; background: white; border-top: 1px solid #eee;">
-            <p style="font-family: 'Playfair Display', serif; color: var(--champagne-gold); font-size: 1.2rem;">#IlhamuntukJasmin</p>
+        <div class="map-container" style="height: 400px; width: 100%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358210355416!2d110.37016337583675!3d1.5235559608620894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7494f6e3c8f%3A0xe549a9907c6f08c3!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1710000000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <footer style="padding: 40px; background: rgba(255, 238, 242, 0.9);">
+            <p>#IlhamuntukJasmin <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
+            <p style="font-size: 0.8rem; color: #aaa;">Dicipta dengan kasih sayang</p>
         </footer>
     </div>
 
     <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
-    <div class="music-control" onclick="toggleMusic()"><i id="music-icon" class="fas fa-music"></i></div>
+    <div class="music-control" onclick="toggleMusic()"><span id="music-icon">🎵</span></div>
 
     <script>
+        // Logik sedia ada
         function enterSite() {
             document.getElementById('welcome-screen').style.opacity = '0';
             var music = document.getElementById("bg-music");
-            music.play().catch(e => console.log("Autoplay blocked"));
+            music.play().catch(e => console.log(e));
             setTimeout(() => { document.getElementById('welcome-screen').style.display = 'none'; }, 1000);
         }
+
+        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
+        setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
 
         var isPlaying = false;
         function toggleMusic() {
             var m = document.getElementById("bg-music");
-            var icon = document.getElementById("music-icon");
-            if (isPlaying) { 
-                m.pause(); 
-                icon.className = "fas fa-volume-mute"; 
-                isPlaying = false; 
-            } else { 
-                m.play(); 
-                icon.className = "fas fa-music"; 
-                isPlaying = true; 
-            }
+            if (isPlaying) { m.pause(); document.getElementById("music-icon").innerHTML = "🔇"; isPlaying = false; }
+            else { m.play(); document.getElementById("music-icon").innerHTML = "🎵"; isPlaying = true; }
         }
+        
+        // Wishlist Fetching
+        fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT6Q18WuHZNNGfr7Opx7tyjEtjKKgOuaumIjFCNPZQjcmXCrB9HOdg-As6PLmQA3q1oTWERr_rca0ZE/pub?gid=1820886142&single=true&output=csv")
+            .then(res => res.text())
+            .then(data => {
+                const list = document.getElementById('wishes-list');
+                list.innerHTML = "";
+                const rows = data.split("\n").slice(1).reverse();
+                rows.forEach(row => {
+                    const cols = row.split(",");
+                    if(cols[1]) {
+                        var name = cols[1].replace(/"/g, "").trim();
+                        var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
+                        list.innerHTML += `<div style="margin-bottom:12px; border-bottom:1px solid #f9f9f9; padding-bottom:5px;"><strong style="color:#2c3e50;">${name}</strong><br><span style="font-size:0.9rem; color:#555;">${msg}</span></div>`;
+                    }
+                });
+            }).catch(() => {
+                document.getElementById('wishes-list').innerHTML = "Tiada ucapan setakat ini.";
+            });
     </script>
 </body>
 </html>
