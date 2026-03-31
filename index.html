@@ -87,7 +87,6 @@
         
         .details-box { margin-top: -50px; }
 
-        /* NAMA PENGANTIN - DIKECILKAN SUPAYA TAK CROSS BORDER */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
             font-size: clamp(1.1rem, 4.3vw, 1.6rem); 
@@ -103,7 +102,7 @@
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
 
-        /* TAJUK DIBESARKAN */
+        /* TAJUK UMUM */
         h3 {
             font-family: 'GreatVibesKustom', cursive;
             font-size: 4.5rem; 
@@ -113,9 +112,13 @@
             font-weight: normal;
         }
 
+        /* KHUSUS UNTUK ATUR CARA MAJLIS PADA MOBILE */
+        .title-schedule {
+            font-size: 4.5rem;
+        }
+
         .contact-title { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin-bottom: 5px; }
 
-        /* JARAK 2 SPACING UNTUK BUTANG */
         .contact-btn-wrapper {
             margin-top: 30px; 
             display: flex;
@@ -131,17 +134,15 @@
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
-        .schedule-table { width: 100%; border-collapse: collapse; font-size: 1.1rem; }
-        .schedule-table td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
-        .time { font-weight: bold; color: #2c3e50; width: 35%; }
+        .schedule-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+        .schedule-table td { padding: 12px 8px; border-bottom: 1px solid #eee; text-align: left; }
+        .time { font-weight: bold; color: #2c3e50; width: 35%; white-space: nowrap; }
 
-        /* COMMENTS SECTION DENGAN GAMBAR CUSTOM ANDA */
         .wishes-list {
             max-height: 450px; overflow-y: auto; text-align: left; padding: 40px; 
-            border: 2px solid #eebbc3; 
+            border: 1px solid #eebbc3; 
             background-color: #fff;
-            /* Pastikan nama fail ini tepat seperti yang anda muat naik ke GitHub */
-            background-image: url('image_49f5e7.png'); 
+            background-image: url('ucapan-bg.png'); 
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -152,7 +153,7 @@
         .wishes-list::before {
             content: "";
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.5); /* Kurangkan ketelusan untuk nampak gambar lebih jelas */
+            background: rgba(255, 255, 255, 0.5); 
             z-index: 0;
         }
         .wishes-list div { 
@@ -174,8 +175,12 @@
         @media (max-width: 600px) {
             .bride-groom-names { font-size: 4.2vw; } 
             .header-names { font-size: 2.2rem; }
-            .section-box { padding: 25px 15px; }
+            .section-box { padding: 20px 15px; }
             h3 { font-size: 3.5rem; }
+            /* Kecilkan lagi tajuk Atur Cara Majlis supaya muat 1 baris */
+            .title-schedule { font-size: 2.8rem !important; }
+            .schedule-table { font-size: 0.85rem; }
+            .time { width: 40%; }
         }
     </style>
 </head>
@@ -253,7 +258,7 @@
             </div>
 
             <div id="cat-schedule" class="section-box">
-                <h3>Atur Cara Majlis</h3>
+                <h3 class="title-schedule">Atur Cara Majlis</h3>
                 <table class="schedule-table">
                     <tr><td class="time">10:00 PAGI</td><td>Ketibaan Jemputan & Jamuan Makan</td></tr>
                     <tr><td class="time">11:00 PAGI</td><td>Ketibaan Pengantin (Bersanding)</td></tr>
