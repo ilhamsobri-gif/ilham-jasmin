@@ -74,12 +74,19 @@
 
         .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; box-sizing: border-box; }
         
+        /* GAYA KOTAK DENGAN PINK BORDER */
         .section-box {
-            background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 8px; padding: 40px; margin-bottom: 30px; width: 100%; box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 2px solid #eebbc3; /* Pink Border Uniform */
         }
         
-        .details-box { border: 2px solid #eebbc3; margin-top: -50px; }
+        .details-box { margin-top: -50px; }
 
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
@@ -206,16 +213,16 @@
                 <p style="font-style: italic; color: #666; font-size: 0.95rem; margin: 0 10px;">
                     Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
                 </p>
-                 </p>
+                </p>
                 <h2 class="bride-groom-names">Mohamad Ilham Bin Mohd Sobri</h2>
-                 </p>
-                 </p>
+                </p>
+                </p>
                 <p style="font-size: 1rem; font-family: 'Lato'; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
-                 </p>
-                 </p>
+                </p>
+                </p>
                 <h2 class="bride-groom-names">Jasmin Binti Sahminan</h2>
-                 </p>
-                 </p>
+                </p>
+                </p>
                 <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
                 <div style="margin-bottom: 25px;">
                     <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
@@ -289,14 +296,13 @@
             setTimeout(() => { 
                 document.getElementById('welcome-screen').style.display = 'none'; 
                 
-                // --- LOGIK SKROL BERPERINGKAT (DENGAN HEADER) ---
                 const categories = [
-                    { id: 'cat-header', delay: 5000 },   // Pertama: Walimatulurus (Tunggu 5s)
-                    { id: 'cat-wedding', delay: 4000 },  // Kedua: Maklumat Majlis
-                    { id: 'cat-contact', delay: 4000 },  // Ketiga: Hubungi Kami
-                    { id: 'cat-schedule', delay: 4000 }, // Keempat: Atur Cara
-                    { id: 'cat-wishes', delay: 4000 },   // Kelima: Ucapan
-                    { id: 'cat-map', delay: 4000 }       // Terakhir: Peta
+                    { id: 'cat-header', delay: 5000 },
+                    { id: 'cat-wedding', delay: 4000 },
+                    { id: 'cat-contact', delay: 4000 },
+                    { id: 'cat-schedule', delay: 4000 },
+                    { id: 'cat-wishes', delay: 4000 },
+                    { id: 'cat-map', delay: 4000 }
                 ];
 
                 let current = 0;
@@ -315,9 +321,7 @@
                         }
                     }
                 }
-
                 autoScroll();
-
             }, 1000);
         }
 
