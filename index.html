@@ -134,9 +134,10 @@
         .schedule-table td { padding: 12px 8px; border-bottom: 1px solid #eee; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; white-space: nowrap; }
 
-        /* --- COMMENTS SECTION DIPERBAIKI UNTUK LAPTOP/COMP --- */
+        /* --- UCAPAN SECTION - DIPERBAIKI UNTUK FULL VIEW DI LAPTOP --- */
         .wishes-list {
-            max-height: 450px; 
+            min-height: 450px; /* Tambah ketinggian minimum */
+            max-height: 600px; 
             overflow-y: auto; 
             text-align: left; 
             padding: 40px; 
@@ -145,8 +146,8 @@
             background-image: url('ucapan-bg.png'); 
             background-position: center;
             background-repeat: no-repeat;
-            /* TUKAR KEPADA 100% 100% SUPAYA PENUH SKRIN BESAR */
-            background-size: 100% 100%; 
+            /* Menggunakan cover supaya imej sentiasa penuh dalam kotak di Laptop/PC */
+            background-size: cover; 
             border-radius: 8px;
             color: #4a4a4a;
             position: relative;
@@ -156,16 +157,19 @@
         .wishes-list::before {
             content: "";
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.5); 
-            z-index: -1; /* Pastikan overlay di belakang teks */
+            background: rgba(255, 255, 255, 0.4); /* Overlay putih nipis */
+            z-index: -1;
             border-radius: 8px;
         }
 
         .wishes-list div { 
             position: relative; 
             z-index: 2; 
-            border-bottom: 1px solid rgba(238, 187, 195, 0.4); 
-            padding-bottom: 12px; margin-bottom: 12px; 
+            border-bottom: 1px solid rgba(238, 187, 195, 0.5); 
+            padding-bottom: 15px; margin-bottom: 15px; 
+            background: rgba(255, 255, 255, 0.2); /* Sedikit latar belakang pada teks untuk pembacaan jelas */
+            padding: 10px;
+            border-radius: 5px;
         }
         .wishes-list strong { color: #d4af37; font-size: 1.1rem; }
 
@@ -185,7 +189,7 @@
             h3 { font-size: 3.5rem; }
             .title-schedule { font-size: 2.8rem !important; }
             .schedule-table { font-size: 0.85rem; }
-            .time { width: 40%; }
+            .wishes-list { padding: 20px; min-height: 350px; }
         }
     </style>
 </head>
