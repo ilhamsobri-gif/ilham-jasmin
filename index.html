@@ -11,8 +11,7 @@
         /* --- INTEGRASI FON CINTARINI --- */
         @font-face {
             font-family: 'Cintarini';
-            /* Pastikan nama fail di GitHub adalah tepat: Cintarini.ttf */
-            src: url('Cintarini.ttf') format('truetype'); 
+            src: url('Cintarini.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -73,14 +72,13 @@
         
         .details-box { border: 2px solid #eebbc3; margin-top: -50px; }
 
-        /* --- PENYELARASAN NAMA PENGANTIN UNTUK MOBILE --- */
         .bride-groom-names {
-            font-family: 'Cintarini', cursive; 
+            font-family: 'Cintarini', cursive;
             font-size: 1.7rem; 
             color: #2c3e50;
             line-height: 1.2;
             margin: 20px 0;
-            white-space: nowrap; /* Memaksa teks kekal dalam satu baris */
+            white-space: nowrap;
         }
 
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
@@ -107,15 +105,16 @@
         @keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* --- MEDIA QUERY UNTUK MOBILE --- */
         @media (max-width: 600px) {
             .bride-groom-names { 
-                /* Menggunakan fon dinamik vw (viewport width) supaya mengecil ikut skrin */
-                font-size: 5.4vw; 
+                /* Saiz dikurangkan lagi supaya muat skrin telefon kecil */
+                font-size: 4.5vw; 
+                letter-spacing: -0.2px;
             } 
-            .header-names { font-size: 2.5rem; }
-            .white-box { padding: 25px; }
+            .header-names { font-size: 2.2rem; }
+            .white-box { padding: 25px 15px; }
             h3 { font-size: 1.8rem; }
+            .welcome-names { font-size: 2rem; }
         }
     </style>
 </head>
@@ -174,7 +173,7 @@
                 </div>
                 
                 <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="btn" target="_blank"><i class="fas fa-edit"></i> Sila RSVP Di Sini</a>
-                <a href="https://maps.app.goo.gl/93W9D3JjY6zE8R8X7" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                <a href="https://maps.app.goo.gl/uX7G6jA6Wp7G8D8A7" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
             </div>
 
             <div class="white-box">
@@ -197,7 +196,7 @@
         </div>
 
         <div class="map-container" style="height: 400px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358231264627!2d110.3758362!3d1.5224326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba761e3f3b97b%3A0xc3b8a1e2d7e6f8a!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711915000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.423985536551!2d110.37050307481845!3d1.5147573609800615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7a35368a5c3%3A0x64364022839b1a51!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711920000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 40px; background: rgba(255, 238, 242, 0.9);">
