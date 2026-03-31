@@ -181,7 +181,7 @@
 
     <div id="main-content">
         <header id="cat-header">
-            <p class="subtitle">Walimatul Urus</p>
+            <p class="subtitle">Walimatulurus</p>
             <h1 class="header-names">Ilham & Jasmin</h1>
             <div id="timer" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
                 <div class="time-box"><span id="days">0</span><br><small>Hari</small></div>
@@ -234,4 +234,120 @@
                     <p class="contact-title">Pihak Pengantin Perempuan (Mizi)</p>
                     <div class="contact-btn-group">
                         <a href="tel:+60146602970" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
-                        <a href="https://wa.me/60146602970" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp
+                        <a href="https://wa.me/60146602970" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cat-schedule" class="section-box">
+                <h3>Atur Cara Majlis</h3>
+                <table class="schedule-table">
+                    <tr><td class="time">10:00 PAGI</td><td>Ketibaan Jemputan & Jamuan Makan</td></tr>
+                    <tr><td class="time">11:00 PAGI</td><td>Ketibaan Pengantin (Bersanding)</td></tr>
+                    <tr><td class="time">12:00 TENGAH HARI</td><td>Sesi Memotong Kek & Bergambar</td></tr>
+                    <tr><td class="time">01:00 PETANG</td><td>Majlis Bersurai</td></tr>
+                </table>
+            </div>
+
+            <div id="cat-wishes" class="section-box wishes-container">
+                <h3>Ucapan & Doa</h3>
+                <div class="wishes-list" id="wishes-list" style="max-height: 250px; overflow-y: auto; text-align: left; padding: 15px; border: 1px solid #eee; background: #fff; border-radius: 5px;">
+                    <div class="loading-text">Memuat turun ucapan...</div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="btn" target="_blank">Hantar Ucapan</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="cat-map" class="map-container" style="height: 400px; width: 100%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.353381669477!2d110.37583627585097!3d1.5306692984549306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba79607860167%3A0xc078896013328e2!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1709200000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <footer style="padding: 40px; background: rgba(255, 238, 242, 0.9);">
+            <p>#IlhamuntukJasmin <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
+            <p style="font-size: 0.8rem; color: #aaa;">Dicipta dengan kasih sayang</p>
+        </footer>
+    </div>
+
+    <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
+    <div class="music-control" onclick="toggleMusic()" style="position: fixed; bottom: 20px; right: 20px; background: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; border: 2px solid #eebbc3;"><span id="music-icon">🎵</span></div>
+
+    <script>
+        function enterSite() {
+            document.getElementById('welcome-screen').style.opacity = '0';
+            var music = document.getElementById("bg-music");
+            music.play().catch(e => console.log(e));
+            
+            setTimeout(() => { 
+                document.getElementById('welcome-screen').style.display = 'none'; 
+                
+                // --- LOGIK SKROL BERPERINGKAT (DENGAN HEADER) ---
+                const categories = [
+                    { id: 'cat-header', delay: 5000 },   // Pertama: Walimatulurus (Tunggu 5s)
+                    { id: 'cat-wedding', delay: 4000 },  // Kedua: Maklumat Majlis
+                    { id: 'cat-contact', delay: 4000 },  // Ketiga: Hubungi Kami
+                    { id: 'cat-schedule', delay: 4000 }, // Keempat: Atur Cara
+                    { id: 'cat-wishes', delay: 4000 },   // Kelima: Ucapan
+                    { id: 'cat-map', delay: 4000 }       // Terakhir: Peta
+                ];
+
+                let current = 0;
+
+                function autoScroll() {
+                    if (current < categories.length) {
+                        const target = document.getElementById(categories[current].id);
+                        if (target) {
+                            const offset = target.offsetTop - 20; 
+                            window.scrollTo({ top: offset, behavior: 'smooth' });
+                            
+                            setTimeout(() => {
+                                current++;
+                                autoScroll();
+                            }, categories[current].delay);
+                        }
+                    }
+                }
+
+                autoScroll();
+
+            }, 1000);
+        }
+
+        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
+        setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+
+        var isPlaying = false;
+        function toggleMusic() {
+            var m = document.getElementById("bg-music");
+            if (isPlaying) { m.pause(); document.getElementById("music-icon").innerHTML = "🔇"; isPlaying = false; }
+            else { m.play(); document.getElementById("music-icon").innerHTML = "🎵"; isPlaying = true; }
+        }
+        
+        fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT6Q18WuHZNNGfr7Opx7tyjEtjKKgOuaumIjFCNPZQjcmXCrB9HOdg-As6PLmQA3q1oTWERr_rca0ZE/pub?gid=1820886142&single=true&output=csv")
+            .then(res => res.text())
+            .then(data => {
+                const list = document.getElementById('wishes-list');
+                list.innerHTML = "";
+                const rows = data.split("\n").slice(1).reverse();
+                rows.forEach(row => {
+                    const cols = row.split(",");
+                    if(cols[1]) {
+                        var name = cols[1].replace(/"/g, "").trim();
+                        var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
+                        list.innerHTML += `<div style="margin-bottom:12px; border-bottom:1px solid #f9f9f9; padding-bottom:5px;"><strong style="color:#2c3e50;">${name}</strong><br><span style="font-size:0.9rem; color:#555;">${msg}</span></div>`;
+                    }
+                });
+            }).catch(() => {
+                document.getElementById('wishes-list').innerHTML = "Tiada ucapan setakat ini.";
+            });
+    </script>
+</body>
+</html>
