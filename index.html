@@ -134,9 +134,9 @@
         .schedule-table td { padding: 12px 8px; border-bottom: 1px solid #eee; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; white-space: nowrap; }
 
-        /* --- UCAPAN SECTION - DIPERBAIKI UNTUK FULL VIEW DI LAPTOP --- */
+        /* --- UCAPAN SECTION - LAPTOP/PC VIEW --- */
         .wishes-list {
-            min-height: 450px; /* Tambah ketinggian minimum */
+            min-height: 450px;
             max-height: 600px; 
             overflow-y: auto; 
             text-align: left; 
@@ -146,8 +146,7 @@
             background-image: url('ucapan-bg.png'); 
             background-position: center;
             background-repeat: no-repeat;
-            /* Menggunakan cover supaya imej sentiasa penuh dalam kotak di Laptop/PC */
-            background-size: cover; 
+            background-size: cover; /* Imej besar untuk Laptop */
             border-radius: 8px;
             color: #4a4a4a;
             position: relative;
@@ -157,7 +156,7 @@
         .wishes-list::before {
             content: "";
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.4); /* Overlay putih nipis */
+            background: rgba(255, 255, 255, 0.4); 
             z-index: -1;
             border-radius: 8px;
         }
@@ -167,7 +166,7 @@
             z-index: 2; 
             border-bottom: 1px solid rgba(238, 187, 195, 0.5); 
             padding-bottom: 15px; margin-bottom: 15px; 
-            background: rgba(255, 255, 255, 0.2); /* Sedikit latar belakang pada teks untuk pembacaan jelas */
+            background: rgba(255, 255, 255, 0.2); 
             padding: 10px;
             border-radius: 5px;
         }
@@ -189,7 +188,13 @@
             h3 { font-size: 3.5rem; }
             .title-schedule { font-size: 2.8rem !important; }
             .schedule-table { font-size: 0.85rem; }
-            .wishes-list { padding: 20px; min-height: 350px; }
+            
+            /* --- KHUSUS UNTUK MOBILE: KEMBALIKAN IMEJ FULL --- */
+            .wishes-list { 
+                padding: 20px; 
+                min-height: 350px; 
+                background-size: 100% 100%; /* Imej penuh tanpa terpotong di mobile */
+            }
         }
     </style>
 </head>
