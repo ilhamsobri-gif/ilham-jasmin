@@ -26,31 +26,9 @@
         /* --- CSS STYLES --- */
         body {
             margin: 0; padding: 0; font-family: 'Lato', sans-serif;
-            background-color: #2c3e50; /* Warna latar belakang gelap sebagai sandaran */
-            position: relative;
-            color: white; /* Tukar warna teks utama kepada putih */
-            text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
+            background-color: white; /* Tukar kembali ke putih global */
+            color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
             scroll-behavior: smooth;
-        }
-
-        /* Pseudo-element untuk imej latar belakang yang digelapkan */
-        body::before {
-            content: "";
-            position: fixed; /* Tetapkan latar belakang */
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('background.png');
-            background-size: cover;
-            background-position: center;
-            z-index: -2; /* Letakkan di belakang kandungan */
-        }
-
-        /* Pseudo-element untuk lapisan tindihan gelap (overlay) */
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Hitam dengan 50% ketelusan */
-            z-index: -1; /* Di atas imej, di bawah kandungan */
         }
 
         #welcome-screen {
@@ -61,8 +39,7 @@
         }
         
         .welcome-content {
-            background-color: rgba(0, 0, 0, 0.7); /* Gelapkan sedikit kotak alu-aluan */
-            padding: 40px; border-radius: 15px; color: white;
+            background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white;
             animation: fadeIn 2s; width: 80%; max-width: 500px;
         }
 
@@ -81,8 +58,7 @@
         }
 
         header {
-            /* Kekalkan kecerunan, tetapi pastikan teks putih menonjol */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop');
             background-size: cover; background-position: center;
             padding: 80px 20px; color: white;
@@ -98,96 +74,86 @@
         #timer {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
+            gap: 15px;
+            margin-top: 20px;
         }
         .time-box {
-            background: rgba(255, 255, 255, 0.1); /* Kurangkan keterlihatan kotak */
-            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
             border-radius: 10px;
-            min-width: 80px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            min-width: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
         }
         .time-box span {
-            font-size: 2.5rem; 
+            font-size: 1.8rem;
             font-weight: bold;
             display: block;
             line-height: 1;
         }
         .time-box small {
-            font-size: 1rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; box-sizing: border-box; }
         
-        /* GAYA KOTAK ASAS DENGAN LATAR BELAKANG GELAP */
+        /* GAYA KOTAK KATEGORI (PUTIH ASAS) */
         .section-box {
-            background-color: rgba(20, 20, 20, 0.95); /* Tukar kepada kelabu sangat gelap */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Gelapkan bayang */
+            background-color: white; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-radius: 8px;
             padding: 40px;
             margin-bottom: 30px;
             width: 100%;
             box-sizing: border-box;
-            border: 2px solid #eebbc3;
-            color: #eee; /* Warna teks dalam kotak kelabu cerah */
+            border: 1px solid #eee; /* Sempadan putih nipis */
+            color: #4a4a4a;
         }
-
-        /* GAYA LATAR BELAKANG KAYU (GELAP) */
-        .wood-bg {
-            background-image: url('https://images.unsplash.com/photo-1610661642133-c24c29d11516?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        /* Overlay gelap untuk kotak kayu */
-        .wood-bg::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.8); /* Overlay hitam pekat */
-            border-radius: 6px;
-            z-index: 0;
-        }
-        .wood-bg > * { position: relative; z-index: 1; }
         
-        /* Kotak maklumat utama (Walimatulurus) juga dijadikan gelap */
-        .details-box { margin-top: -50px; background-color: rgba(20, 20, 20, 0.98); }
+        /* GAYA SEMPADAN BERUNSUR KAYU (WOOD DESIGN) UNTUK KATEGORI KHUSUS */
+        .wood-border {
+            /* Sempadan gambar tekstur kayu terapung (floating) */
+            border-image: url('https://images.unsplash.com/photo-1610661642133-c24c29d11516?q=80&w=2070&auto=format&fit=crop') 30 round;
+            border-width: 15px; /* Sempadan kayu yang tebal dan menonjol */
+            border-style: solid;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Bayang lebih gelap untuk efek terapung */
+            background-clip: padding-box; /* Pastikan kandungan tidak bertindih dengan sempadan kayu */
+        }
+        
+        .details-box { margin-top: -50px; background-color: white; }
 
+        /* MEMBESARKAN FON NAMA PENGANTIN & KEKAL SATU BARIS */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
-            font-size: clamp(1.1rem, 4.5vw, 1.7rem); 
-            color: #eebbc3; /* Tukar warna nama kepada merah jambu cerah */
-            line-height: 1.2;
-            margin: 20px auto;
+            font-size: 2.5rem; /* Saiz fon dibesarkan */
+            color: #eebbc3; 
+            line-height: 1;
+            margin: 15px auto;
             display: block;
             width: 100%;
             text-align: center;
-            white-space: nowrap;
+            white-space: nowrap; /* Memaksa kekal satu baris */
+            overflow: hidden; /* Sembunyikan limpahan jika nama terlalu panjang pada skrin sangat kecil */
+            text-overflow: ellipsis; /* Tambah tiga titik jika limpahan berlaku */
         }
 
-        /* Selaraskan warna teks lain dalam kotak */
-        .parents-name { font-size: 1.1rem; font-weight: bold; color: white; margin: 5px 0; }
-        .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #aaa; }
-        .details-box p { color: #ccc; }
-        .details-box strong { color: white; }
-
+        .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
+        .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
+        
         h3 {
             font-family: 'Great Vibes', cursive;
             font-size: 3.5rem;
-            color: #d4af37; /* Kekalkan emas */
+            color: #d4af37;
             margin-bottom: 15px;
             font-weight: normal;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
         .btn {
             display: inline-block; margin: 10px 5px; padding: 12px 25px;
-            background-color: #eebbc3; color: #2c3e50; /* Butang cerah, teks gelap */
+            background-color: #2c3e50; color: white;
             text-decoration: none;
             border-radius: 50px; font-weight: bold; transition: 0.3s; font-size: 0.9rem;
         }
@@ -211,7 +177,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             animation: bounce 2s infinite;
         }
 
@@ -220,31 +186,34 @@
 
         .btn-funky:nth-child(2) { animation-delay: 0.2s; }
 
+        /* MENGECEKILKAN FON TAJUK HUBUNGAN */
         .contact-title {
-            font-size: 1.4rem;
+            font-size: 1rem; /* Saiz fon dikecilkan */
             font-weight: bold;
-            color: white;
+            color: #2c3e50;
             margin-bottom: 5px;
             display: block;
         }
 
         .schedule-table { width: 100%; margin: 20px 0; border-collapse: collapse; }
-        .schedule-table td { padding: 10px; border-bottom: 1px solid #444; text-align: left; color: #ccc; }
-        .time { font-weight: bold; color: #eebbc3; width: 35%; }
+        .schedule-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; color: #4a4a4a; }
+        .time { font-weight: bold; color: #d4af37; width: 35%; }
 
-        /* Gaya Senarai Ucapan yang Digelapkan */
+        /* Gaya Senarai Ucapan (Gaya Screenshot) */
         .wishes-list {
-            max-height: 250px; 
+            max-height: 300px; 
             overflow-y: auto; 
             text-align: left; 
-            padding: 15px; 
-            border: 1px solid #444; 
-            background: rgba(10, 10, 10, 0.9); /* Latar belakang senarai sangat gelap */
-            border-radius: 5px;
-            color: #eee; /* Warna teks kelabu cerah */
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            background: white;
+            border-radius: 8px;
+            color: #4a4a4a;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
         }
-        .wishes-list strong { color: #eebbc3; } /* Warna nama merah jambu */
-        .wishes-list span { color: #ccc; } /* Warna mesej kelabu */
+        .wishes-list strong { color: #2c3e50; font-weight: bold; display: block; margin-bottom: 5px; }
+        .wishes-list span { color: #555; font-size: 0.9rem; display: block; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; }
+        .wishes-list .wishes-item:last-child span { border-bottom: none; }
 
         @keyframes bounce { 
             0%, 100% {transform: translateY(0);} 
@@ -254,12 +223,11 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
-            .bride-groom-names { font-size: 4vw; padding: 0 10px; } 
+            .bride-groom-names { font-size: 1.8rem; padding: 0 5px; } 
             .header-names { font-size: 2.2rem; }
             .section-box { padding: 25px 15px; }
             h3 { font-size: 2.8rem; }
-            .time-box { min-width: 60px; padding: 10px; }
-            .time-box span { font-size: 1.8rem; }
+            .wood-border { border-width: 10px; } /* Nipiskan sempadan kayu pada mobile */
         }
     </style>
 </head>
@@ -298,13 +266,13 @@
                     <p class="parents-name">&</p>
                     <p class="parents-name">INTAN JUNAIDAH BINTI ZULIADIN</p>
                 </div>
-                <p style="font-style: italic; color: #aaa; font-size: 0.95rem; margin: 0 10px;">
+                <p style="font-style: italic; color: #888; font-size: 0.95rem; margin: 0 10px;">
                     Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
                 </p>
                 <h2 class="bride-groom-names">Mohamad Ilham Bin Mohd Sobri</h2>
                 <p style="font-size: 1rem; font-family: 'Lato'; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
                 <h2 class="bride-groom-names">Jasmin Binti Sahminan</h2>
-                <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
+                <hr style="width: 50%; border: 0.5px solid #eee; margin: 20px auto;">
                 <div style="margin-bottom: 25px;">
                     <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
                     <p style="margin: 5px 0;"><strong><i class="fas fa-map-marker-alt"></i> LOKASI MAJLIS:</strong><br>
@@ -312,10 +280,10 @@
                     13, Lor 1, Tabuan Jaya, 93350 Kuching, Sarawak</p>
                 </div>
                 <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="btn" target="_blank"><i class="fas fa-edit"></i> Sila RSVP Di Sini</a>
-                <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358249821816!2d110.370355!3d1.5224389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7a35368a183%3A0x7d6f5194474773c5!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711920000000!5m2!1sen!2smy7" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
             </div>
 
-            <div id="cat-contact" class="section-box wood-bg">
+            <div id="cat-contact" class="section-box wood-border">
                 <h3>Hubungi Kami</h3>
                 <div style="margin-bottom: 25px;">
                     <p class="contact-title">Pihak Pengantin Lelaki (Sobri)</p>
@@ -324,7 +292,7 @@
                         <a href="https://wa.me/60173251415" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
-                <hr style="border: 0; border-top: 1px solid #444; margin: 20px 0;">
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
                 <div>
                     <p class="contact-title">Pihak Pengantin Perempuan (Mizi)</p>
                     <div class="contact-btn-group">
@@ -334,7 +302,7 @@
                 </div>
             </div>
 
-            <div id="cat-schedule" class="section-box wood-bg">
+            <div id="cat-schedule" class="section-box wood-border">
                 <h3>Atur Cara Majlis</h3>
                 <table class="schedule-table">
                     <tr><td class="time">10:00 PAGI</td><td>Ketibaan Jemputan & Jamuan Makan</td></tr>
@@ -344,7 +312,7 @@
                 </table>
             </div>
 
-            <div id="cat-wishes" class="section-box wood-bg wishes-container">
+            <div id="cat-wishes" class="section-box wood-border wishes-container">
                 <h3>Ucapan & Doa</h3>
                 <div class="wishes-list" id="wishes-list">
                     <div class="loading-text">Memuat turun ucapan...</div>
@@ -359,7 +327,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358249821816!2d110.370355!3d1.5224389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7a35368a183%3A0x7d6f5194474773c5!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711920000000!5m2!1sen!2smy8" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-        <footer style="padding: 40px; background: rgba(0, 0, 0, 0.8);">
+        <footer style="padding: 40px; background: rgba(0, 0, 0, 0.1);">
             <p>#IlhamuntukJasmin <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
             <p style="font-size: 0.8rem; color: #888;">Dicipta dengan kasih sayang</p>
         </footer>
@@ -434,7 +402,7 @@
                     if(cols[1]) {
                         var name = cols[1].replace(/"/g, "").trim();
                         var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
-                        list.innerHTML += `<div style="margin-bottom:12px; border-bottom:1px solid #444; padding-bottom:5px;"><strong>${name}</strong><br><span>${msg}</span></div>`;
+                        list.innerHTML += `<div class="wishes-item"><strong>${name}</strong><span>${msg}</span></div>`;
                     }
                 });
             }).catch(() => {
