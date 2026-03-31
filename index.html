@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Walimatul Urus Ilham & Jasmin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -79,10 +79,8 @@
         
         .details-box { border: 2px solid #eebbc3; margin-top: -50px; }
 
-        /* --- PENYELARASAN NAMA PENGANTIN --- */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
-            /* Menggunakan clamp untuk memastikan teks mengecil secara automatik mengikut skrin */
             font-size: clamp(1.1rem, 4.5vw, 1.7rem); 
             color: #2c3e50;
             line-height: 1.2;
@@ -90,14 +88,14 @@
             display: block;
             width: 100%;
             text-align: center;
-            white-space: nowrap; /* Memaksa kekal satu baris */
+            white-space: nowrap;
         }
 
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
 
         h3 {
-            font-family: 'GreatVibes', cursive;
+            font-family: 'Great Vibes', cursive;
             font-size: 3.5rem;
             color: #d4af37;
             margin-bottom: 15px;
@@ -112,6 +110,7 @@
         }
         .btn:hover { background-color: #d4af37; }
 
+        /* BUTANG HUBUNGI KAMI DENGAN ANIMASI BOUNCE */
         .contact-btn-group {
             display: flex;
             justify-content: center;
@@ -130,20 +129,18 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            /* Animasi bounce yang sama dengan Buka Undangan */
+            animation: bounce 2s infinite;
         }
 
-        .btn-funky:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
+        .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
+
+        /* Memastikan kedua-dua butang melantun secara seragam */
+        .btn-funky:nth-child(2) {
+            animation-delay: 0.2s; /* Sedikit kelewatan untuk efek visual menarik */
         }
-
-        .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); animation: pulse-blue 2s infinite; }
-        .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); animation: pulse-green 2s infinite; }
-
-        @keyframes pulse-blue { 0% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(52, 152, 219, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); } }
-        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
         .contact-title {
             font-size: 1.4rem;
@@ -157,12 +154,15 @@
         .schedule-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; }
 
-        @keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
+        @keyframes bounce { 
+            0%, 100% {transform: translateY(0);} 
+            50% {transform: translateY(-10px);} 
+        }
+        
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
             .bride-groom-names { 
-                /* Memastikan fon cukup kecil untuk satu baris pada skrin telefon sempit */
                 font-size: 4vw; 
                 padding: 0 10px;
             } 
