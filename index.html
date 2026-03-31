@@ -84,6 +84,7 @@
             border-radius: 10px;
             min-width: 80px;
             border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
         }
         .time-box span {
             font-size: 2.5rem; 
@@ -111,30 +112,20 @@
             border: 2px solid #eebbc3;
         }
 
-        /* GAYA LATAR BELAKANG KAYU (WOOD DESIGN) */
-        .wood-bg {
-            /* Menggunakan imej tekstur kayu dari Unsplash */
-            background-image: url('https://images.unsplash.com/photo-1610661642133-c24c29d11516?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            position: relative;
+        /* GAYA FLOATING WOOD BORDER */
+        .wood-floating-border {
+            background-color: white;
+            border: 12px solid transparent;
+            border-image: url('https://images.unsplash.com/photo-1610661642133-c24c29d11516?q=80&w=2070&auto=format&fit=crop') 30 stretch;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
-        /* Overlay halus untuk memastikan teks kekal boleh dibaca */
-        .wood-bg::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 255, 255, 0.88); /* Overlay sedikit lebih gelap dari sebelum ini */
-            border-radius: 6px;
-            z-index: 0;
-        }
-        .wood-bg > * { position: relative; z-index: 1; }
         
         .details-box { margin-top: -50px; background-color: white; }
 
+        /* NAMA PENGANTIN BESAR & 1 BARIS */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
-            font-size: clamp(1.1rem, 4.5vw, 1.7rem); 
+            font-size: clamp(1.8rem, 6vw, 2.8rem); 
             color: #2c3e50;
             line-height: 1.2;
             margin: 20px auto;
@@ -148,7 +139,7 @@
         .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
 
         h3 {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'GreatVibesKustom', cursive;
             font-size: 3.5rem;
             color: #d4af37;
             margin-bottom: 15px;
@@ -191,8 +182,9 @@
 
         .btn-funky:nth-child(2) { animation-delay: 0.2s; }
 
+        /* TAJUK HUBUNGAN DIKECILKAN */
         .contact-title {
-            font-size: 1.4rem;
+            font-size: 1rem;
             font-weight: bold;
             color: #2c3e50;
             margin-bottom: 5px;
@@ -203,6 +195,21 @@
         .schedule-table td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; }
 
+        /* COMMENTS SECTION DARK BACKGROUND */
+        .wishes-list {
+            max-height: 250px; 
+            overflow-y: auto; 
+            text-align: left; 
+            padding: 15px; 
+            border: 1px solid #ccc; 
+            background: #1a1a1a; 
+            border-radius: 5px;
+            color: white;
+        }
+        .wishes-list div { border-bottom: 1px solid #333 !important; padding-bottom: 10px; margin-bottom: 10px; }
+        .wishes-list strong { color: #eebbc3; }
+        .wishes-list span { color: #ddd; }
+
         @keyframes bounce { 
             0%, 100% {transform: translateY(0);} 
             50% {transform: translateY(-10px);} 
@@ -211,7 +218,7 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
-            .bride-groom-names { font-size: 4vw; padding: 0 10px; } 
+            .bride-groom-names { font-size: 5vw; padding: 0 5px; } 
             .header-names { font-size: 2.2rem; }
             .section-box { padding: 25px 15px; }
             h3 { font-size: 2.8rem; }
@@ -269,10 +276,10 @@
                     13, Lor 1, Tabuan Jaya, 93350 Kuching, Sarawak</p>
                 </div>
                 <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="btn" target="_blank"><i class="fas fa-edit"></i> Sila RSVP Di Sini</a>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+Kuching" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
             </div>
 
-            <div id="cat-contact" class="section-box wood-bg">
+            <div id="cat-contact" class="section-box wood-floating-border">
                 <h3>Hubungi Kami</h3>
                 <div style="margin-bottom: 25px;">
                     <p class="contact-title">Pihak Pengantin Lelaki (Sobri)</p>
@@ -291,7 +298,7 @@
                 </div>
             </div>
 
-            <div id="cat-schedule" class="section-box wood-bg">
+            <div id="cat-schedule" class="section-box wood-floating-border">
                 <h3>Atur Cara Majlis</h3>
                 <table class="schedule-table">
                     <tr><td class="time">10:00 PAGI</td><td>Ketibaan Jemputan & Jamuan Makan</td></tr>
@@ -301,9 +308,9 @@
                 </table>
             </div>
 
-            <div id="cat-wishes" class="section-box wood-bg wishes-container">
+            <div id="cat-wishes" class="section-box wood-floating-border wishes-container">
                 <h3>Ucapan & Doa</h3>
-                <div class="wishes-list" id="wishes-list" style="max-height: 250px; overflow-y: auto; text-align: left; padding: 15px; border: 1px solid #ccc; background: rgba(255,255,255,0.9); border-radius: 5px;">
+                <div class="wishes-list" id="wishes-list">
                     <div class="loading-text">Memuat turun ucapan...</div>
                 </div>
                 <div style="margin-top: 20px;">
@@ -313,7 +320,7 @@
         </div>
 
         <div id="cat-map" class="map-container" style="height: 400px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.353381669477!2d110.37583627585097!3d1.5306692984549306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba79607860167%3A0xc078896013328e2!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1709200000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.3582490072346!2d110.375496!3d1.522501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba761e389df31%3A0xc07a82643a6d2f3a!2sZahra%20Event%20Hall!5e0!3m2!1sen!2smy!4v1711950000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 40px; background: rgba(255, 238, 242, 0.9);">
@@ -333,7 +340,6 @@
             
             setTimeout(() => { 
                 document.getElementById('welcome-screen').style.display = 'none'; 
-                
                 const categories = [
                     { id: 'cat-header', delay: 5000 },
                     { id: 'cat-wedding', delay: 4000 },
@@ -344,14 +350,12 @@
                 ];
 
                 let current = 0;
-
                 function autoScroll() {
                     if (current < categories.length) {
                         const target = document.getElementById(categories[current].id);
                         if (target) {
                             const offset = target.offsetTop - 20; 
                             window.scrollTo({ top: offset, behavior: 'smooth' });
-                            
                             setTimeout(() => {
                                 current++;
                                 autoScroll();
@@ -391,7 +395,7 @@
                     if(cols[1]) {
                         var name = cols[1].replace(/"/g, "").trim();
                         var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
-                        list.innerHTML += `<div style="margin-bottom:12px; border-bottom:1px solid #f9f9f9; padding-bottom:5px;"><strong style="color:#2c3e50;">${name}</strong><br><span style="font-size:0.9rem; color:#555;">${msg}</span></div>`;
+                        list.innerHTML += `<div style="margin-bottom:12px; padding-bottom:5px;"><strong style="color:#eebbc3;">${name}</strong><br><span style="font-size:0.9rem;">${msg}</span></div>`;
                     }
                 });
             }).catch(() => {
