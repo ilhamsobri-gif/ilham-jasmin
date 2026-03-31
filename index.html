@@ -72,9 +72,35 @@
             color: white;
         }
 
+        /* MEMBESARKAN COUNTDOWN TIMER */
+        #timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .time-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .time-box span {
+            font-size: 2.5rem; /* Saiz nombor dibesarkan */
+            font-weight: bold;
+            display: block;
+            line-height: 1;
+        }
+        .time-box small {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; box-sizing: border-box; }
         
-        /* GAYA KOTAK DENGAN PINK BORDER */
+        /* GAYA KOTAK ASAS */
         .section-box {
             background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -83,10 +109,28 @@
             margin-bottom: 30px;
             width: 100%;
             box-sizing: border-box;
-            border: 2px solid #eebbc3; /* Pink Border Uniform */
+            border: 2px solid #eebbc3;
         }
+
+        /* GAYA LATAR BELAKANG KAYU UNTUK KATEGORI KHUSUS */
+        .wood-bg {
+            background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        /* Overlay halus untuk memastikan teks kekal boleh dibaca atas latar kayu */
+        .wood-bg::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 6px;
+            z-index: 0;
+        }
+        .wood-bg > * { position: relative; z-index: 1; }
         
-        .details-box { margin-top: -50px; }
+        .details-box { margin-top: -50px; background-color: white; }
 
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
@@ -110,6 +154,7 @@
             margin-bottom: 15px;
             font-weight: normal;
             text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .btn {
@@ -155,7 +200,7 @@
         }
 
         .schedule-table { width: 100%; margin: 20px 0; border-collapse: collapse; }
-        .schedule-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+        .schedule-table td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; }
 
         @keyframes bounce { 
@@ -170,8 +215,8 @@
             .header-names { font-size: 2.2rem; }
             .section-box { padding: 25px 15px; }
             h3 { font-size: 2.8rem; }
-            .contact-title { font-size: 1.2rem; }
-            .time { width: 40%; font-size: 0.85rem; }
+            .time-box { min-width: 60px; padding: 10px; }
+            .time-box span { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -190,11 +235,11 @@
         <header id="cat-header">
             <p class="subtitle">WALIMATUL URUS</p>
             <h1 class="header-names">Ilham & Jasmin</h1>
-            <div id="timer" style="display: flex; justify-content: center; gap: 15px; margin-top: 20px;">
-                <div class="time-box"><span id="days">0</span><br><small>Hari</small></div>
-                <div class="time-box"><span id="hours">0</span><br><small>Jam</small></div>
-                <div class="time-box"><span id="minutes">0</span><br><small>Min</small></div>
-                <div class="time-box"><span id="seconds">0</span><br><small>Saat</small></div>
+            <div id="timer">
+                <div class="time-box"><span id="days">0</span><small>Hari</small></div>
+                <div class="time-box"><span id="hours">0</span><small>Jam</small></div>
+                <div class="time-box"><span id="minutes">0</span><small>Min</small></div>
+                <div class="time-box"><span id="seconds">0</span><small>Saat</small></div>
             </div>
         </header>
 
@@ -213,16 +258,9 @@
                 <p style="font-style: italic; color: #666; font-size: 0.95rem; margin: 0 10px;">
                     Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
                 </p>
-                </p>
                 <h2 class="bride-groom-names">Mohamad Ilham Bin Mohd Sobri</h2>
-                </p>
-                </p>
                 <p style="font-size: 1rem; font-family: 'Lato'; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
-                </p>
-                </p>
                 <h2 class="bride-groom-names">Jasmin Binti Sahminan</h2>
-                </p>
-                </p>
                 <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
                 <div style="margin-bottom: 25px;">
                     <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
@@ -234,7 +272,7 @@
                 <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
             </div>
 
-            <div id="cat-contact" class="section-box">
+            <div id="cat-contact" class="section-box wood-bg">
                 <h3>Hubungi Kami</h3>
                 <div style="margin-bottom: 25px;">
                     <p class="contact-title">Pihak Pengantin Lelaki (Sobri)</p>
@@ -243,7 +281,7 @@
                         <a href="https://wa.me/60173251415" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px 0;">
                 <div>
                     <p class="contact-title">Pihak Pengantin Perempuan (Mizi)</p>
                     <div class="contact-btn-group">
@@ -253,7 +291,7 @@
                 </div>
             </div>
 
-            <div id="cat-schedule" class="section-box">
+            <div id="cat-schedule" class="section-box wood-bg">
                 <h3>Atur Cara Majlis</h3>
                 <table class="schedule-table">
                     <tr><td class="time">10:00 PAGI</td><td>Ketibaan Jemputan & Jamuan Makan</td></tr>
@@ -263,9 +301,9 @@
                 </table>
             </div>
 
-            <div id="cat-wishes" class="section-box wishes-container">
+            <div id="cat-wishes" class="section-box wood-bg wishes-container">
                 <h3>Ucapan & Doa</h3>
-                <div class="wishes-list" id="wishes-list" style="max-height: 250px; overflow-y: auto; text-align: left; padding: 15px; border: 1px solid #eee; background: #fff; border-radius: 5px;">
+                <div class="wishes-list" id="wishes-list" style="max-height: 250px; overflow-y: auto; text-align: left; padding: 15px; border: 1px solid #ccc; background: rgba(255,255,255,0.9); border-radius: 5px;">
                     <div class="loading-text">Memuat turun ucapan...</div>
                 </div>
                 <div style="margin-top: 20px;">
