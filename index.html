@@ -72,7 +72,6 @@
             color: white;
         }
 
-        /* MEMBESARKAN COUNTDOWN TIMER */
         #timer {
             display: flex;
             justify-content: center;
@@ -87,7 +86,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
         .time-box span {
-            font-size: 2.5rem; /* Saiz nombor dibesarkan */
+            font-size: 2.5rem; 
             font-weight: bold;
             display: block;
             line-height: 1;
@@ -112,19 +111,20 @@
             border: 2px solid #eebbc3;
         }
 
-        /* GAYA LATAR BELAKANG KAYU UNTUK KATEGORI KHUSUS */
+        /* GAYA LATAR BELAKANG KAYU (WOOD DESIGN) */
         .wood-bg {
-            background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop');
+            /* Menggunakan imej tekstur kayu dari Unsplash */
+            background-image: url('https://images.unsplash.com/photo-1610661642133-c24c29d11516?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             position: relative;
         }
-        /* Overlay halus untuk memastikan teks kekal boleh dibaca atas latar kayu */
+        /* Overlay halus untuk memastikan teks kekal boleh dibaca */
         .wood-bg::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88); /* Overlay sedikit lebih gelap dari sebelum ini */
             border-radius: 6px;
             z-index: 0;
         }
@@ -258,16 +258,9 @@
                 <p style="font-style: italic; color: #666; font-size: 0.95rem; margin: 0 10px;">
                     Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
                 </p>
-                </p>
                 <h2 class="bride-groom-names">Mohamad Ilham Bin Mohd Sobri</h2>
-                </p>
-                </p>
                 <p style="font-size: 1rem; font-family: 'Lato'; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
-                </p>
-                </p>
                 <h2 class="bride-groom-names">Jasmin Binti Sahminan</h2>
-                </p>
-                </p>
                 <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
                 <div style="margin-bottom: 25px;">
                     <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
