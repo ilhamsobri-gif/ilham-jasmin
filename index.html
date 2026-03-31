@@ -87,14 +87,13 @@
         
         .details-box { margin-top: -50px; }
 
-        /* NAMA PENGANTIN - DIKECILKAN DRASIK & CENTER (TAK CROSS BORDER, TAK TERPOTONG) */
+        /* NAMA PENGANTIN - DIKECILKAN SUPAYA TAK CROSS BORDER */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
-            /* Saiz amat kecil pada mobile, line-height tinggi supaya tak terpotong */
-            font-size: clamp(1.1rem, 4.5vw, 1.7rem); 
+            font-size: clamp(1.1rem, 4.3vw, 1.6rem); 
             color: #2c3e50;
-            line-height: 1.2;
-            margin: 20px auto;
+            line-height: 1.4; 
+            margin: 15px auto;
             display: block;
             width: 100%;
             text-align: center;
@@ -104,17 +103,25 @@
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
 
-        /* TAJUK DIBESARKAN SEDIKIT */
+        /* TAJUK DIBESARKAN */
         h3 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
+            font-family: 'GreatVibesKustom', cursive;
+            font-size: 4.5rem; 
             color: #d4af37;
-            margin-bottom: 15px;
-            font-weight: normal;
+            margin-bottom: 20px;
             text-align: center;
+            font-weight: normal;
         }
 
-        .contact-title { font-size: 1.4rem; font-weight: bold; color: #2c3e50; margin-bottom: 5px; }
+        .contact-title { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin-bottom: 5px; }
+
+        /* JARAK 2 SPACING UNTUK BUTANG */
+        .contact-btn-wrapper {
+            margin-top: 30px; 
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
 
         .btn-funky {
             padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none;
@@ -124,22 +131,36 @@
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
-        .schedule-table { width: 100%; border-collapse: collapse; }
-        .schedule-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+        .schedule-table { width: 100%; border-collapse: collapse; font-size: 1.1rem; }
+        .schedule-table td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; }
 
-        /* COMMENTS SECTION - Elegant Soft Sakura Background (transparent) */
+        /* COMMENTS SECTION DENGAN GAMBAR CUSTOM ANDA */
         .wishes-list {
-            max-height: 250px; overflow-y: auto; text-align: left; padding: 15px; 
-            border: 1px solid #eebbc3; 
+            max-height: 450px; overflow-y: auto; text-align: left; padding: 40px; 
+            border: 2px solid #eebbc3; 
             background-color: #fff;
-            background-image: url('https://www.transparenttextures.com/patterns/flower-trail.png');
-            background-color: rgba(255, 255, 255, 0.8);
+            /* Pastikan nama fail ini tepat seperti yang anda muat naik ke GitHub */
+            background-image: url('image_49f5e7.png'); 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
             border-radius: 8px;
             color: #4a4a4a;
+            position: relative;
         }
-        .wishes-list div { border-bottom: 1px solid #f9f9f9; padding-bottom: 5px; margin-bottom: 12px; }
-        .wishes-list strong { color: #d4af37; }
+        .wishes-list::before {
+            content: "";
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.5); /* Kurangkan ketelusan untuk nampak gambar lebih jelas */
+            z-index: 0;
+        }
+        .wishes-list div { 
+            position: relative; z-index: 1; 
+            border-bottom: 1px solid rgba(238, 187, 195, 0.4); 
+            padding-bottom: 12px; margin-bottom: 12px; 
+        }
+        .wishes-list strong { color: #d4af37; font-size: 1.1rem; }
 
         .music-control {
             position: fixed; bottom: 20px; right: 20px; background: white;
@@ -149,14 +170,12 @@
         }
 
         @keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
+        
         @media (max-width: 600px) {
-            /* Pastikan nama mengecil ikut skrin pada mobile, tak terpotong */
-            .bride-groom-names { font-size: 4vw; padding: 0 10px; } 
+            .bride-groom-names { font-size: 4.2vw; } 
             .header-names { font-size: 2.2rem; }
             .section-box { padding: 25px 15px; }
-            h3 { font-size: 2.8rem; }
+            h3 { font-size: 3.5rem; }
         }
     </style>
 </head>
@@ -195,7 +214,7 @@
                     <p class="parents-name">&</p>
                     <p class="parents-name">INTAN JUNAIDAH BINTI ZULIADIN</p>
                 </div>
-                <p style="font-style: italic; color: #666; font-size: 0.95rem; margin: 0 10px;">
+                <p style="font-style: italic; color: #666; font-size: 0.9rem;">
                     Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
                 </p>
                 <h2 class="bride-groom-names">Mohamad Ilham Bin Mohd Sobri</h2>
@@ -204,19 +223,21 @@
                 <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
                 <div style="margin-bottom: 25px;">
                     <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
-                    <p style="margin: 5px 0;"><strong><i class="fas fa-map-marker-alt"></i> LOKASI MAJLIS:</strong><br>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> LOKASI MAJLIS:</strong><br>
                     Zahra Event Hall by The Chef Table,<br>
                     13, Lor 1, Tabuan Jaya, 93350 Kuching, Sarawak</p>
                 </div>
-                <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+Kuching" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+Kuching" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                </div>
             </div>
 
             <div id="cat-contact" class="section-box">
                 <h3>Hubungi Kami</h3>
                 <div style="margin-bottom: 25px;">
                     <p class="contact-title">Pihak Pengantin Lelaki (Sobri)</p>
-                    <div style="display:flex; justify-content:center; gap:10px;">
+                    <div class="contact-btn-wrapper">
                         <a href="tel:+60173251415" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
                         <a href="https://wa.me/60173251415" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
@@ -224,7 +245,7 @@
                 <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
                 <div>
                     <p class="contact-title">Pihak Pengantin Perempuan (Mizi)</p>
-                    <div style="display:flex; justify-content:center; gap:10px;">
+                    <div class="contact-btn-wrapper">
                         <a href="tel:+60146602970" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
                         <a href="https://wa.me/60146602970" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
@@ -280,7 +301,6 @@
             document.getElementById('welcome-screen').style.opacity = '0';
             music.play().catch(e => console.log(e));
             isPlaying = true;
-            
             setTimeout(() => { 
                 document.getElementById('welcome-screen').style.display = 'none'; 
                 const categories = [
