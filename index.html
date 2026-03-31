@@ -11,7 +11,7 @@
         /* --- INTEGRASI FON KUSTOM --- */
         @font-face {
             font-family: 'Cintarini';
-            src: url('Cintarini.ttf') format('truetype');
+            src: url('Cintarini.ttf') format('truetype'); [cite: 12]
             font-weight: normal;
             font-style: normal;
         }
@@ -305,4 +305,40 @@
             }, 1000);
         }
 
-        var countDownDate = new Date("June 28,
+        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
+        setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+
+        var isPlaying = false;
+        function toggleMusic() {
+            var m = document.getElementById("bg-music");
+            if (isPlaying) { m.pause(); document.getElementById("music-icon").innerHTML = "🔇"; isPlaying = false; }
+            else { m.play(); document.getElementById("music-icon").innerHTML = "🎵"; isPlaying = true; }
+        }
+        
+        fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT6Q18WuHZNNGfr7Opx7tyjEtjKKgOuaumIjFCNPZQjcmXCrB9HOdg-As6PLmQA3q1oTWERr_rca0ZE/pub?gid=1820886142&single=true&output=csv")
+            .then(res => res.text())
+            .then(data => {
+                const list = document.getElementById('wishes-list');
+                list.innerHTML = "";
+                const rows = data.split("\n").slice(1).reverse();
+                rows.forEach(row => {
+                    const cols = row.split(",");
+                    if(cols[1]) {
+                        var name = cols[1].replace(/"/g, "").trim();
+                        var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
+                        list.innerHTML += `<div style="margin-bottom:12px; border-bottom:1px solid #f9f9f9; padding-bottom:5px;"><strong style="color:#2c3e50;">${name}</strong><br><span style="font-size:0.9rem; color:#555;">${msg}</span></div>`;
+                    }
+                });
+            }).catch(() => {
+                document.getElementById('wishes-list').innerHTML = "Tiada ucapan setakat ini.";
+            });
+    </script>
+</body>
+</html>
