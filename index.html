@@ -64,19 +64,18 @@
 
         .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; color: white; }
 
-        #timer { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
+        #timer { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
         .time-box {
-            background: rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 10px;
-            min-width: 80px; border: 1px solid rgba(255, 255, 255, 0.3); color: white;
+            background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 10px;
+            min-width: 60px; border: 1px solid rgba(255, 255, 255, 0.3); color: white;
         }
-        .time-box span { font-size: 2.5rem; font-weight: bold; display: block; line-height: 1; }
-        .time-box small { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .time-box span { font-size: 1.8rem; font-weight: bold; display: block; line-height: 1; }
+        .time-box small { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
 
         .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; box-sizing: border-box; }
         
-        /* GAYA KOTAK ASAS */
         .section-box {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: white;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-radius: 8px;
             padding: 40px;
@@ -85,31 +84,20 @@
             box-sizing: border-box;
             border: 2px solid #eebbc3;
         }
-
-        /* GAYA FLOATING WOOD BORDER - DIPERBAIKI */
-        .wood-floating-border {
-            border: 15px solid transparent;
-            border-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* Pattern kayu */
-            border-image-source: url('https://images.unsplash.com/photo-1610661642133-c24c29d11516?q=80&w=100&auto=format&fit=crop');
-            border-image-slice: 30;
-            border-image-repeat: round;
-            background-color: white;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
         
-        .details-box { margin-top: -50px; background-color: white; }
+        .details-box { margin-top: -50px; }
 
-        /* NAMA PENGANTIN - DIPASTIKAN TIDAK MELEPASI BORDER */
+        /* NAMA PENGANTIN - KEKAL 1 BARIS & CENTER */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
-            font-size: clamp(1.8rem, 6vw, 3rem); /* Saiz automatik ikut skrin */
+            font-size: clamp(1.5rem, 5.5vw, 2.8rem); 
             color: #2c3e50;
             line-height: 1.2;
-            margin: 20px auto;
+            margin: 15px auto;
             display: block;
-            width: 90%; /* Pastikan ada ruang kiri kanan */
+            width: 100%;
             text-align: center;
-            word-wrap: break-word; /* Wrap jika terlalu panjang */
+            white-space: nowrap; /* Paksa 1 baris */
         }
 
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
@@ -117,10 +105,11 @@
 
         h3 {
             font-family: 'GreatVibesKustom', cursive;
-            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-size: 3.5rem;
             color: #d4af37;
             margin-bottom: 15px;
             text-align: center;
+            font-weight: normal;
         }
 
         /* TAJUK HUBUNGAN DIKECILKAN */
@@ -135,30 +124,36 @@
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
         .schedule-table { width: 100%; border-collapse: collapse; }
-        .schedule-table td { padding: 10px; border-bottom: 1px solid #ddd; text-align: left; }
+        .schedule-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; }
 
-        /* COMMENTS SECTION - LATAR BUNGA TRANSPARENT */
+        /* COMMENTS SECTION - BUNGA TRANSPARENT */
         .wishes-list {
             max-height: 300px; overflow-y: auto; text-align: left; padding: 20px; 
-            border: 1px solid #eebbc3; 
-            background-image: url('https://www.transparenttextures.com/patterns/flower-trail.png'); /* Corak bunga telus */
-            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd; 
+            background-image: url('https://www.transparenttextures.com/patterns/flower-trail.png');
+            background-color: rgba(255, 255, 255, 0.7);
             border-radius: 8px;
             color: #4a4a4a;
         }
-        .wishes-list div { border-bottom: 1px solid rgba(238, 187, 195, 0.3); padding-bottom: 10px; margin-bottom: 10px; }
-        .wishes-list strong { color: #d4af37; font-size: 1.1rem; }
+        .wishes-list div { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 10px; }
+
+        /* BUTANG MUZIK */
+        .music-control {
+            position: fixed; bottom: 20px; right: 20px; background: white;
+            width: 50px; height: 50px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; cursor: pointer;
+            z-index: 1000; border: 2px solid #eebbc3; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
 
         @keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
-            .bride-groom-names { font-size: 1.6rem; width: 100%; white-space: normal; } 
+            .bride-groom-names { font-size: 5vw; } 
             .header-names { font-size: 2.2rem; }
             .section-box { padding: 25px 15px; }
-            .time-box { min-width: 60px; padding: 10px; }
-            .time-box span { font-size: 1.8rem; }
+            h3 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -210,11 +205,13 @@
                     Zahra Event Hall by The Chef Table,<br>
                     13, Lor 1, Tabuan Jaya, 93350 Kuching, Sarawak</p>
                 </div>
-                <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+Kuching" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+Kuching" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                </div>
             </div>
 
-            <div id="cat-contact" class="section-box wood-floating-border">
+            <div id="cat-contact" class="section-box">
                 <h3>Hubungi Kami</h3>
                 <div style="margin-bottom: 25px;">
                     <p class="contact-title">Pihak Pengantin Lelaki (Sobri)</p>
@@ -233,7 +230,7 @@
                 </div>
             </div>
 
-            <div id="cat-schedule" class="section-box wood-floating-border">
+            <div id="cat-schedule" class="section-box">
                 <h3>Atur Cara Majlis</h3>
                 <table class="schedule-table">
                     <tr><td class="time">10:00 PAGI</td><td>Ketibaan Jemputan & Jamuan Makan</td></tr>
@@ -243,7 +240,7 @@
                 </table>
             </div>
 
-            <div id="cat-wishes" class="section-box wood-floating-border">
+            <div id="cat-wishes" class="section-box wishes-container">
                 <h3>Ucapan & Doa</h3>
                 <div class="wishes-list" id="wishes-list">
                     <div class="loading-text">Memuat turun ucapan...</div>
@@ -265,12 +262,30 @@
     </div>
 
     <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
+    <div class="music-control" onclick="toggleMusic()">
+        <span id="music-icon">🎵</span>
+    </div>
 
     <script>
+        var music = document.getElementById("bg-music");
+        var isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+                document.getElementById("music-icon").innerHTML = "🔇";
+                isPlaying = false;
+            } else {
+                music.play();
+                document.getElementById("music-icon").innerHTML = "🎵";
+                isPlaying = true;
+            }
+        }
+
         function enterSite() {
             document.getElementById('welcome-screen').style.opacity = '0';
-            var music = document.getElementById("bg-music");
             music.play().catch(e => console.log(e));
+            isPlaying = true;
             
             setTimeout(() => { 
                 document.getElementById('welcome-screen').style.display = 'none'; 
