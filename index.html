@@ -11,8 +11,7 @@
         /* --- INTEGRASI FON CINTARINI --- */
         @font-face {
             font-family: 'Cintarini';
-            /* Pastikan fail Cintarini.ttf berada dalam folder yang sama dengan kod ini [cite: 9, 12] */
-            src: url('Cintarini.ttf') format('truetype');
+            src: url('Cintarini.ttf') format('truetype'); [cite: 9, 12]
             font-weight: normal;
             font-style: normal;
         }
@@ -73,21 +72,22 @@
         
         .details-box { border: 2px solid #eebbc3; margin-top: -50px; }
 
+        /* PENYELESAIAN UNTUK SATU BARIS PADA TELEFON */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
             font-size: 1.7rem; 
             color: #2c3e50;
             line-height: 1.2;
             margin: 20px 0;
+            white-space: nowrap; /* Menghalang teks daripada pecah ke baris kedua  */
         }
 
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
 
-        /* MEMBESARKAN SAIZ FON TAJUK SEKSYEN */
         h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem; /* Ditingkatkan daripada saiz standard */
+            font-size: 2.2rem;
             color: #d4af37;
             margin-bottom: 20px;
         }
@@ -107,10 +107,13 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
-            .bride-groom-names { font-size: 1.3rem; }
+            /* Fon akan mengecil secara automatik mengikut lebar skrin telefon  */
+            .bride-groom-names { 
+                font-size: 5.5vw; /* Menggunakan viewport width untuk kekal satu baris  */
+            } 
             .header-names { font-size: 2.5rem; }
             .white-box { padding: 25px; }
-            h3 { font-size: 1.8rem; } /* Penyesuaian saiz tajuk untuk mobile */
+            h3 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -118,7 +121,7 @@
 
     <div id="welcome-screen">
         <div class="welcome-content">
-            <p style="letter-spacing: 2px;">WALIMATULURUS</p>
+            <p style="letter-spacing: 2px;">WALIMATUL URUS</p>
             <h1 class="welcome-names">Ilham & Jasmin</h1>
             <p>28 Jun 2026</p>
             <button class="open-btn" onclick="enterSite()">Buka Undangan <i class="fas fa-envelope-open"></i></button>
@@ -155,15 +158,9 @@
                     Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
                 </p>
 
-                <h2 class="bride-groom-names">
-                     </p>
-                    Mohamad Ilham Bin Mohd Sobri<br>
-                    </p>
-                    <span style="font-size: 1rem; font-family: 'Lato'; color: #888; font-style: italic; vertical-align: middle;">dengan pilihan hatinya</span><br>
-                    </p>
-                    Jasmin Binti Sahminan
-                    </p>
-                </h2>
+                <h2 class="bride-groom-names">Mohamad Ilham Bin Mohd Sobri</h2>
+                <p style="font-size: 1rem; font-family: 'Lato'; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
+                <h2 class="bride-groom-names">Jasmin Binti Sahminan</h2>
 
                 <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
 
