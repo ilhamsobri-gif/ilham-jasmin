@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Walimatul Urus Ilham & Jasmin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         /* --- INTEGRASI FON KUSTOM --- */
         @font-face {
             font-family: 'Cintarini';
-            src: url('Cintarini.ttf') format('truetype'); [cite: 9, 12]
+            src: url('Cintarini.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
 
         @font-face {
-            font-family: 'GreatVibes';
-            /* Nama fail mestilah tepat seperti di GitHub: GreatVibes-Regular.ttf */
-            src: url('GreatVibes-Regular.ttf') format('truetype'); [cite: 9, 12]
+            font-family: 'GreatVibesKustom';
+            src: url('GreatVibes-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -83,19 +82,20 @@
         /* --- PENYELARASAN NAMA PENGANTIN --- */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
-            font-size: 1.7rem; 
+            /* Menggunakan clamp untuk memastikan teks mengecil secara automatik mengikut skrin */
+            font-size: clamp(1.1rem, 4.5vw, 1.7rem); 
             color: #2c3e50;
             line-height: 1.2;
             margin: 20px auto;
             display: block;
             width: 100%;
             text-align: center;
+            white-space: nowrap; /* Memaksa kekal satu baris */
         }
 
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
 
-        /* TAJUK DENGAN FON GREAT VIBES DARI GITHUB */
         h3 {
             font-family: 'GreatVibes', cursive;
             font-size: 3.5rem;
@@ -112,7 +112,6 @@
         }
         .btn:hover { background-color: #d4af37; }
 
-        /* BUTANG HUBUNGI KAMI FUNKY */
         .contact-btn-group {
             display: flex;
             justify-content: center;
@@ -161,20 +160,17 @@
         @keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* --- MEDIA QUERY UNTUK MOBILE --- */
         @media (max-width: 600px) {
             .bride-groom-names { 
-                font-size: 5.2vw; /* Saiz dinamik untuk kekal satu baris */
-                white-space: normal; /* Benarkan wrap pada skrin sangat kecil untuk kekal di tengah */
-                overflow-wrap: break-word;
-                padding: 0 5px;
+                /* Memastikan fon cukup kecil untuk satu baris pada skrin telefon sempit */
+                font-size: 4vw; 
+                padding: 0 10px;
             } 
             .header-names { font-size: 2.2rem; }
             .white-box { padding: 25px 15px; }
             h3 { font-size: 2.8rem; }
             .contact-title { font-size: 1.2rem; }
             .time { width: 40%; font-size: 0.85rem; }
-            .schedule-table td { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -233,7 +229,7 @@
                 </div>
                 
                 <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="btn" target="_blank"><i class="fas fa-edit"></i> Sila RSVP Di Sini</a>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table+Kuching" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
             </div>
 
             <div class="white-box">
@@ -277,60 +273,4 @@
         </div>
 
         <div class="map-container" style="height: 400px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.364426569123!2d110.3754245758552!3d1.5202674984651347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba76686a67307%3A0xc31994689622d7a2!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1710000000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-
-        <footer style="padding: 40px; background: rgba(255, 238, 242, 0.9);">
-            <p>#IlhamuntukJasmin <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
-            <p style="font-size: 0.8rem; color: #aaa;">Dicipta dengan kasih sayang</p>
-        </footer>
-    </div>
-
-    <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
-    <div class="music-control" onclick="toggleMusic()" style="position: fixed; bottom: 20px; right: 20px; background: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; border: 2px solid #eebbc3;"><span id="music-icon">🎵</span></div>
-
-    <script>
-        function enterSite() {
-            document.getElementById('welcome-screen').style.opacity = '0';
-            var music = document.getElementById("bg-music");
-            music.play().catch(e => console.log(e));
-            setTimeout(() => { document.getElementById('welcome-screen').style.display = 'none'; }, 1000);
-        }
-
-        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
-        setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
-        }, 1000);
-
-        var isPlaying = false;
-        function toggleMusic() {
-            var m = document.getElementById("bg-music");
-            if (isPlaying) { m.pause(); document.getElementById("music-icon").innerHTML = "🔇"; isPlaying = false; }
-            else { m.play(); document.getElementById("music-icon").innerHTML = "🎵"; isPlaying = true; }
-        }
-        
-        fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT6Q18WuHZNNGfr7Opx7tyjEtjKKgOuaumIjFCNPZQjcmXCrB9HOdg-As6PLmQA3q1oTWERr_rca0ZE/pub?gid=1820886142&single=true&output=csv")
-            .then(res => res.text())
-            .then(data => {
-                const list = document.getElementById('wishes-list');
-                list.innerHTML = "";
-                const rows = data.split("\n").slice(1).reverse();
-                rows.forEach(row => {
-                    const cols = row.split(",");
-                    if(cols[1]) {
-                        var name = cols[1].replace(/"/g, "").trim();
-                        var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
-                        list.innerHTML += `<div style="margin-bottom:12px; border-bottom:1px solid #f9f9f9; padding-bottom:5px;"><strong style="color:#2c3e50;">${name}</strong><br><span style="font-size:0.9rem; color:#555;">${msg}</span></div>`;
-                    }
-                });
-            }).catch(() => {
-                document.getElementById('wishes-list').innerHTML = "Tiada ucapan setakat ini.";
-            });
-    </script>
-</body>
-</html>
+            <iframe src="
