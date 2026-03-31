@@ -134,7 +134,7 @@
         .schedule-table td { padding: 12px 8px; border-bottom: 1px solid #eee; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; white-space: nowrap; }
 
-        /* --- UCAPAN SECTION - LAPTOP/PC VIEW --- */
+        /* --- UCAPAN SECTION - DENGAN BACKGROUND TRANSPARENT --- */
         .wishes-list {
             min-height: 450px;
             max-height: 600px; 
@@ -146,7 +146,7 @@
             background-image: url('ucapan-bg.png'); 
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover; /* Imej besar untuk Laptop */
+            background-size: cover; 
             border-radius: 8px;
             color: #4a4a4a;
             position: relative;
@@ -156,7 +156,8 @@
         .wishes-list::before {
             content: "";
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.4); 
+            /* TINGKATKAN OPACITY (0.85) SUPAYA GAMBAR LEBIH KABUR/TRANSPARENT DAN TEKS JELAS */
+            background: rgba(255, 255, 255, 0.85); 
             z-index: -1;
             border-radius: 8px;
         }
@@ -166,9 +167,6 @@
             z-index: 2; 
             border-bottom: 1px solid rgba(238, 187, 195, 0.5); 
             padding-bottom: 15px; margin-bottom: 15px; 
-            background: rgba(255, 255, 255, 0.2); 
-            padding: 10px;
-            border-radius: 5px;
         }
         .wishes-list strong { color: #d4af37; font-size: 1.1rem; }
 
@@ -188,12 +186,10 @@
             h3 { font-size: 3.5rem; }
             .title-schedule { font-size: 2.8rem !important; }
             .schedule-table { font-size: 0.85rem; }
-            
-            /* --- KHUSUS UNTUK MOBILE: KEMBALIKAN IMEJ FULL --- */
             .wishes-list { 
                 padding: 20px; 
                 min-height: 350px; 
-                background-size: 100% 100%; /* Imej penuh tanpa terpotong di mobile */
+                background-size: 100% 100%; 
             }
         }
     </style>
