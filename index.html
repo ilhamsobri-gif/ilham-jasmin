@@ -87,35 +87,32 @@
         
         .details-box { margin-top: -50px; }
 
-        /* NAMA PENGANTIN - DIKECILKAN SUPAYA TAK CROSS BORDER */
+        /* NAMA PENGANTIN - DIPERBAIKI (TIDAK TERPOTONG & CENTER) */
         .bride-groom-names {
             font-family: 'Cintarini', cursive;
-            /* Saiz lebih kecil pada mobile (min: 1.2rem, max: 2.2rem) */
-            font-size: clamp(1.2rem, 5vw, 2.2rem); 
+            font-size: clamp(1.8rem, 5.5vw, 2.5rem); 
             color: #2c3e50;
-            line-height: 1.2;
+            line-height: 1.6; /* Tambah ruang supaya ekor huruf tak terpotong */
             margin: 15px auto;
             display: block;
             width: 100%;
             text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: clip;
+            white-space: nowrap; /* Kekal 1 baris */
         }
 
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         .and-text { font-family: 'Playfair Display', serif; font-style: italic; margin: 5px 0; color: #888; }
 
-        /* TAJUK DIBESARKAN SEDIKIT */
         h3 {
             font-family: 'GreatVibesKustom', cursive;
-            font-size: 4rem; /* Dari 3.5rem ke 4rem */
+            font-size: 3.5rem;
             color: #d4af37;
             margin-bottom: 15px;
             text-align: center;
             font-weight: normal;
         }
 
+        /* TAJUK HUBUNGAN DIKECILKAN */
         .contact-title { font-size: 0.95rem; font-weight: bold; color: #2c3e50; margin-bottom: 5px; }
 
         .btn-funky {
@@ -130,28 +127,33 @@
         .schedule-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; }
 
-        /* COMMENTS SECTION - Watercolor Floral Design yang Lebih Menarik */
+        /* --- PILIHAN A: ELEGANT SOFT SAKURA BACKGROUND --- */
         .wishes-list {
-            max-height: 350px; 
-            overflow-y: auto; 
-            text-align: left; 
-            padding: 25px; 
-            border: 2px solid #eebbc3; 
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
-                        url('https://www.transparenttextures.com/patterns/p5.png'),
-                        url('https://img.freepik.com/free-vector/hand-painted-watercolor-floral-background_23-2148443315.jpg?size=626&ext=jpg');
-            background-blend-mode: overlay;
-            background-size: cover;
-            border-radius: 15px;
-            color: #333;
-            box-shadow: inset 0 0 20px rgba(238, 187, 195, 0.2);
+            max-height: 350px; overflow-y: auto; text-align: left; padding: 25px; 
+            border: 1px solid #eebbc3; 
+            background-color: #fff;
+            /* Menggunakan imej sakura cair di penjuru */
+            background-image: url('https://www.transparenttextures.com/patterns/p6.png'), 
+                              url('https://img.freepik.com/free-vector/elegant-sakura-flower-background_1361-2292.jpg?size=626&ext=jpg');
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            background-size: contain;
+            border-radius: 8px;
+            color: #4a4a4a;
+            position: relative;
+        }
+        .wishes-list::before {
+            content: "";
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.7); /* Memberi kesan cair/telus pada sakura */
+            z-index: 0;
         }
         .wishes-list div { 
-            border-bottom: 1px solid rgba(238, 187, 195, 0.5); 
-            padding: 10px 0; 
-            margin-bottom: 5px; 
+            position: relative; z-index: 1; 
+            border-bottom: 1px solid rgba(238, 187, 195, 0.3); 
+            padding-bottom: 10px; margin-bottom: 10px; 
         }
-        .wishes-list strong { color: #d4af37; font-family: 'Playfair Display', serif; }
+        .wishes-list strong { color: #d4af37; }
 
         .music-control {
             position: fixed; bottom: 20px; right: 20px; background: white;
@@ -164,11 +166,10 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
-            /* Pastikan nama mengecil ikut skrin pada mobile */
-            .bride-groom-names { font-size: 4.8vw; letter-spacing: -0.5px; } 
+            .bride-groom-names { font-size: 5.5vw; } 
             .header-names { font-size: 2.2rem; }
-            .section-box { padding: 20px 10px; }
-            h3 { font-size: 3rem; }
+            .section-box { padding: 25px 15px; }
+            h3 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -210,16 +211,9 @@
                 <p style="font-style: italic; color: #666; font-size: 0.9rem;">
                     Dengan segala hormatnya mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik seisi keluarga ke Majlis Perkahwinan Anakanda kami yang dikasihi
                 </p>
-                </p>
                 <h2 class="bride-groom-names">Mohamad Ilham Bin Mohd Sobri</h2>
-                </p>
-                </p>
                 <p style="font-size: 1rem; font-family: 'Lato'; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
-                </p>
-                </p>
                 <h2 class="bride-groom-names">Jasmin Binti Sahminan</h2>
-                </p>
-                </p>
                 <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
                 <div style="margin-bottom: 25px;">
                     <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
@@ -293,22 +287,14 @@
         var isPlaying = false;
 
         function toggleMusic() {
-            if (isPlaying) {
-                music.pause();
-                document.getElementById("music-icon").innerHTML = "🔇";
-                isPlaying = false;
-            } else {
-                music.play();
-                document.getElementById("music-icon").innerHTML = "🎵";
-                isPlaying = true;
-            }
+            if (isPlaying) { music.pause(); document.getElementById("music-icon").innerHTML = "🔇"; isPlaying = false; }
+            else { music.play(); document.getElementById("music-icon").innerHTML = "🎵"; isPlaying = true; }
         }
 
         function enterSite() {
             document.getElementById('welcome-screen').style.opacity = '0';
             music.play().catch(e => console.log(e));
             isPlaying = true;
-            
             setTimeout(() => { 
                 document.getElementById('welcome-screen').style.display = 'none'; 
                 const categories = [
@@ -355,7 +341,7 @@
                     if(cols[1]) {
                         var name = cols[1].replace(/"/g, "").trim();
                         var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
-                        list.innerHTML += `<div><strong>${name}</strong><br><span>${msg}</span></div>`;
+                        list.innerHTML += `<div style="margin-bottom:12px; padding-bottom:5px;"><strong style="color:#d4af37;">${name}</strong><br><span style="font-size:0.9rem; color:#4a4a4a;">${msg}</span></div>`;
                     }
                 });
             }).catch(() => {
