@@ -98,6 +98,25 @@
         }
         .btn:hover { background-color: #d4af37; }
 
+        .contact-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-call { background-color: #3498db; }
+        .btn-whatsapp { background-color: #25d366; }
+
         .schedule-table { width: 100%; margin: 20px 0; border-collapse: collapse; }
         .schedule-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
         .time { font-weight: bold; color: #2c3e50; width: 30%; }
@@ -107,7 +126,6 @@
 
         @media (max-width: 600px) {
             .bride-groom-names { 
-                /* Saiz dikurangkan lagi supaya muat skrin telefon kecil */
                 font-size: 4.5vw; 
                 letter-spacing: -0.2px;
             } 
@@ -173,7 +191,26 @@
                 </div>
                 
                 <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="btn" target="_blank"><i class="fas fa-edit"></i> Sila RSVP Di Sini</a>
-                <a href="https://maps.app.goo.gl/uX7G6jA6Wp7G8D8A7" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table+Kuching" class="btn" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+            </div>
+
+            <div class="white-box">
+                <h3>Hubungi Kami</h3>
+                <div style="margin-bottom: 25px;">
+                    <p style="font-weight: bold; margin-bottom: 5px;">Pihak Pengantin Lelaki (Sobri)</p>
+                    <div class="contact-btn-group">
+                        <a href="tel:+60173251415" class="btn-sm btn-call"><i class="fas fa-phone"></i> Telefon</a>
+                        <a href="https://wa.me/60173251415" class="btn-sm btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                <div>
+                    <p style="font-weight: bold; margin-bottom: 5px;">Pihak Pengantin Perempuan (Mizi)</p>
+                    <div class="contact-btn-group">
+                        <a href="tel:+60146602970" class="btn-sm btn-call"><i class="fas fa-phone"></i> Telefon</a>
+                        <a href="https://wa.me/60146602970" class="btn-sm btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
             </div>
 
             <div class="white-box">
@@ -196,7 +233,7 @@
         </div>
 
         <div class="map-container" style="height: 400px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.423985536551!2d110.37050307481845!3d1.5147573609800615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7a35368a5c3%3A0x64364022839b1a51!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711920000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.4239851722883!2d110.3705003!3d1.5147514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba766df65dfa3%3A0xc3389025e791e847!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711900000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 40px; background: rgba(255, 238, 242, 0.9);">
