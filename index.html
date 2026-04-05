@@ -6,11 +6,6 @@
     
     <title>Walimatul Urus Jasmin & Ilham</title>
 
-    <meta property="og:title" content="Walimatul Urus Jasmin & Ilham">
-    <meta property="og:description" content="Undangan Majlis Perkahwinan Jasmin & Ilham pada 28 Jun 2026">
-    <meta property="og:image" content="welcome-bg.png">
-    <meta property="og:type" content="website">
-
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -18,11 +13,12 @@
         @font-face { font-family: 'Cintarini'; src: url('Cintarini.ttf') format('truetype'); }
         @font-face { font-family: 'GreatVibesKustom'; src: url('GreatVibes-Regular.ttf') format('truetype'); }
 
-        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0; padding: 0; font-family: 'Lato', sans-serif;
-            background-color: #ffeef2; background-image: url('background.png');
+            background-color: #ffeef2; 
+            background-image: url('background.png'); /* BACKGROUND ASAL ANDA */
             background-size: cover; background-position: center; background-attachment: fixed;
             color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
         }
@@ -33,69 +29,64 @@
             z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;
             transition: opacity 1s ease-out;
         }
-        .welcome-content { background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white; animation: fadeIn 2s; width: 85%; max-width: 500px; }
-        .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; color: white; }
-        .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite; }
+        
+        .welcome-content { background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white; width: 85%; max-width: 500px; }
+        .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; }
+        .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
         #main-content { opacity: 0; transition: opacity 1.5s ease-out; }
-        .fade-in-up-active { animation: fadeInUp 1.8s ease-out forwards; opacity: 1 !important; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in-up-active { opacity: 1 !important; }
 
         header { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop'); background-size: cover; background-position: center; padding: 80px 20px; color: white; }
-        .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; color: white; }
+        .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; }
         
         #timer { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
         .time-box { background: rgba(255, 255, 255, 0.2); padding: 8px; border-radius: 10px; min-width: 60px; color: white; border: 1px solid rgba(255,255,255,0.3); }
         .time-box span { font-size: 1.4rem; font-weight: bold; display: block; }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; position: relative; z-index: 1; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; }
         .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; overflow: hidden; }
         .details-box { margin-top: -50px; }
 
-        .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; }
-        .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); white-space: nowrap; }
-        .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
+        .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; white-space: nowrap; }
+        .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); }
+        .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); letter-spacing: -0.5px; }
 
         .parents-name { font-size: 1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
+        /* IKON TELEFON & WHATSAPP ASAL (TANPA ANIMASI) */
+        .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
         .schedule-table td { padding: 15px 5px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; }
-        .activity-cell { line-height: 1.6; color: #4a4a4a; white-space: normal !important; font-family: 'Lato', sans-serif; } 
+        .activity-cell { line-height: 1.6; color: #4a4a4a; white-space: normal !important; } 
 
-        /* --- KESAN FROSTED GLASS (BAHAGIAN DALAM) --- */
+        /* --- KESAN FROSTED GLASS HANYA PADA BACKGROUND KOMEN (AKMAL, ABAH, SHIKIN) --- */
         .wishes-list { 
             min-height: 400px; 
             max-height: 550px; 
             overflow-y: auto; 
             text-align: left; 
-            padding: 25px; 
-            border-radius: 10px; 
-            position: relative; 
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            
-            /* Glassmorphism Effect */
-            background: rgba(255, 255, 255, 0.25) !important; /* Telus supaya background.png nampak */
-            backdrop-filter: blur(15px) !important; 
-            -webkit-backdrop-filter: blur(15px) !important;
-            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+            padding: 20px; 
+            border-radius: 8px;
+            /* Inilah efek frosted glass di dalam kotak putih */
+            background: rgba(255, 255, 255, 0.3); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .wishes-list div { 
-            border-bottom: 1px solid rgba(238, 187, 195, 0.3); 
-            padding-bottom: 12px; 
-            margin-bottom: 12px; 
-        }
+        .wishes-list div { border-bottom: 1px solid rgba(238, 187, 195, 0.3); padding-bottom: 12px; margin-bottom: 12px; }
+        .wishes-list strong { color: #d4af37; }
 
-        /* --- MODAL MAPS --- */
+        /* NAVIGATION MODAL */
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
-        .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
+        .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
         .map-opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
@@ -105,11 +96,7 @@
         #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
         #scroll-toggle-btn span { font-size: 0.8rem; font-weight: bold; margin-left: 8px; color: #2c3e50; }
         .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.6) !important; }
-
-        @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } 25%, 75% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
-        @keyframes bounceMain { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
-        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        @media (max-width: 600px) { .header-names { font-size: 2.1rem; } }
+        .minimized span { display: none; }
     </style>
 </head>
 <body>
@@ -199,15 +186,7 @@
                 <h3 class="title-schedule">Atur Cara Majlis</h3>
                 <table class="schedule-table">
                     <tr><td class="time">10:00 PAGI</td><td class="activity-cell">Ketibaan keluarga dan jemputan</td></tr>
-                    <tr>
-                        <td class="time">11:00 PAGI</td>
-                        <td class="activity-cell">
-                            Ketibaan pasangan pengantin<br>
-                            Bacaan doa<br>
-                            Merenjis<br>
-                            Makan nasi temuan & memotong kek
-                        </td>
-                    </tr>
+                    <tr><td class="time">11:00 PAGI</td><td class="activity-cell">Ketibaan pasangan pengantin<br>Bacaan doa<br>Merenjis<br>Makan nasi temuan & memotong kek</td></tr>
                     <tr><td class="time">12:00 TENGAH HARI</td><td class="activity-cell">Jamuan makan</td></tr>
                 </table>
             </div>
@@ -233,11 +212,7 @@
 
     <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
     <div class="music-control" onclick="toggleMusic()"><span id="music-icon">🎵</span></div>
-    
-    <div id="scroll-toggle-btn" onclick="toggleScroll()">
-        <i id="scroll-icon" class="fas fa-pause"></i>
-        <span id="scroll-text">Berhenti Skrol</span>
-    </div>
+    <div id="scroll-toggle-btn" onclick="toggleScroll()"><i id="scroll-icon" class="fas fa-pause"></i><span id="scroll-text">Berhenti Skrol</span></div>
 
     <script>
         if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
@@ -262,12 +237,9 @@
             if (autoScrollActive) return;
             autoScrollActive = true;
             const btn = document.getElementById('scroll-toggle-btn');
-            const icon = document.getElementById('scroll-icon');
-            const text = document.getElementById('scroll-text');
-            btn.style.display = 'flex';
-            btn.classList.remove('minimized');
-            icon.className = "fas fa-pause";
-            text.innerText = "Berhenti Skrol";
+            btn.style.display = 'flex'; btn.classList.remove('minimized');
+            document.getElementById('scroll-icon').className = "fas fa-pause";
+            document.getElementById('scroll-text').innerText = "Berhenti Skrol";
             scrollInterval = setInterval(() => {
                 window.scrollBy(0, 1);
                 if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) stopAutoScroll();
@@ -277,14 +249,11 @@
         }
 
         function stopAutoScroll() {
-            clearInterval(scrollInterval);
-            autoScrollActive = false;
+            clearInterval(scrollInterval); autoScrollActive = false;
             const btn = document.getElementById('scroll-toggle-btn');
-            const icon = document.getElementById('scroll-icon');
-            const text = document.getElementById('scroll-text');
             btn.classList.remove('minimized');
-            icon.className = "fas fa-play";
-            text.innerText = "Teruskan Skrol";
+            document.getElementById('scroll-icon').className = "fas fa-play";
+            document.getElementById('scroll-text').innerText = "Teruskan Skrol";
             clearTimeout(minimizeTimeout);
             minimizeTimeout = setTimeout(() => btn.classList.add('minimized'), 3000);
         }
@@ -322,7 +291,7 @@
                     if(cols[1]) {
                         var name = cols[1].replace(/"/g, "").trim();
                         var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
-                        list.innerHTML += `<div><strong style="color:#d4af37;">${name}</strong><br><span style="font-size:0.85rem; color:#4a4a4a;">${msg}</span></div>`;
+                        list.innerHTML += `<div><strong>${name}</strong><br><span style="font-size:0.85rem; color:#4a4a4a;">${msg}</span></div>`;
                     }
                 });
             }).catch(() => document.getElementById('wishes-list').innerText = "Tiada ucapan setakat ini.");
