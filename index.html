@@ -82,7 +82,6 @@
         
         .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; }
         
-        /* ANIMASI BARU UNTUK IKON TELEFON & WHATSAPP */
         .btn-funky { 
             padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; 
             color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; 
@@ -90,22 +89,39 @@
             transition: transform 0.3s ease;
         }
         
-        .btn-funky i {
-            animation: iconPulse 2s infinite ease-in-out;
-        }
-
+        .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-funky:hover { transform: scale(1.05); }
 
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
-        /* Keyframes untuk ikon berdenyut & goyang */
         @keyframes iconPulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
             25%, 75% { transform: rotate(-10deg); }
             50% { transform: rotate(10deg); }
         }
+
+        /* --- STYLES FOR MAP MODAL --- */
+        .modal {
+            display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center;
+        }
+        .modal-content {
+            background-color: white; padding: 25px; border-radius: 15px; width: 80%; max-width: 300px;
+            text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease;
+        }
+        .modal-title { font-weight: bold; margin-bottom: 20px; color: #2c3e50; }
+        .map-opt-btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none;
+            color: white; font-weight: bold; font-size: 1rem;
+        }
+        .btn-gmaps { background-color: #4285F4; }
+        .btn-waze { background-color: #33CCFF; }
+        .close-modal { color: #888; font-size: 0.9rem; cursor: pointer; text-decoration: underline; margin-top: 10px; display: block; }
+
+        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
         .schedule-table td { padding: 12px 8px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
@@ -155,6 +171,19 @@
 </head>
 <body>
 
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <p class="modal-title">Pilih Navigasi</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Zahra+Event+Hall+by+The+Chef+Table+Kuching" target="_blank" class="map-opt-btn btn-gmaps">
+                <i class="fab fa-google"></i> Google Maps
+            </a>
+            <a href="https://waze.com/ul?q=Zahra+Event+Hall+by+The+Chef+Table+Kuching&navigate=yes" target="_blank" class="map-opt-btn btn-waze">
+                <i class="fab fa-waze"></i> Waze
+            </a>
+            <span class="close-modal" onclick="closeMapModal()">Batal</span>
+        </div>
+    </div>
+
     <div id="welcome-screen">
         <div class="welcome-content">
             <p style="letter-spacing: 2px;">WALIMATUL URUS</p>
@@ -202,7 +231,9 @@
                 </div>
                 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
                     <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
-                    <a href="https://maps.app.goo.gl/YourActualGoogleMapsLink" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                    <button class="open-btn" style="padding:10px 25px; font-size:0.9rem; background-color:#2c3e50; color:white; border:none;" onclick="openMapModal()">
+                        <i class="fas fa-location-arrow"></i> Petunjuk Arah
+                    </button>
                 </div>
             </div>
 
@@ -244,12 +275,12 @@
         </div>
 
         <div id="cat-map" style="height: 400px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.423985552309!2d110.36440787593125!3d1.5146869609214436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7698888e763%3A0x673523555208f438!2sZahra%20Event%20Hall!5e0!3m2!1sen!2smy!4v1712360000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358249821815!2d110.36653067464016!3d1.5303274984551105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba7e37f074d09%3A0xc489d8924b898129!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 60px 40px; background: rgba(255, 238, 242, 0.9);">
             <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">#JasminuntukIlham <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
-            <p style="font-size: 0.9rem; color: #666; letter-spacing: 1px;">Dicipta dengan kasih sayang</p>
+            <p style="font-size: 0.8rem; color: #666; letter-spacing: 1px;">Dicipta dengan kasih sayang</p>
         </footer>
     </div>
 
@@ -274,6 +305,19 @@
         function toggleMusic() {
             if (isPlaying) { music.pause(); document.getElementById("music-icon").innerHTML = "🔇"; isPlaying = false; }
             else { music.play(); document.getElementById("music-icon").innerHTML = "🎵"; isPlaying = true; }
+        }
+
+        /* --- NAVIGATION MODAL FUNCTIONS --- */
+        function openMapModal() {
+            document.getElementById('mapModal').style.display = 'flex';
+            if (autoScrollActive) stopAutoScroll(); // Berhenti skrol bila modal buka
+        }
+        function closeMapModal() {
+            document.getElementById('mapModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById('mapModal');
+            if (event.target == modal) { modal.style.display = 'none'; }
         }
 
         function startAutoScroll() {
