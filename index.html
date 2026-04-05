@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
     <title>Walimatul Urus Jasmin & Ilham</title>
 
-    <meta property="og:title" content="Walimatul Urus Jasmin & Ilham">
-    <meta property="og:description" content="Undangan Majlis Perkahwinan Jasmin & Ilham pada 28 Jun 2026">
-    <meta property="og:image" content="welcome-bg.png">
-    <meta property="og:type" content="website">
-
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -34,103 +28,63 @@
             transition: opacity 1s ease-out;
         }
         
-        .welcome-content {
-            background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white;
-            animation: fadeIn 2s; width: 85%; max-width: 500px;
-        }
-
-        .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; color: white; }
-        
-        .open-btn {
-            background-color: #eebbc3; color: #2c3e50; padding: 15px 40px;
-            border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none;
-            margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite;
-        }
+        .welcome-content { background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white; width: 85%; max-width: 500px; }
+        .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; }
+        .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite; }
 
         #main-content { opacity: 0; transition: opacity 1.5s ease-out; }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .fade-in-up-active { animation: fadeInUp 1.8s ease-out forwards; opacity: 1 !important; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop');
-            background-size: cover; background-position: center; padding: 80px 20px; color: white;
-        }
-
-        .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; color: white; }
-
+        header { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop'); background-size: cover; background-position: center; padding: 80px 20px; color: white; }
+        .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; }
         #timer { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
-        .time-box { background: rgba(255, 255, 255, 0.2); padding: 8px; border-radius: 10px; min-width: 60px; color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .time-box { background: rgba(255, 255, 255, 0.2); padding: 8px; border-radius: 10px; min-width: 60px; border: 1px solid rgba(255,255,255,0.3); }
         .time-box span { font-size: 1.4rem; font-weight: bold; display: block; }
 
         .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; }
-        .section-box { 
-            background-color: white; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
-            border-radius: 12px; 
-            padding: 40px 15px; 
-            margin-bottom: 30px; 
-            border: 2px solid #eebbc3; 
-            width: 100%;
-            overflow: hidden;
-        }
+        .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; }
         .details-box { margin-top: -50px; }
 
-        .bride-groom-names {
-            font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; 
-            margin: 15px auto; display: block; width: 100%; text-align: center; 
-            white-space: nowrap; letter-spacing: -0.5px;
-        }
-        .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); }
-        .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); }
+        .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; }
+        .name-jasmin { font-size: clamp(1.4rem, 6vw, 2.2rem); white-space: nowrap; }
+        .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
 
-        .parents-name { font-size: 1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
-        
-        h3 { 
-            font-family: 'GreatVibesKustom', cursive; 
-            font-size: clamp(2.2rem, 9.5vw, 4.5rem); 
-            color: #d4af37; margin-bottom: 20px; text-align: center; 
-        }
+        h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; }
 
-        .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
+        /* --- STYLES FOR ATUR CARA (RESPONSIVE FLEX) --- */
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
         .schedule-table td { padding: 15px 5px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
-        .time { font-weight: bold; color: #2c3e50; width: 35%; }
-        .activity-cell { line-height: 1.8; color: #4a4a4a; white-space: normal !important; } 
-        .agenda-divider { color: #eebbc3; font-weight: bold; }
+        .time { font-weight: bold; color: #2c3e50; width: 30%; }
+        
+        .agenda-item { display: flex; align-items: flex-start; margin-bottom: 8px; text-align: left; }
+        .agenda-divider { color: #eebbc3; font-weight: bold; min-width: 25px; flex-shrink: 0; }
+        .agenda-text { flex-grow: 1; line-height: 1.4; color: #4a4a4a; }
 
+        /* --- MODAL MAPS --- */
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
-        .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
+        .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
         .map-opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
 
-        .wishes-list { min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; background-color: #fff; background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; border-radius: 8px; position: relative; z-index: 1; border: 1px solid #eebbc3; }
-        .wishes-list::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: -1; }
+        /* --- MAP PLACEHOLDER SOLUTION --- */
+        .map-wrapper { width: 100%; height: 250px; background-color: #e5e3df; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; position: relative; border-top: 2px solid #eebbc3; }
+        .map-wrapper i { font-size: 3rem; color: #2c3e50; margin-bottom: 10px; }
+        .map-wrapper p { font-weight: bold; color: #2c3e50; margin: 0; }
 
         .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
-        
-        #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.9); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; padding: 0 12px; }
+        #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.9); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.5s; overflow: hidden; padding: 0 12px; }
         #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
-        #scroll-toggle-btn span { font-size: 0.8rem; font-weight: bold; margin-left: 8px; color: #2c3e50; }
         .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.6) !important; }
-        .minimized span { display: none; }
 
-        @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } 25%, 75% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+        @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
         @keyframes bounceMain { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
-        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-        @media (max-width: 600px) { .header-names { font-size: 2.1rem; } }
     </style>
 </head>
 <body>
@@ -138,13 +92,9 @@
     <div id="mapModal" class="modal">
         <div class="modal-content">
             <p style="font-weight:bold; margin-bottom:15px; color:#2c3e50;">Pilih Navigasi</p>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table" target="_blank" class="map-opt-btn btn-gmaps">
-                <i class="fab fa-google"></i> Google Maps
-            </a>
-            <a href="https://waze.com/ul?q=Zahra+Event+Hall+by+The+Chef+Table+Kuching&navigate=yes" target="_blank" class="map-opt-btn btn-waze">
-                <i class="fab fa-waze"></i> Waze
-            </a>
-            <span style="color:#888; cursor:pointer; text-decoration:underline; display:block; margin-top:10px; font-size:0.9rem;" onclick="closeMapModal()">Batal</span>
+            <a href="https://maps.app.goo.gl/v3J9f9N1G2X9vYkS8" target="_blank" class="map-opt-btn btn-gmaps"><i class="fab fa-google"></i> Google Maps</a>
+            <a href="https://waze.com/ul?q=Zahra+Event+Hall+by+The+Chef+Table+Kuching&navigate=yes" target="_blank" class="map-opt-btn btn-waze"><i class="fab fa-waze"></i> Waze</a>
+            <span style="color:#888; cursor:pointer; text-decoration:underline; display:block; margin-top:10px;" onclick="closeMapModal()">Batal</span>
         </div>
     </div>
 
@@ -171,15 +121,11 @@
 
         <div class="container">
             <div class="section-box details-box">
-                <p style="font-size:0.9rem;">Assalamualaikum W.B.T & Salam Sejahtera</p>
+                <p>Assalamualaikum W.B.T & Salam Sejahtera</p>
                 <div style="margin: 25px 0;">
-                    <p class="parents-name">SAHMINAN BIN SIRAT</p>
-                    <p class="parents-name">&</p>
-                    <p class="parents-name">INTAN JUNAIDAH BINTI ZULIADIN</p>
-                    <p style="font-style:italic; margin:5px 0; color:#888; font-size:0.9rem;">serta</p>
-                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR</p>
-                    <p class="parents-name">&</p>
-                    <p class="parents-name">NORULHIDAYAH BINTI ABDUL AZIZ</p>
+                    <p style="font-weight:bold;">SAHMINAN BIN SIRAT & INTAN JUNAIDAH BINTI ZULIADIN</p>
+                    <p style="font-style:italic; color:#888;">serta</p>
+                    <p style="font-weight:bold;">MOHD SOBRI BIN MOKHTAR & NORULHIDAYAH BINTI ABDUL AZIZ</p>
                 </div>
                 
                 <h2 class="bride-groom-names name-jasmin">Jasmin Binti Sahminan</h2>
@@ -187,92 +133,86 @@
                 <h2 class="bride-groom-names name-ilham">Mohamad Ilham Bin Mohd Sobri</h2>
                 
                 <hr style="width: 40%; border: 0.5px solid #eebbc3; margin: 20px auto;">
-                <div style="margin-bottom: 25px; font-size: 0.9rem;">
+                <div style="margin-bottom: 25px;">
                     <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
                     <p><strong><i class="fas fa-map-marker-alt"></i> LOKASI MAJLIS:</strong><br>
                     Zahra Event Hall by The Chef Table,<br>
-                    13, Lor 1, Tabuan Jaya, 93350 Kuching, Sarawak</p>
+                    13, Lor 1, Tabuan Jaya, Kuching</p>
                 </div>
                 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 22px; font-size:0.85rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
-                    <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="openMapModal()">
-                        <i class="fas fa-location-arrow"></i> Petunjuk Arah
-                    </button>
-                </div>
-            </div>
-
-            <div class="section-box">
-                <h3>Hubungi Kami</h3>
-                <div style="margin-bottom: 20px;">
-                    <p style="font-weight:bold; color:#2c3e50; margin-bottom:10px;">Pihak Perempuan (Mizi)</p>
-                    <div class="contact-btn-wrapper">
-                        <a href="tel:+60146602970" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
-                        <a href="https://wa.me/60146602970" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    </div>
-                </div>
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                <div>
-                    <p style="font-weight:bold; color:#2c3e50; margin-bottom:10px;">Pihak Lelaki (Sobri)</p>
-                    <div class="contact-btn-wrapper">
-                        <a href="tel:+60173251415" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
-                        <a href="https://wa.me/60173251415" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    </div>
+                    <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 22px; font-size:0.85rem; text-decoration:none;" target="_blank">RSVP</a>
+                    <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="openMapModal()">Lokasi</button>
                 </div>
             </div>
 
             <div class="section-box">
                 <h3 class="title-schedule">Atur Cara Majlis</h3>
                 <table class="schedule-table">
-                    <tr><td class="time">10:00 PAGI</td><td class="activity-cell"><span class="agenda-divider">-&nbsp;&nbsp;</span>Ketibaan keluarga dan jemputan</td></tr>
                     <tr>
-                        <td class="time">11:00 PAGI</td>
-                        <td class="activity-cell">
-                            <span class="agenda-divider">-&nbsp;&nbsp;</span>Ketibaan pasangan pengantin<br>
-                            <span class="agenda-divider">-&nbsp;&nbsp;</span>Bacaan doa<br>
-                            <span class="agenda-divider">-&nbsp;&nbsp;</span>Merenjis<br>
-                            <span class="agenda-divider">-&nbsp;&nbsp;</span>Makan nasi temuan & memotong kek
+                        <td class="time">10:00 PAGI</td>
+                        <td>
+                            <div class="agenda-item">
+                                <span class="agenda-divider">-</span>
+                                <span class="agenda-text">Ketibaan keluarga dan jemputan</span>
+                            </div>
                         </td>
                     </tr>
-                    <tr><td class="time">12:00 TENGAH HARI</td><td class="activity-cell"><span class="agenda-divider">-&nbsp;&nbsp;</span>Jamuan makan</td></tr>
+                    <tr>
+                        <td class="time">11:00 PAGI</td>
+                        <td>
+                            <div class="agenda-item">
+                                <span class="agenda-divider">-</span>
+                                <span class="agenda-text">Ketibaan pasangan pengantin</span>
+                            </div>
+                            <div class="agenda-item">
+                                <span class="agenda-divider">-</span>
+                                <span class="agenda-text">Bacaan doa</span>
+                            </div>
+                            <div class="agenda-item">
+                                <span class="agenda-divider">-</span>
+                                <span class="agenda-text">Merenjis</span>
+                            </div>
+                            <div class="agenda-item">
+                                <span class="agenda-divider">-</span>
+                                <span class="agenda-text">Makan nasi temuan & memotong kek</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="time">12:00 TENGAH HARI</td>
+                        <td>
+                            <div class="agenda-item">
+                                <span class="agenda-divider">-</span>
+                                <span class="agenda-text">Jamuan makan</span>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
-
-            <div class="section-box">
-                <h3>Ucapan & Doa</h3>
-                <div class="wishes-list" id="wishes-list">Memuatkan ucapan...</div>
-                <div style="margin-top: 20px;">
-                    <a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank">Hantar Ucapan</a>
-                </div>
-            </div>
         </div>
 
-        <div style="height: 350px; width: 100%;">
-            <iframe src="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="map-wrapper" onclick="openMapModal()">
+            <i class="fas fa-map-marked-alt"></i>
+            <p>KLIK UNTUK LIHAT LOKASI PADA PETA</p>
+            <span style="font-size: 0.8rem; color: #666;">Zahra Event Hall, Kuching</span>
         </div>
 
-        <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);">
-            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 5px;">#JasminuntukIlham <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
-            <p style="font-size: 0.85rem; color: #666; letter-spacing: 1px;">Dicipta dengan kasih sayang</p>
+        <footer style="padding: 40px 20px; background: rgba(255, 238, 242, 0.9);">
+            <p style="font-weight: bold;">#JasminuntukIlham <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
+            <p style="font-size: 0.8rem; color: #666;">Dicipta dengan kasih sayang</p>
         </footer>
     </div>
 
     <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
     <div class="music-control" onclick="toggleMusic()"><span id="music-icon">🎵</span></div>
-    
-    <div id="scroll-toggle-btn" onclick="toggleScroll()">
-        <i id="scroll-icon" class="fas fa-pause"></i>
-        <span id="scroll-text">Berhenti Skrol</span>
-    </div>
+    <div id="scroll-toggle-btn" onclick="toggleScroll()"><i id="scroll-icon" class="fas fa-pause"></i></div>
 
     <script>
-        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
         window.scrollTo(0, 0);
-
         var music = document.getElementById("bg-music");
         var isPlaying = false;
         var scrollInterval;
         var autoScrollActive = false;
-        var minimizeTimeout;
 
         function toggleMusic() {
             if (isPlaying) { music.pause(); document.getElementById("music-icon").innerHTML = "🔇"; isPlaying = false; }
@@ -281,37 +221,24 @@
 
         function openMapModal() { document.getElementById('mapModal').style.display = 'flex'; if (autoScrollActive) stopAutoScroll(); }
         function closeMapModal() { document.getElementById('mapModal').style.display = 'none'; }
-        window.onclick = function(e) { if (e.target == document.getElementById('mapModal')) closeMapModal(); }
 
         function startAutoScroll() {
             if (autoScrollActive) return;
             autoScrollActive = true;
-            const btn = document.getElementById('scroll-toggle-btn');
-            const icon = document.getElementById('scroll-icon');
-            const text = document.getElementById('scroll-text');
-            btn.style.display = 'flex';
-            btn.classList.remove('minimized');
-            icon.className = "fas fa-pause";
-            text.innerText = "Berhenti Skrol";
+            document.getElementById('scroll-toggle-btn').style.display = 'flex';
+            document.getElementById('scroll-icon').className = "fas fa-pause";
             scrollInterval = setInterval(() => {
                 window.scrollBy(0, 1);
                 if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) stopAutoScroll();
             }, 35); 
-            clearTimeout(minimizeTimeout);
-            minimizeTimeout = setTimeout(() => btn.classList.add('minimized'), 3000);
+            setTimeout(() => document.getElementById('scroll-toggle-btn').classList.add('minimized'), 3000);
         }
 
         function stopAutoScroll() {
             clearInterval(scrollInterval);
             autoScrollActive = false;
-            const btn = document.getElementById('scroll-toggle-btn');
-            const icon = document.getElementById('scroll-icon');
-            const text = document.getElementById('scroll-text');
-            btn.classList.remove('minimized');
-            icon.className = "fas fa-play";
-            text.innerText = "Teruskan Skrol";
-            clearTimeout(minimizeTimeout);
-            minimizeTimeout = setTimeout(() => btn.classList.add('minimized'), 3000);
+            document.getElementById('scroll-icon').className = "fas fa-play";
+            document.getElementById('scroll-toggle-btn').classList.remove('minimized');
         }
 
         function toggleScroll() { autoScrollActive ? stopAutoScroll() : startAutoScroll(); }
@@ -327,30 +254,13 @@
             }, 1000);
         }
 
-        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
         setInterval(() => {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
+            var distance = new Date("June 28, 2026 11:00:00").getTime() - new Date().getTime();
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
         }, 1000);
-
-        fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT6Q18WuHZNNGfr7Opx7tyjEtjKKgOuaumIjFCNPZQjcmXCrB9HOdg-As6PLmQA3q1oTWERr_rca0ZE/pub?gid=1820886142&single=true&output=csv")
-            .then(res => res.text()).then(data => {
-                const list = document.getElementById('wishes-list');
-                list.innerHTML = "";
-                const rows = data.split("\n").slice(1).reverse();
-                rows.forEach(row => {
-                    const cols = row.split(",");
-                    if(cols[1]) {
-                        var name = cols[1].replace(/"/g, "").trim();
-                        var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
-                        list.innerHTML += `<div style="margin-bottom:12px; padding-bottom:5px;"><strong style="color:#d4af37;">${name}</strong><br><span style="font-size:0.85rem; color:#4a4a4a;">${msg}</span></div>`;
-                    }
-                });
-            }).catch(() => document.getElementById('wishes-list').innerText = "Tiada ucapan setakat ini.");
     </script>
 </body>
 </html>
