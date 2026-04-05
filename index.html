@@ -88,10 +88,9 @@
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
 
-        /* FLOATING CONTROLS */
         .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
         
-        /* --- SCROLL BUTTON REPAIR --- */
+        /* SCROLL BUTTON FIX */
         #scroll-toggle-btn { 
             position: fixed; bottom: 75px; right: 20px; 
             background: rgba(255, 255, 255, 0.95); 
@@ -105,13 +104,7 @@
         #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
         #scroll-toggle-btn span { font-size: 0.8rem; font-weight: bold; margin-left: 8px; color: #2c3e50; white-space: nowrap; }
 
-        /* MINIMIZED STATE (Only show icon) */
-        .minimized { 
-            min-width: 45px !important; 
-            width: 45px !important; 
-            padding: 0 !important; 
-            background: rgba(255, 255, 255, 0.7) !important; 
-        }
+        .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.7) !important; }
         .minimized span { display: none !important; }
 
         @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } 25%, 75% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
@@ -220,7 +213,10 @@
             </div>
         </div>
 
-        <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);"><p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 5px;">#JasminuntukIlham <i class="fas fa-heart" style="color: #eebbc3;"></i></p></footer>
+        <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);">
+            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 5px;">#JasminuntukIlham <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
+            <p style="font-size: 0.85rem; color: #666; letter-spacing: 1px;">Dicipta dengan kasih sayang</p>
+        </footer>
     </div>
 
     <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
