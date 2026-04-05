@@ -6,6 +6,11 @@
     
     <title>Walimatul Urus Jasmin & Ilham</title>
 
+    <meta property="og:title" content="Walimatul Urus Jasmin & Ilham">
+    <meta property="og:description" content="Undangan Majlis Perkahwinan Jasmin & Ilham pada 28 Jun 2026">
+    <meta property="og:image" content="welcome-bg.png">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -22,7 +27,7 @@
             color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
         }
 
-        /* FIX UNTUK IPHONE BACKGROUND */
+        /* FIX UNTUK IPHONE BACKGROUND AGAR TIDAK KABUR */
         body::before {
             content: "";
             position: fixed;
@@ -34,6 +39,7 @@
             will-change: transform;
         }
 
+        /* --- WELCOME SCREEN --- */
         #welcome-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('welcome-bg.png'); background-size: cover; background-position: center;
@@ -44,6 +50,7 @@
         .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; color: white; }
         .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite; }
 
+        /* --- MAIN CONTENT --- */
         #main-content { opacity: 0; transition: opacity 1.5s ease-out; }
         .fade-in-up-active { animation: fadeInUp 1.8s ease-out forwards; opacity: 1 !important; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
@@ -59,6 +66,7 @@
         .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; overflow: hidden; }
         .details-box { margin-top: -50px; }
 
+        /* --- NAMA PENGANTIN --- */
         .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; }
         .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); white-space: nowrap; }
         .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
@@ -66,12 +74,14 @@
         .parents-name { font-size: 1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
+        /* --- BUTTONS & ANIMATIONS --- */
         .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
+        /* --- ATUR CARA SETTINGS --- */
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
         .schedule-table td { padding: 15px 5px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
         .time { font-weight: bold; color: #2c3e50; width: 32%; }
@@ -79,18 +89,20 @@
         .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
         .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; }
 
+        /* --- UCAPAN & DOA --- */
         .wishes-list { min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; background-color: #fff; background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; border-radius: 8px; position: relative; z-index: 1; border: 1px solid #eebbc3; }
         .wishes-list::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: -1; }
 
+        /* --- MODAL MAPS --- */
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
         .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
         .map-opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
 
+        /* --- FLOATING CONTROLS --- */
         .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
         
-        /* SCROLL BUTTON FIX */
         #scroll-toggle-btn { 
             position: fixed; bottom: 75px; right: 20px; 
             background: rgba(255, 255, 255, 0.95); 
@@ -149,27 +161,26 @@
             <div class="section-box details-box">
                 <p style="font-size:0.9rem;">Assalamualaikum W.B.T & Salam Sejahtera</p>
                 <div style="margin: 25px 0;">
-                    <p class="parents-name">SAHMINAN BIN SIRAT</p>
-                    <p class="parents-name">&</p>
-                    <p class="parents-name">INTAN JUNAIDAH BINTI ZULIADIN</p>
+                    <p class="parents-name">SAHMINAN BIN SIRAT & INTAN JUNAIDAH BINTI ZULIADIN</p>
                     <p style="font-style:italic; margin:5px 0; color:#888; font-size:0.9rem;">serta</p>
-                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR</p>
-                    <p class="parents-name">&</p>
-                    <p class="parents-name">NORULHIDAYAH BINTI ABDUL AZIZ</p>
+                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR & NORULHIDAYAH BINTI ABDUL AZIZ</p>
                 </div>
+                
                 <h2 class="bride-groom-names name-jasmin">Jasmin Binti Sahminan</h2>
                 <p style="font-size: 0.9rem; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
                 <h2 class="bride-groom-names name-ilham">Mohamad Ilham Bin Mohd Sobri</h2>
+                
                 <hr style="width: 40%; border: 0.5px solid #eebbc3; margin: 20px auto;">
                 <div style="margin-bottom: 25px; font-size: 0.9rem;">
                     <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
                     <p><strong><i class="fas fa-map-marker-alt"></i> LOKASI MAJLIS:</strong><br>
-                    Zahra Event Hall by The Chef Table,<br>
-                    13, Lor 1, Tabuan Jaya, 93350 Kuching, Sarawak</p>
+                    Zahra Event Hall, Tabuan Jaya, Kuching, Sarawak</p>
                 </div>
                 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
                     <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 22px; font-size:0.85rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
-                    <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="openMapModal()"><i class="fas fa-location-arrow"></i> Petunjuk Arah</button>
+                    <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="openMapModal()">
+                        <i class="fas fa-location-arrow"></i> Petunjuk Arah
+                    </button>
                 </div>
             </div>
 
@@ -209,8 +220,14 @@
             <div class="section-box">
                 <h3>Ucapan & Doa</h3>
                 <div class="wishes-list" id="wishes-list">Memuatkan ucapan...</div>
-                <div style="margin-top: 20px;"><a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank">Hantar Ucapan</a></div>
+                <div style="margin-top: 20px;">
+                    <a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank">Hantar Ucapan</a>
+                </div>
             </div>
+        </div>
+
+        <div style="height: 350px; width: 100%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358249495147!2d110.37042887460293!3d1.536109360877774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba76a60e5743f%3A0x7d6a575a74360e2!2sZahra%20Event%20Hall!5e0!3m2!1sen!2smy!4v1708412345678!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);">
@@ -221,11 +238,7 @@
 
     <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
     <div class="music-control" onclick="toggleMusic()"><span id="music-icon">🎵</span></div>
-    
-    <div id="scroll-toggle-btn" onclick="toggleScroll()">
-        <i id="scroll-icon" class="fas fa-pause"></i>
-        <span id="scroll-text">Berhenti Skrol</span>
-    </div>
+    <div id="scroll-toggle-btn" onclick="toggleScroll()"><i id="scroll-icon" class="fas fa-pause"></i><span id="scroll-text">Berhenti Skrol</span></div>
 
     <script>
         if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
