@@ -69,14 +69,8 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .fade-in-up-active {
@@ -159,9 +153,11 @@
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
+        /* Atur Cara Table Settings */
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 1rem; }
         .schedule-table td { padding: 12px 8px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
         .time { font-weight: bold; color: #2c3e50; width: 35%; white-space: nowrap; }
+        .activity-cell { white-space: nowrap; } /* Memaksa aktiviti dalam 1 baris */
 
         .wishes-list {
             min-height: 450px;
@@ -219,7 +215,8 @@
             .section-box { padding: 20px 15px; }
             h3 { font-size: 3.5rem; }
             .title-schedule { font-size: 2.8rem !important; }
-            .schedule-table { font-size: 0.85rem; }
+            /* Kecilkan saiz font table sikit untuk mobile supaya muat 1 baris */
+            .schedule-table { font-size: 0.78rem; }
             .wishes-list { padding: 20px; min-height: 350px; background-size: 100% 100%; }
         }
     </style>
@@ -276,7 +273,7 @@
                 </div>
                 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
                     <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
-                    <a href="https://www.google.com/maps/dir//Zahra+Event+Hall+by+The+Chef+Table,+13,+Lor+1,+Tabuan+Jaya,+93350+Kuching,+Sarawak/" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
+                    <a href="https://www.google.com/maps/embed?pb=...6" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fas fa-location-arrow"></i> Petunjuk Arah</a>
                 </div>
             </div>
 
@@ -302,9 +299,9 @@
             <div id="cat-schedule" class="section-box">
                 <h3 class="title-schedule">Atur Cara Majlis</h3>
                 <table class="schedule-table">
-                    <tr><td class="time">10:00 PAGI</td><td>Ketibaan keluarga dan jemputan</td></tr>
-                    <tr><td class="time">11:00 PAGI</td><td>Ketibaan pasangan pengantin<br>Bacaan doa<br>Merenjis<br>Makan nasi temuan & memotong kek</td></tr>
-                    <tr><td class="time">12:00 T. HARI</td><td>Jamuan makan</td></tr>
+                    <tr><td class="time">10:00 PAGI</td><td class="activity-cell">Ketibaan keluarga dan jemputan</td></tr>
+                    <tr><td class="time">11:00 PAGI</td><td class="activity-cell">Ketibaan pasangan pengantin<br>Bacaan doa<br>Merenjis<br>Makan nasi temuan & memotong kek</td></tr>
+                    <tr><td class="time">12:00 TENGAH HARI</td><td class="activity-cell">Jamuan makan</td></tr>
                 </table>
             </div>
 
@@ -336,6 +333,10 @@
     <div id="stop-scroll-btn" onclick="stopAutoScroll()">⏸ Berhenti Skrol</div>
 
     <script>
+        // PAKSA SKRIN KE ATAS PADA REFRESH
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+        window.scrollTo(0, 0);
+
         var music = document.getElementById("bg-music");
         var isPlaying = false;
         var scrollInterval;
@@ -366,18 +367,13 @@
         function enterSite() {
             const welcome = document.getElementById('welcome-screen');
             welcome.style.opacity = '0';
-            
             music.play().catch(e => console.log(e));
             isPlaying = true;
-            
             setTimeout(() => { 
                 welcome.style.display = 'none'; 
                 const main = document.getElementById('main-content');
                 main.classList.add('fade-in-up-active');
-                
-                setTimeout(() => {
-                    startAutoScroll();
-                }, 1500);
+                setTimeout(() => { startAutoScroll(); }, 1500);
             }, 1000);
         }
 
