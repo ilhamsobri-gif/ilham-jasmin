@@ -92,8 +92,32 @@
         .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
         .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; }
 
-        .wishes-list { min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; background-color: #fff; background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; border-radius: 8px; position: relative; z-index: 1; border: 1px solid #eebbc3; }
-        .wishes-list::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: -1; }
+        /* --- UCAPAN & DOA (GAMBAR BARU + Kesan Frosted Glass) --- */
+        .wishes-list { 
+            min-height: 400px; 
+            max-height: 550px; 
+            overflow-y: auto; 
+            text-align: left; 
+            padding: 20px; 
+            
+            /* Menukar imej latar belakang */
+            background-image: url('ucapan-bg (2).png'); 
+            background-position: center; 
+            background-size: cover; 
+            border-radius: 8px; 
+            
+            /* Kesan Frosted Glass (Glassmorphism) */
+            background-color: rgba(255, 255, 255, 0.3); /* Putih semi-telus */
+            backdrop-filter: blur(10px); /* Kesan kabur pada latar belakang di belakang kotak */
+            -webkit-backdrop-filter: blur(10px); /* Sokongan untuk Safari/iOS */
+            
+            border: 1px solid rgba(238, 187, 195, 0.5); /* Border halus warna pink semi-telus */
+            position: relative; 
+            z-index: 1; 
+        }
+        
+        /* Membuang lapisan putih legap di atas imej supaya kesan frosted nampak */
+        .wishes-list::before { display: none; }
 
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
         .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
@@ -265,7 +289,7 @@
             scrollInterval = setInterval(() => {
                 window.scrollBy(0, 1);
                 if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) stopAutoScroll();
-            }, 35); 
+            }, 35); 
             clearTimeout(minimizeTimeout);
             minimizeTimeout = setTimeout(() => { btn.classList.add('minimized'); }, 3000);
         }
@@ -289,8 +313,8 @@
         function enterSite() {
             document.getElementById('welcome-screen').style.opacity = '0';
             music.play().catch(() => {}); isPlaying = true;
-            setTimeout(() => { 
-                document.getElementById('welcome-screen').style.display = 'none'; 
+            setTimeout(() => { 
+                document.getElementById('welcome-screen').style.display = 'none'; 
                 document.getElementById('main-content').classList.add('fade-in-up-active');
                 setTimeout(startAutoScroll, 1500);
             }, 1000);
