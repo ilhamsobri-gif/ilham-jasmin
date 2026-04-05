@@ -11,42 +11,40 @@
     <meta property="og:image" content="welcome-bg.png">
     <meta property="og:type" content="website">
 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- FON KUSTOM --- */
+        /* --- INTEGRASI FON KUSTOM --- */
         @font-face { font-family: 'Cintarini'; src: url('Cintarini.ttf') format('truetype'); }
         @font-face { font-family: 'GreatVibesKustom'; src: url('GreatVibes-Regular.ttf') format('truetype'); }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
-            margin: 0; padding: 0; font-family: 'Lato', sans-serif;
+            margin: 0; padding: 0; font-family: 'Lato', sans-serif; /* Fon asal dikembalikan */
             background-color: #ffeef2; background-image: url('background.png');
             background-size: cover; background-position: center; background-attachment: fixed;
             color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
         }
 
-        /* --- WELCOME SCREEN --- */
         #welcome-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('welcome-bg.png'); background-size: cover; background-position: center;
             z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;
             transition: opacity 1s ease-out;
         }
+        
         .welcome-content { background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white; animation: fadeIn 2s; width: 85%; max-width: 500px; }
         .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; color: white; }
         .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite; }
 
-        /* --- MAIN CONTENT --- */
         #main-content { opacity: 0; transition: opacity 1.5s ease-out; }
         .fade-in-up-active { animation: fadeInUp 1.8s ease-out forwards; opacity: 1 !important; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
         header { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop'); background-size: cover; background-position: center; padding: 80px 20px; color: white; }
         .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; color: white; }
-
         #timer { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
         .time-box { background: rgba(255, 255, 255, 0.2); padding: 8px; border-radius: 10px; min-width: 60px; color: white; border: 1px solid rgba(255,255,255,0.3); }
         .time-box span { font-size: 1.4rem; font-weight: bold; display: block; }
@@ -55,7 +53,6 @@
         .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; overflow: hidden; }
         .details-box { margin-top: -50px; }
 
-        /* --- NAMA PENGANTIN --- */
         .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; }
         .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); white-space: nowrap; }
         .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
@@ -63,22 +60,21 @@
         .parents-name { font-size: 1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
-        /* --- BUTTONS --- */
         .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
-        /* --- ATUR CARA SETTINGS --- */
+        /* --- STYLES FOR ATUR CARA KEMBALI ASAL --- */
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
         .schedule-table td { padding: 15px 5px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
-        .time { font-weight: bold; color: #2c3e50; width: 32%; }
-        .agenda-item { display: flex; align-items: flex-start; margin-bottom: 8px; }
-        .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
-        .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; }
+        .time { font-weight: bold; color: #2c3e50; width: 35%; }
+        /* Mengembalikan fon standard untuk atur cara, membuang simbol pemisah */
+        .activity-cell { line-height: 1.6; color: #4a4a4a; white-space: normal !important; font-family: 'Lato', sans-serif; } 
+        .agenda-divider { display: none; } /* Pastikan pemisah tidak muncul */
 
-        /* --- KESAN FROSTED GLASS UNTUK UCAPAN --- */
+        /* --- KESAN FROSTED GLASS BARU UNTUK UCAPAN --- */
         .wishes-list { 
             min-height: 400px; 
             max-height: 550px; 
@@ -90,15 +86,14 @@
             z-index: 1; 
             border: 1px solid rgba(255, 255, 255, 0.4);
             
-            /* Glassmorphism Logic */
+            /* Kesan Kaca Baru */
             background: rgba(255, 255, 255, 0.35); /* Putih semi-telus */
             backdrop-filter: blur(15px); /* Kesan kabur (frosting) */
             -webkit-backdrop-filter: blur(15px); /* Untuk Safari iOS */
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
         }
         
-        /* Hilangkan ::before lama yang mengganggu kesan blur */
-        .wishes-list::before { display: none; }
+        .wishes-list::before { display: none; } /* Hilangkan ::before lama yang mengganggu */
 
         .wishes-list div { 
             background: rgba(255, 255, 255, 0.2); /* Setiap ucapan dalam bubble nipis */
@@ -217,20 +212,20 @@
                 <table class="schedule-table">
                     <tr>
                         <td class="time">10:00 PAGI</td>
-                        <td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Ketibaan keluarga dan jemputan</span></div></td>
+                        <td class="activity-cell">Ketibaan keluarga dan jemputan</td>
                     </tr>
                     <tr>
                         <td class="time">11:00 PAGI</td>
-                        <td>
-                            <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Ketibaan pasangan pengantin</span></div>
-                            <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Bacaan doa</span></div>
-                            <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Merenjis</span></div>
-                            <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Makan nasi temuan & memotong kek</span></div>
+                        <td class="activity-cell">
+                            Ketibaan pasangan pengantin<br>
+                            Bacaan doa<br>
+                            Merenjis<br>
+                            Makan nasi temuan & memotong kek
                         </td>
                     </tr>
                     <tr>
                         <td class="time">12:00 TENGAH HARI</td>
-                        <td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Jamuan makan</span></div></td>
+                        <td class="activity-cell">Jamuan makan</td>
                     </tr>
                 </table>
             </div>
@@ -325,8 +320,10 @@
             }, 1000);
         }
 
+        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
         setInterval(() => {
-            var distance = new Date("June 28, 2026 11:00:00").getTime() - new Date().getTime();
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
