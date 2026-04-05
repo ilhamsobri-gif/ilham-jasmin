@@ -97,7 +97,7 @@
         }
         .wishes-list::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: -1; }
 
-        /* FLOATING CONTROLS */
+        /* FLOATING MUZIK */
         .music-control { 
             position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); 
             width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; 
@@ -105,23 +105,29 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
         }
 
-        /* AUTO-MINIMIZE SCROLL BUTTON */
+        /* AUTO-MINIMIZE SCROLL BUTTON DENGAN IKON KUNING */
         #scroll-toggle-btn {
             position: fixed; bottom: 80px; right: 20px; background: rgba(255, 255, 255, 0.9);
             height: 50px; min-width: 50px; border-radius: 50px; display: none; align-items: center; 
             justify-content: center; cursor: pointer; z-index: 1000; border: 2px solid #eebbc3; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); color: #2c3e50;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden; padding: 0 15px;
             white-space: nowrap;
         }
         
+        #scroll-toggle-btn i {
+            color: #d4af37; /* KEKAL KUNING EMAS */
+            font-size: 1.2rem;
+        }
+
         #scroll-toggle-btn span {
             font-size: 0.85rem; font-weight: bold; margin-left: 8px;
+            color: #2c3e50;
             transition: opacity 0.3s;
         }
 
-        /* Class untuk mengecilkan butang */
+        /* Class Minimize */
         .minimized {
             min-width: 50px !important; width: 50px !important;
             padding: 0 !important; background: rgba(255, 255, 255, 0.6) !important;
@@ -130,7 +136,6 @@
         .minimized i { margin: 0; }
 
         @keyframes bounce { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
-        
         @media (max-width: 600px) {
             .header-names { font-size: 2.2rem; }
             .section-box { padding: 20px 15px; }
@@ -234,9 +239,9 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.423985012351!2d110.3704285!3d1.5146039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba76313a02797%3A0xe1083416568da34!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
-        <footer style="padding: 40px; background: rgba(255, 238, 242, 0.9);">
-            <p>#JasminuntukIlham <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
-            <p style="font-size: 0.8rem; color: #aaa;">Dicipta dengan kasih sayang</p>
+        <footer style="padding: 60px 40px; background: rgba(255, 238, 242, 0.9);">
+            <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">#JasminuntukIlham <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
+            <p style="font-size: 0.8rem; color: #666; letter-spacing: 1px;">Dicipta dengan kasih sayang</p>
         </footer>
     </div>
 
@@ -278,16 +283,11 @@
 
             scrollInterval = setInterval(function() {
                 window.scrollBy(0, 1);
-                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-                    stopAutoScroll();
-                }
+                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) stopAutoScroll();
             }, 35); 
 
-            // Auto minimize selepas 3 saat
             clearTimeout(minimizeTimeout);
-            minimizeTimeout = setTimeout(() => {
-                btn.classList.add('minimized');
-            }, 3000);
+            minimizeTimeout = setTimeout(() => { btn.classList.add('minimized'); }, 3000);
         }
 
         function stopAutoScroll() {
@@ -302,11 +302,8 @@
             icon.className = "fas fa-play";
             text.innerText = "Teruskan Skrol";
 
-            // Auto minimize selepas 3 saat walaupun tengah berhenti
             clearTimeout(minimizeTimeout);
-            minimizeTimeout = setTimeout(() => {
-                btn.classList.add('minimized');
-            }, 3000);
+            minimizeTimeout = setTimeout(() => { btn.classList.add('minimized'); }, 3000);
         }
 
         function toggleScroll() {
