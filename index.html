@@ -66,7 +66,6 @@
         .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; overflow: hidden; }
         .details-box { margin-top: -50px; }
 
-        /* --- NAMA PENGANTIN --- */
         .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; }
         .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); white-space: nowrap; }
         .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
@@ -74,14 +73,12 @@
         .parents-name { font-size: 1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
-        /* --- BUTTONS & ANIMATIONS --- */
         .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
-        /* --- ATUR CARA SETTINGS --- */
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
         .schedule-table td { padding: 15px 5px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
         .time { font-weight: bold; color: #2c3e50; width: 32%; }
@@ -89,20 +86,18 @@
         .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
         .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; }
 
-        /* --- UCAPAN & DOA --- */
         .wishes-list { min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; background-color: #fff; background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; border-radius: 8px; position: relative; z-index: 1; border: 1px solid #eebbc3; }
         .wishes-list::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: -1; }
 
-        /* --- MODAL MAPS --- */
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
         .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
         .map-opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
 
-        /* --- FLOATING CONTROLS --- */
         .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
         
+        /* SCROLL BUTTON FIX */
         #scroll-toggle-btn { 
             position: fixed; bottom: 75px; right: 20px; 
             background: rgba(255, 255, 255, 0.95); 
@@ -227,7 +222,7 @@
         </div>
 
         <div style="height: 350px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358249495147!2d110.37042887460293!3d1.536109360877774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba76a60e5743f%3A0x7d6a575a74360e2!2sZahra%20Event%20Hall!5e0!3m2!1sen!2smy!4v1708412345678!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358245841443!2d110.3752!3d1.5285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba766c8a7b975%3A0x7d87f58a7e786b86!2sZahra%20Event%20Hall!5e0!3m2!1sen!2smy!4v1712210000000!5m2!1sen!2smy0" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);">
@@ -238,7 +233,11 @@
 
     <audio id="bg-music" loop><source src="song.mp3" type="audio/mpeg"></audio>
     <div class="music-control" onclick="toggleMusic()"><span id="music-icon">🎵</span></div>
-    <div id="scroll-toggle-btn" onclick="toggleScroll()"><i id="scroll-icon" class="fas fa-pause"></i><span id="scroll-text">Berhenti Skrol</span></div>
+    
+    <div id="scroll-toggle-btn" onclick="toggleScroll()">
+        <i id="scroll-icon" class="fas fa-pause"></i>
+        <span id="scroll-text">Berhenti Skrol</span>
+    </div>
 
     <script>
         if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
