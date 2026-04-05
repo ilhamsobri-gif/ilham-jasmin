@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- INTEGRASI FON KUSTOM --- */
         @font-face { font-family: 'Cintarini'; src: url('Cintarini.ttf') format('truetype'); }
         @font-face { font-family: 'GreatVibesKustom'; src: url('GreatVibes-Regular.ttf') format('truetype'); }
 
@@ -28,7 +27,6 @@
             color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
         }
 
-        /* --- WELCOME SCREEN --- */
         #welcome-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('welcome-bg.png'); background-size: cover; background-position: center;
@@ -39,7 +37,6 @@
         .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; color: white; }
         .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite; }
 
-        /* --- MAIN CONTENT --- */
         #main-content { opacity: 0; transition: opacity 1.5s ease-out; }
         .fade-in-up-active { animation: fadeInUp 1.8s ease-out forwards; opacity: 1 !important; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
@@ -51,7 +48,7 @@
         .time-box { background: rgba(255, 255, 255, 0.2); padding: 8px; border-radius: 10px; min-width: 60px; color: white; border: 1px solid rgba(255,255,255,0.3); }
         .time-box span { font-size: 1.4rem; font-weight: bold; display: block; }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; position: relative; z-index: 1; }
         .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; overflow: hidden; }
         .details-box { margin-top: -50px; }
 
@@ -62,7 +59,6 @@
         .parents-name { font-size: 1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
-        .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
@@ -73,7 +69,7 @@
         .time { font-weight: bold; color: #2c3e50; width: 35%; }
         .activity-cell { line-height: 1.6; color: #4a4a4a; white-space: normal !important; font-family: 'Lato', sans-serif; } 
 
-        /* --- KESAN FROSTED GLASS PADA LATAR BELAKANG SENARAI UCAPAN SAHAJA --- */
+        /* --- KESAN FROSTED GLASS (BAHAGIAN DALAM) --- */
         .wishes-list { 
             min-height: 400px; 
             max-height: 550px; 
@@ -82,17 +78,17 @@
             padding: 25px; 
             border-radius: 10px; 
             position: relative; 
-            z-index: 1; 
-            border: 1px solid rgba(238, 187, 195, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             
-            /* Kesan Glassmorphism di dalam border putih */
-            background: rgba(255, 255, 255, 0.3); 
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
+            /* Glassmorphism Effect */
+            background: rgba(255, 255, 255, 0.25) !important; /* Telus supaya background.png nampak */
+            backdrop-filter: blur(15px) !important; 
+            -webkit-backdrop-filter: blur(15px) !important;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
         }
         
         .wishes-list div { 
-            border-bottom: 1px solid rgba(238, 187, 195, 0.4); 
+            border-bottom: 1px solid rgba(238, 187, 195, 0.3); 
             padding-bottom: 12px; 
             margin-bottom: 12px; 
         }
@@ -104,7 +100,6 @@
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
 
-        /* --- FLOATING CONTROLS --- */
         .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
         #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.9); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.5s; overflow: hidden; padding: 0 12px; }
         #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
@@ -307,8 +302,10 @@
             }, 1000);
         }
 
+        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
         setInterval(() => {
-            var distance = new Date("June 28, 2026 11:00:00").getTime() - new Date().getTime();
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
