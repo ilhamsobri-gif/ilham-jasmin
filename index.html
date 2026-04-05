@@ -31,7 +31,7 @@
         
         .welcome-content {
             background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white;
-            width: 80%; max-width: 500px; animation: fadeIn 2s;
+            width: 80%; max-width: 500px;
         }
 
         .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; }
@@ -66,20 +66,18 @@
         .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; padding: 40px; margin-bottom: 30px; border: 2px solid #eebbc3; }
         .details-box { margin-top: -50px; }
         
-        /* PAKSA NAMA 1 BARIS */
+        /* PEMBETULAN NAMA PENGANTIN - KEMBALI KEPADA ASAL & CENTERED */
         .bride-groom-names { 
             font-family: 'Cintarini', cursive; 
             color: #2c3e50; 
             line-height: 1.4; 
             margin: 15px auto;
-            white-space: nowrap; /* Paksa 1 baris */
             display: block;
             width: 100%;
+            text-align: center;
+            white-space: nowrap; /* Kekal 1 baris */
+            font-size: clamp(1.1rem, 4.3vw, 1.7rem); /* Saiz asal anda yang stabil */
         }
-        /* Saiz Jasmin */
-        .name-jasmin { font-size: clamp(1.4rem, 6vw, 2.5rem); }
-        /* Saiz Ilham (Dikecilkan sikit supaya muat 1 baris pada phone paling kecil) */
-        .name-ilham { font-size: clamp(1.1rem, 4.8vw, 2.2rem); }
 
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
 
@@ -90,7 +88,6 @@
             margin-bottom: 20px; 
             white-space: nowrap;
         }
-        .title-schedule { font-size: clamp(2.2rem, 9.5vw, 4rem) !important; }
 
         .schedule-table { width: 100%; border-collapse: collapse; }
         .schedule-table td { padding: 12px 8px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
@@ -164,9 +161,9 @@
                     <p class="parents-name">NORULHIDAYAH BINTI ABDUL AZIZ</p>
                 </div>
                 
-                <h2 class="bride-groom-names name-jasmin">Jasmin Binti Sahminan</h2>
+                <h2 class="bride-groom-names">Jasmin Binti Sahminan</h2>
                 <p style="font-size: 1rem; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
-                <h2 class="bride-groom-names name-ilham">Mohamad Ilham Bin Mohd Sobri</h2>
+                <h2 class="bride-groom-names">Mohamad Ilham Bin Mohd Sobri</h2>
                 
                 <hr style="width: 50%; border: 0.5px solid #eebbc3; margin: 20px auto;">
                 <div style="margin-bottom: 25px;">
@@ -177,7 +174,7 @@
                 </div>
                 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
                     <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank"><i class="fa-solid fa-pen-to-square"></i> Sila RSVP</a>
-                    <a href="https://maps.app.goo.gl/uX3LskS95v63x59C9" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Petunjuk Arah</a>
+                    <a href="https://maps.app.goo.gl/uP9f3iXfXF9jU5P77" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none; background-color:#2c3e50; color:white;" target="_blank"><i class="fa-solid fa-map-location-dot"></i> Petunjuk Arah</a>
                 </div>
             </div>
 
@@ -219,7 +216,7 @@
         </div>
 
         <div id="cat-map" style="height: 400px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.3582522774616!2d110.3752109!3d1.5225139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba76a66666667%3A0x9d115e839e553531!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.3582458428453!2d110.3734676147543!3d1.5233156988889156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fb086431988941%3A0xc48970e6080927c3!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711200000000!5m2!1sen!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 60px 40px; background: rgba(255, 238, 242, 0.9);">
@@ -261,9 +258,8 @@
                 welcome.style.display = 'none';
                 const main = document.getElementById('main-content');
                 main.classList.add('show-content');
-                // Tunjukkan butang kawalan manual
                 document.getElementById('scroll-control-btn').style.display = 'flex';
-                // MULA AUTO SCROLL ASAL
+                // Mula auto-scroll gaya jemputan.me
                 setTimeout(startAutoScroll, 1500);
             }, 1000);
         }
@@ -272,6 +268,7 @@
             if(isScrolling) return;
             isScrolling = true;
             updateScrollIcon();
+            // Pergerakan pixel-by-pixel (35ms untuk kelancaran)
             scrollInterval = setInterval(() => {
                 window.scrollBy(0, 1);
                 if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) stopAutoScroll();
@@ -295,7 +292,6 @@
             else icon.className = "fa-solid fa-play";
         }
 
-        // Jika user scroll manual, pause auto-scroll
         window.addEventListener('touchstart', stopAutoScroll);
         window.addEventListener('wheel', stopAutoScroll);
 
