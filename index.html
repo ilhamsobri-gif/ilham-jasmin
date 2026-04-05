@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+        /* --- FON KUSTOM --- */
         @font-face { font-family: 'Cintarini'; src: url('Cintarini.ttf') format('truetype'); }
         @font-face { font-family: 'GreatVibesKustom'; src: url('GreatVibes-Regular.ttf') format('truetype'); }
 
@@ -27,34 +28,23 @@
             color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
         }
 
+        /* --- WELCOME SCREEN --- */
         #welcome-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('welcome-bg.png'); background-size: cover; background-position: center;
             z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;
             transition: opacity 1s ease-out;
         }
-        
         .welcome-content { background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white; animation: fadeIn 2s; width: 85%; max-width: 500px; }
         .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; color: white; }
-        
-        .open-btn {
-            background-color: #eebbc3; color: #2c3e50; padding: 15px 40px;
-            border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none;
-            margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite;
-        }
+        .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite; }
 
+        /* --- MAIN CONTENT --- */
         #main-content { opacity: 0; transition: opacity 1.5s ease-out; }
         .fade-in-up-active { animation: fadeInUp 1.8s ease-out forwards; opacity: 1 !important; }
-
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop');
-            background-size: cover; background-position: center; padding: 80px 20px; color: white;
-        }
-
+        header { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop'); background-size: cover; background-position: center; padding: 80px 20px; color: white; }
         .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; color: white; }
 
         #timer { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
@@ -65,48 +55,50 @@
         .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; overflow: hidden; }
         .details-box { margin-top: -50px; }
 
-        .bride-groom-names {
-            font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; 
-            margin: 15px auto; display: block; width: 100%; text-align: center; 
-            white-space: nowrap; letter-spacing: -0.5px;
-        }
-        .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); }
-        .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); }
+        /* --- NAMA PENGANTIN --- */
+        .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; }
+        .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); white-space: nowrap; }
+        .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
 
         .parents-name { font-size: 1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; }
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
+        /* --- BUTTONS & ANIMATIONS --- */
         .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
+        /* --- ATUR CARA SETTINGS (FIX ALIGNMENT) --- */
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
         .schedule-table td { padding: 15px 5px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
-        .time { font-weight: bold; color: #2c3e50; width: 35%; }
-        .activity-cell { line-height: 1.8; color: #4a4a4a; white-space: normal !important; } 
-        .agenda-divider { color: #eebbc3; font-weight: bold; margin-right: 8px; }
+        .time { font-weight: bold; color: #2c3e50; width: 32%; }
+        
+        .agenda-item { display: flex; align-items: flex-start; margin-bottom: 8px; }
+        .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
+        .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; }
 
-        .wishes-list {
-            min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; 
-            background-color: #fff; background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; 
-            border-radius: 8px; position: relative; z-index: 1; border: 1px solid #eebbc3;
-        }
+        /* --- UCAPAN & DOA --- */
+        .wishes-list { min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; background-color: #fff; background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; border-radius: 8px; position: relative; z-index: 1; border: 1px solid #eebbc3; }
         .wishes-list::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: -1; }
 
-        .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; border: 2px solid #eebbc3; }
-        #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.9); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.5s; overflow: hidden; padding: 0 12px; }
-        #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
-        #scroll-toggle-btn span { font-size: 0.8rem; font-weight: bold; margin-left: 8px; color: #2c3e50; }
-        .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.6) !important; }
-        .minimized span { display: none; }
-
+        /* --- MODAL MAPS --- */
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
         .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
         .map-opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
 
+        /* --- FLOATING CONTROLS --- */
+        .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
+        #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.9); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.5s; overflow: hidden; padding: 0 12px; }
+        #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
+        #scroll-toggle-btn span { font-size: 0.8rem; font-weight: bold; margin-left: 8px; color: #2c3e50; }
+        .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.6) !important; }
+        .minimized span { display: none; }
+
+        @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } 25%, 75% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
         @keyframes bounceMain { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
         @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @media (max-width: 600px) { .header-names { font-size: 2.1rem; } }
@@ -117,8 +109,12 @@
     <div id="mapModal" class="modal">
         <div class="modal-content">
             <p style="font-weight:bold; margin-bottom:15px; color:#2c3e50;">Pilih Navigasi</p>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table" target="_blank" class="map-opt-btn btn-gmaps"><i class="fab fa-google"></i> Google Maps</a>
-            <a href="https://waze.com/ul?q=Zahra+Event+Hall+by+The+Chef+Table+Kuching&navigate=yes" target="_blank" class="map-opt-btn btn-waze"><i class="fab fa-waze"></i> Waze</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table+Kuching" target="_blank" class="map-opt-btn btn-gmaps">
+                <i class="fab fa-google"></i> Google Maps
+            </a>
+            <a href="https://waze.com/ul?q=Zahra+Event+Hall+by+The+Chef+Table+Kuching&navigate=yes" target="_blank" class="map-opt-btn btn-waze">
+                <i class="fab fa-waze"></i> Waze
+            </a>
             <span style="color:#888; cursor:pointer; text-decoration:underline; display:block; margin-top:10px; font-size:0.9rem;" onclick="closeMapModal()">Batal</span>
         </div>
     </div>
@@ -148,9 +144,13 @@
             <div class="section-box details-box">
                 <p style="font-size:0.9rem;">Assalamualaikum W.B.T & Salam Sejahtera</p>
                 <div style="margin: 25px 0;">
-                    <p class="parents-name">SAHMINAN BIN SIRAT & INTAN JUNAIDAH BINTI ZULIADIN</p>
+                    <p class="parents-name">SAHMINAN BIN SIRAT</p>
+                    <p class="parents-name">&</p>
+                    <p class="parents-name">INTAN JUNAIDAH BINTI ZULIADIN</p>
                     <p style="font-style:italic; margin:5px 0; color:#888; font-size:0.9rem;">serta</p>
-                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR & NORULHIDAYAH BINTI ABDUL AZIZ</p>
+                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR</p>
+                    <p class="parents-name">&</p>
+                    <p class="parents-name">NORULHIDAYAH BINTI ABDUL AZIZ</p>
                 </div>
                 
                 <h2 class="bride-groom-names name-jasmin">Jasmin Binti Sahminan</h2>
@@ -194,17 +194,23 @@
             <div class="section-box">
                 <h3 class="title-schedule">Atur Cara Majlis</h3>
                 <table class="schedule-table">
-                    <tr><td class="time">10:00 PAGI</td><td class="activity-cell"><span class="agenda-divider">-</span>Ketibaan keluarga dan jemputan</td></tr>
+                    <tr>
+                        <td class="time">10:00 PAGI</td>
+                        <td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Ketibaan keluarga dan jemputan</span></div></td>
+                    </tr>
                     <tr>
                         <td class="time">11:00 PAGI</td>
-                        <td class="activity-cell">
-                            <span class="agenda-divider">-</span>Ketibaan pasangan pengantin<br>
-                            <span class="agenda-divider">-</span>Bacaan doa<br>
-                            <span class="agenda-divider">-</span>Merenjis<br>
-                            <span class="agenda-divider">-</span>Makan nasi temuan & memotong kek
+                        <td>
+                            <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Ketibaan pasangan pengantin</span></div>
+                            <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Bacaan doa</span></div>
+                            <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Merenjis</span></div>
+                            <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Makan nasi temuan & memotong kek</span></div>
                         </td>
                     </tr>
-                    <tr><td class="time">12:00 TENGAH HARI</td><td class="activity-cell"><span class="agenda-divider">-</span>Jamuan makan</td></tr>
+                    <tr>
+                        <td class="time">12:00 TENGAH HARI</td>
+                        <td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Jamuan makan</span></div></td>
+                    </tr>
                 </table>
             </div>
 
@@ -215,10 +221,6 @@
                     <a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank">Hantar Ucapan</a>
                 </div>
             </div>
-        </div>
-
-        <div style="height: 350px; width: 100%;">
-            <iframe src="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);">
