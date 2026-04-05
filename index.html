@@ -92,7 +92,7 @@
         .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
         .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; }
 
-        /* --- UCAPAN & DOA (GAMBAR BARU + Kesan Frosted Glass) --- */
+        /* --- UCAPAN & DOA (Frosted Glass Effect - LUTSINAR) --- */
         .wishes-list { 
             min-height: 400px; 
             max-height: 550px; 
@@ -100,24 +100,28 @@
             text-align: left; 
             padding: 20px; 
             
-            /* Menukar imej latar belakang */
+            /* Menggunakan imej baru anda */
             background-image: url('ucapan-bg (2).png'); 
             background-position: center; 
             background-size: cover; 
             border-radius: 8px; 
             
-            /* Kesan Frosted Glass (Glassmorphism) */
-            background-color: rgba(255, 255, 255, 0.3); /* Putih semi-telus */
-            backdrop-filter: blur(10px); /* Kesan kabur pada latar belakang di belakang kotak */
-            -webkit-backdrop-filter: blur(10px); /* Sokongan untuk Safari/iOS */
+            /* Konfigurasi lutsinar/Frosted Glass */
+            background-color: rgba(255, 255, 255, 0.3); /* Putih semi-telus (0.3 legap) */
+            backdrop-filter: blur(10px); /* Kesan kabur kaca */
+            -webkit-backdrop-filter: blur(10px); /* Sokongan Safari/iOS */
             
-            border: 1px solid rgba(238, 187, 195, 0.5); /* Border halus warna pink semi-telus */
+            border: 1px solid rgba(238, 187, 195, 0.4); /* Border pink halus semi-telus */
             position: relative; 
             z-index: 1; 
         }
         
-        /* Membuang lapisan putih legap di atas imej supaya kesan frosted nampak */
+        /* Membuang lapisan putih legap di atas imej */
         .wishes-list::before { display: none; }
+
+        /* Memastikan teks ucapan berwarna gelap supaya jelas di atas latar belakang lutsinar */
+        #wishes-list strong { color: #d4af37 !important; } /* Kekalkan warna emas nama */
+        #wishes-list span { color: #2c3e50 !important; font-weight: bold; } /* Jadikan teks komen warna biru gelap & tebal */
 
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
         .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
@@ -289,7 +293,7 @@
             scrollInterval = setInterval(() => {
                 window.scrollBy(0, 1);
                 if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) stopAutoScroll();
-            }, 35); 
+            }, 35); 
             clearTimeout(minimizeTimeout);
             minimizeTimeout = setTimeout(() => { btn.classList.add('minimized'); }, 3000);
         }
@@ -313,8 +317,8 @@
         function enterSite() {
             document.getElementById('welcome-screen').style.opacity = '0';
             music.play().catch(() => {}); isPlaying = true;
-            setTimeout(() => { 
-                document.getElementById('welcome-screen').style.display = 'none'; 
+            setTimeout(() => { 
+                document.getElementById('welcome-screen').style.display = 'none'; 
                 document.getElementById('main-content').classList.add('fade-in-up-active');
                 setTimeout(startAutoScroll, 1500);
             }, 1000);
