@@ -283,18 +283,18 @@
             <div id="cat-contact" class="section-box">
                 <h3>Hubungi Kami</h3>
                 <div style="margin-bottom: 25px;">
-                    <p class="contact-title">Pihak Pengantin Lelaki (Sobri)</p>
-                    <div class="contact-btn-wrapper">
-                        <a href="tel:+60173251415" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
-                        <a href="https://wa.me/60173251415" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                    </div>
-                </div>
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                <div>
                     <p class="contact-title">Pihak Pengantin Perempuan (Mizi)</p>
                     <div class="contact-btn-wrapper">
                         <a href="tel:+60146602970" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
                         <a href="https://wa.me/60146602970" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                <div>
+                    <p class="contact-title">Pihak Pengantin Lelaki (Sobri)</p>
+                    <div class="contact-btn-wrapper">
+                        <a href="tel:+60173251415" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
+                        <a href="https://wa.me/60173251415" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -381,7 +381,6 @@
             }, 1000);
         }
 
-        // Timer
         var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
         setInterval(function() {
             var now = new Date().getTime();
@@ -392,7 +391,6 @@
             document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
         }, 1000);
 
-        // Fetch Wishes
         fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vT6Q18WuHZNNGfr7Opx7tyjEtjKKgOuaumIjFCNPZQjcmXCrB9HOdg-As6PLmQA3q1oTWERr_rca0ZE/pub?gid=1820886142&single=true&output=csv")
             .then(res => res.text())
             .then(data => {
