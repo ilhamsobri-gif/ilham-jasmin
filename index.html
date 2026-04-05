@@ -79,6 +79,7 @@
 
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
+        /* --- BUTTONS & ANIMATIONS --- */
         .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
@@ -92,7 +93,22 @@
         .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
         .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; }
 
-        /* --- UCAPAN & DOA (Frosted Glass Effect - LUTSINAR) --- */
+        /* --- ATUR CARA FROSTED GLASS (Glassmorphism) --- */
+        .schedule-box {
+            background: rgba(255, 255, 255, 0.2); /* Latar belakang putih semi-telus */
+            backdrop-filter: blur(10px); /* Kesan kabur (Frosted) */
+            -webkit-backdrop-filter: blur(10px); /* Sokongan Safari */
+            border-radius: 12px;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Garisan sempadan halus semi-telus */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- UCAPAN & DOA (Menambah imej dan kesan lutsinar) --- */
         .wishes-list { 
             min-height: 400px; 
             max-height: 550px; 
@@ -100,35 +116,37 @@
             text-align: left; 
             padding: 20px; 
             
-            /* Menggunakan imej baru anda */
-            background-image: url('ucapan-bg (2).png'); 
+            /* Menggunakan imej latar belakang yang sama seperti gambar contoh */
+            background-image: url('welcome-bg.png'); 
             background-position: center; 
             background-size: cover; 
             border-radius: 8px; 
             
-            /* Konfigurasi lutsinar/Frosted Glass */
-            background-color: rgba(255, 255, 255, 0.3); /* Putih semi-telus (0.3 legap) */
-            backdrop-filter: blur(10px); /* Kesan kabur kaca */
-            -webkit-backdrop-filter: blur(10px); /* Sokongan Safari/iOS */
+            /* Mencipta kesan kaca/lutsinar */
+            background-color: rgba(255, 255, 255, 0.3); 
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
             
-            border: 1px solid rgba(238, 187, 195, 0.4); /* Border pink halus semi-telus */
             position: relative; 
             z-index: 1; 
+            border: 1px solid rgba(238, 187, 195, 0.5); /* Border halus semi-telus */
         }
         
         /* Membuang lapisan putih legap di atas imej */
         .wishes-list::before { display: none; }
 
-        /* Memastikan teks ucapan berwarna gelap supaya jelas di atas latar belakang lutsinar */
-        #wishes-list strong { color: #d4af37 !important; } /* Kekalkan warna emas nama */
-        #wishes-list span { color: #2c3e50 !important; font-weight: bold; } /* Jadikan teks komen warna biru gelap & tebal */
+        /* Memastikan teks ucapan berwarna gelap supaya jelas di atas imej lutsinar */
+        #wishes-list strong { color: #d4af37 !important; } /* Warna emas nama */
+        #wishes-list span { color: #2c3e50 !important; font-weight: bold; } /* Warna biru gelap teks komen */
 
+        /* --- MODAL MAPS --- */
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
         .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
         .map-opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
 
+        /* --- FLOATING CONTROLS --- */
         .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
         #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.95); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.4s; overflow: hidden; padding: 0 15px; }
         #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
@@ -226,7 +244,7 @@
                 </div>
             </div>
 
-            <div class="section-box">
+            <div class="schedule-box">
                 <h3 class="title-schedule">Atur Cara Majlis</h3>
                 <table class="schedule-table">
                     <tr><td class="time">10:00 PAGI</td><td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Ketibaan keluarga dan jemputan</span></div></td></tr>
