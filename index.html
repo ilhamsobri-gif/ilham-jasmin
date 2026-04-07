@@ -81,7 +81,10 @@
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
-        .btn-salam-trigger { background: linear-gradient(45deg, #d4af37, #b8860b); margin: 20px auto; width: fit-content; }
+        .btn-salam-trigger { background: linear-gradient(45deg, #d4af37, #b8860b); margin: 10px auto; width: fit-content; }
+        
+        /* BUTAN SAVE DATE */
+        .btn-save-date { background: linear-gradient(45deg, #6c757d, #495057); color: white; }
 
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
         .schedule-table td { padding: 15px 5px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
@@ -102,7 +105,7 @@
         .acc-card { background: #fdfaf1; border: 1px dashed #d4af37; border-radius: 10px; padding: 15px; margin-top: 15px; }
         .copy-btn { background: #d4af37; color: white; border: none; padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; margin-top: 8px; font-weight: bold; }
 
-        /* --- UCAPAN DESIGN (FROSTED GLASS) --- */
+        /* --- UCAPAN DESIGN --- */
         .wishes-list { min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; background-color: #fff; background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; border-radius: 8px; position: relative; z-index: 1; border: 1px solid #eebbc3; }
         .wishes-list::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: -1; }
 
@@ -164,13 +167,13 @@
             <div class="section-box details-box">
                 <p style="font-size:0.9rem;">Assalamualaikum W.B.T & Salam Sejahtera</p>
                 
-                <p style="font-size: 1rem; color: #4a4a4a; font-weight: bold; margin-top: 15px; margin-bottom: 5px;">Pihak Pengantin Perempuan:</p>
+                <p style="font-size: 1rem; color: #4a4a4a; font-weight: bold; margin-top: 15px; margin-bottom: 5px;">PIHAK PENGANTIN PEREMPUAN:</p>
                 <div class="parents-container">
                     <p class="parents-name">SAHMINAN BIN SIRAT</p>
                     <span class="ampersand">&</span>
                     <p class="parents-name">INTAN JUNAIDAH BINTI ZULIADIN</p>
                     <span class="serta-text">serta</span>
-                    <p style="font-size: 1rem; color: #4a4a4a; font-weight: bold; margin-bottom: 5px;">Pihak Pengantin Lelaki:</p>
+                    <p style="font-size: 1rem; color: #4a4a4a; font-weight: bold; margin-bottom: 5px;">PIHAK PENGANTIN LELAKI:</p>
                     <p class="parents-name">MOHD SOBRI BIN MOKHTAR</p>
                     <span class="ampersand">&</span>
                     <p class="parents-name">NORULHIDAYAH BINTI ABDUL AZIZ</p>
@@ -181,10 +184,7 @@
                 </p>
                 
                 <h2 class="bride-groom-names name-jasmin">Jasmin Binti Sahminan</h2>
-                 </p>
-                 </p>
                 <p style="font-size: 0.9rem; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
-                 </p>
                 <h2 class="bride-groom-names name-ilham">Mohamad Ilham Bin Mohd Sobri</h2>
                 
                 <hr style="width: 40%; border: 0.5px solid #eebbc3; margin: 20px auto;">
@@ -199,6 +199,10 @@
                     <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="openMapModal()">
                         <i class="fas fa-location-arrow"></i> Petunjuk Arah
                     </button>
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Majlis+Perkahwinan+Jasmin+%26+Ilham&dates=20260628T020000Z/20260628T080000Z&details=Undangan+Majlis+Perkahwinan+Jasmin+%26+Ilham.+Tempat:+Zahra+Event+Hall,+Kuching.&location=Zahra+Event+Hall+by+The+Chef+Table+Kuching&sf=true&output=xml" 
+                       target="_blank" class="open-btn btn-save-date" style="padding:10px 22px; font-size:0.85rem; text-decoration:none;">
+                        <i class="far fa-calendar-plus"></i> Simpan Tarikh
+                    </a>
                 </div>
             </div>
 
@@ -231,7 +235,7 @@
                         <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Merenjis</span></div>
                         <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Makan nasi temuan & memotong kek</span></div>
                     </td></tr>
-                    <tr><td class="time">12:00 TGH HARI</td><td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Jamuan makan</span></div></td></tr>
+                    <tr><td class="time">12:00 TGH</td><td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Jamuan makan</span></div></td></tr>
                 </table>
             </div>
 
@@ -264,7 +268,7 @@
         </div>
 
         <div style="height: 350px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358245841443!2d110.3752!3d1.5285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba766c8a7b975%3A0x7d87f58a7e786b86!2sZahra%20Event%20Hall!5e0!3m2!1sen!2smy!4v1712210000000!5m2!1sen!2smy0" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358244795493!2d110.37920367501344!3d1.5312386984545568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba734d0b00001%3A0x7d0b00000000000!2sZahra+Event+Hall+by+The+Chef+Table!5e0!3m2!1sms!2smy!4v1700000000000!5m2!1sms!2smy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);">
@@ -308,6 +312,7 @@
         window.onclick = function(e) { if (e.target == document.getElementById('mapModal')) closeMapModal(); }
 
         function startAutoScroll() {
+            if (autoScrollActive) return;
             autoScrollActive = true;
             const btn = document.getElementById('scroll-toggle-btn');
             const icon = document.getElementById('scroll-icon');
