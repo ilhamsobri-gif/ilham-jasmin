@@ -6,6 +6,11 @@
     
     <title>Walimatul Urus Jasmin & Ilham</title>
 
+    <meta property="og:title" content="Walimatul Urus Jasmin & Ilham">
+    <meta property="og:description" content="Undangan Majlis Perkahwinan Jasmin & Ilham pada 28 Jun 2026">
+    <meta property="og:image" content="welcome-bg.png">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Amiri:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -24,75 +29,82 @@
 
         /* FIX UNTUK IPHONE BACKGROUND */
         body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('background.png'); background-size: cover; background-position: center;
-            z-index: -1; will-change: transform;
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            will-change: transform;
         }
 
+        /* --- WELCOME SCREEN --- */
         #welcome-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('welcome-bg.png'); background-size: cover; background-position: center;
             z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center;
             transition: opacity 1s ease-out;
         }
-        .welcome-content { background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white; width: 85%; max-width: 500px; }
-        .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; }
+        .welcome-content { background-color: rgba(0, 0, 0, 0.4); padding: 40px; border-radius: 15px; color: white; animation: fadeIn 2s; width: 85%; max-width: 500px; }
+        .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; color: white; }
         .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite; }
 
+        /* --- MAIN CONTENT --- */
         #main-content { opacity: 0; transition: opacity 1.5s ease-out; }
         .fade-in-up-active { animation: fadeInUp 1.8s ease-out forwards; opacity: 1 !important; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
 
         header { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519225421980-715cb0202128?q=80&w=2600&auto=format&fit=crop'); background-size: cover; background-position: center; padding: 80px 20px; color: white; }
-        .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; }
+        .header-names { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 10px 0; color: white; }
 
         #timer { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
-        .time-box { background: rgba(255, 255, 255, 0.2); padding: 8px; border-radius: 10px; min-width: 60px; border: 1px solid rgba(255,255,255,0.3); }
+        .time-box { background: rgba(255, 255, 255, 0.2); padding: 8px; border-radius: 10px; min-width: 60px; color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .time-box span { font-size: 1.4rem; font-weight: bold; display: block; }
 
         .container { max-width: 800px; margin: 0 auto; padding: 40px 15px; }
-        .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; }
+        .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; overflow: hidden; }
         .details-box { margin-top: -50px; }
 
         .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; }
         .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); white-space: nowrap; }
-        .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; }
+        .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
 
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; text-transform: uppercase; }
-        h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; }
+        h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
-        /* BUTTONS & ICONS */
+        /* BUTTONS */
+        .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
-        /* ATUR CARA FROSTED */
-        .schedule-box { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.3); }
         .agenda-item { display: flex; align-items: flex-start; margin-bottom: 8px; text-align: left; }
-        .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; }
+        .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
+        .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; }
 
-        /* --- SALAM KAUT DESIGN (Rujukan ekaddigital) --- */
-        .salam-kaut-box { 
-            background: #fff; border: 2px solid #d4af37; border-radius: 15px; padding: 30px 20px; margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05); position: relative;
-        }
-        .salam-kaut-title { font-family: 'GreatVibes', cursive; font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
-        .qr-container { margin: 20px auto; width: 200px; height: 200px; border: 8px solid #f9f9f9; border-radius: 10px; }
+        /* --- SALAM RESTU DESIGN (VERTICAL STACK) --- */
+        .salam-restu-box { background: white; border: 2px solid #d4af37; border-radius: 15px; padding: 30px 20px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .salam-title { font-family: 'GreatVibes', cursive; font-size: 2.8rem; color: #d4af37; margin-bottom: 10px; }
+        .qr-container { margin: 20px auto; width: 200px; height: 200px; border: 6px solid #f9f9f9; border-radius: 10px; }
         .qr-container img { width: 100%; height: 100%; object-fit: contain; }
-        .acc-info { background: #fdfaf1; border: 1px dashed #d4af37; border-radius: 10px; padding: 15px; margin-top: 15px; }
-        .copy-btn { background: #d4af37; color: white; border: none; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; margin-top: 5px; }
+        .acc-card { background: #fdfaf1; border: 1px dashed #d4af37; border-radius: 10px; padding: 15px; margin-top: 15px; }
+        .copy-btn { background: #d4af37; color: white; border: none; padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; margin-top: 8px; font-weight: bold; }
 
-        /* --- UCAPAN DESIGN (ucapan-bg.png + Frosted) --- */
+        /* --- UCAPAN DESIGN (ucapan-bg.png + Frosted Glass) --- */
         .wishes-list { 
-            min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; 
+            min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 25px; 
             background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; 
-            border-radius: 8px; background-color: rgba(255, 255, 255, 0.4); 
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            border-radius: 12px; background-color: rgba(255, 255, 255, 0.4); 
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             border: 1px solid #eebbc3; position: relative; z-index: 1; 
         }
         .wishes-list::before { display: none; }
         #wishes-list span { color: #2c3e50 !important; font-weight: bold; }
 
+        /* FLOATING CONTROLS */
+        .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
         #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.95); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.4s; overflow: hidden; padding: 0 15px; }
         .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.7) !important; }
         .minimized span { display: none !important; }
@@ -106,7 +118,7 @@
 
     <div id="welcome-screen">
         <div class="welcome-content">
-            <p style="letter-spacing: 2px;">WALIMATUL URUS</p>
+            <p style="letter-spacing: 2px; font-size: 0.8rem;">WALIMATUL URUS</p>
             <h1 class="welcome-names">Jasmin & Ilham</h1>
             <p>28 Jun 2026</p>
             <button class="open-btn" onclick="enterSite()">Buka Undangan <i class="fas fa-envelope-open"></i></button>
@@ -115,7 +127,7 @@
 
     <div id="main-content">
         <header>
-            <p style="letter-spacing: 2px;">WALIMATUL URUS</p>
+            <p style="letter-spacing: 2px; font-size: 0.9rem;">WALIMATUL URUS</p>
             <h1 class="header-names">Jasmin & Ilham</h1>
             <div id="timer">
                 <div class="time-box"><span id="days">0</span><small>Hari</small></div>
@@ -128,9 +140,10 @@
         <div class="container">
             <div class="section-box details-box">
                 <p style="font-size:0.9rem;">Assalamualaikum W.B.T & Salam Sejahtera</p>
+                
                 <div style="margin: 25px 0;">
                     <p class="parents-name">SAHMINAN BIN SIRAT & INTAN JUNAIDAH BINTI ZULIADIN</p>
-                    <p style="font-family: 'Playfair Display', serif; font-style: italic; color: #888;">serta</p>
+                    <p style="font-style:italic; margin:5px 0; color:#888; font-size:0.9rem;">serta</p>
                     <p class="parents-name">MOHD SOBRI BIN MOKHTAR & NORULHIDAYAH BINTI ABDUL AZIZ</p>
                 </div>
 
@@ -143,13 +156,12 @@
                 <h2 class="bride-groom-names name-ilham">Mohamad Ilham Bin Mohd Sobri</h2>
                 
                 <hr style="width: 40%; border: 0.5px solid #eebbc3; margin: 20px auto;">
-                <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
-                <p><strong><i class="fas fa-map-marker-alt"></i> LOKASI MAJLIS:</strong><br>
-                Zahra Event Hall, Tabuan Jaya, Kuching, Sarawak</p>
+                <p><strong>AHAD, 28 JUN 2026</strong></p>
+                <p><strong>LOKASI MAJLIS:</strong><br>Zahra Event Hall, Tabuan Jaya, Kuching, Sarawak</p>
                 
                 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
                     <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 22px; font-size:0.85rem; text-decoration:none;" target="_blank">RSVP</a>
-                    <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="openMapModal()">Petunjuk Arah</button>
+                    <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="alert('Membuka Peta...')">Petunjuk Arah</button>
                 </div>
             </div>
 
@@ -160,7 +172,7 @@
                     <a href="tel:+60146602970" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
                     <a href="https://wa.me/60146602970" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 </div>
-                <hr style="margin: 20px 0;">
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
                 <p style="font-weight:bold; color:#2c3e50;">Pihak Lelaki (Sobri)</p>
                 <div class="contact-btn-wrapper">
                     <a href="tel:+60173251415" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
@@ -168,9 +180,9 @@
                 </div>
             </div>
 
-            <div class="schedule-box">
-                <h3 class="title-schedule">Atur Cara Majlis</h3>
-                <table style="width:100%; border-collapse:collapse;">
+            <div class="section-box">
+                <h3>Atur Cara Majlis</h3>
+                <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
                     <tr><td style="padding:10px; font-weight:bold; width:30%;">10:00 PAGI</td><td><div class="agenda-item"><span class="agenda-divider">-</span>Ketibaan keluarga dan jemputan</div></td></tr>
                     <tr><td style="padding:10px; font-weight:bold;">11:00 PAGI</td><td>
                         <div class="agenda-item"><span class="agenda-divider">-</span>Ketibaan pasangan pengantin</div>
@@ -182,25 +194,30 @@
                 </table>
             </div>
 
-            <div class="salam-kaut-box">
-                <div class="salam-kaut-title">Salam Restu</div>
-                <p style="font-size:0.9rem;">Kehadiran anda adalah hadiah terbesar buat kami. Namun jika ingin memberi tanda ingatan:</p>
+            <div class="salam-restu-box">
+                <div class="salam-title">Salam Restu</div>
+                <p style="font-size:0.9rem; margin-bottom:15px;">Kehadiran anda adalah hadiah terbesar buat kami. Namun jika ingin memberi tanda ingatan:</p>
+                
                 <div class="qr-container">
                     <img src="qrcode.jpg" alt="DuitNow QR">
                 </div>
-                <div class="acc-info">
+
+                <div class="acc-card">
                     <p style="margin:0; font-weight:bold; color:#d4af37;">Maybank / DuitNow</p>
-                    <p style="margin:5px 0;" id="accNum">1234567890</p> 
-                    <p style="margin:0; font-size:0.8rem; font-weight:bold;">MOHAMAD ILHAM / JASMIN</p>
-                    <button class="copy-btn" onclick="copyAcc()">Salin No. Akaun</button>
+                    <p style="margin:5px 0; font-size:1.1rem; font-weight:bold; letter-spacing:1px;" id="accNum">1234567890</p>
+                    <p style="margin:0; font-size:0.85rem; font-weight:bold; color:#2c3e50;">MOHAMAD ILHAM / JASMIN</p>
+                    <button class="copy-btn" onclick="copyToClipboard('1234567890')">Salin No. Akaun</button>
                 </div>
-                <p style="margin-top:15px; font-weight:bold;">Terima Kasih <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
+                
+                <p style="margin-top:20px; font-weight:bold; color:#2c3e50;">Terima Kasih <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
             </div>
 
             <div class="section-box">
                 <h3>Ucapan & Doa</h3>
                 <div class="wishes-list" id="wishes-list">Memuatkan ucapan...</div>
-                <div style="margin-top: 20px;"><a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank">Hantar Ucapan</a></div>
+                <div style="margin-top: 20px;">
+                    <a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank">Hantar Ucapan</a>
+                </div>
             </div>
         </div>
 
@@ -215,10 +232,9 @@
     <div id="scroll-toggle-btn" onclick="toggleScroll()"><i id="scroll-icon" class="fas fa-pause"></i><span id="scroll-text">Berhenti Skrol</span></div>
 
     <script>
-        function copyAcc() {
-            var num = "1234567890"; // Ganti dengan nombor akaun betul anda
-            navigator.clipboard.writeText(num);
-            alert("Nombor akaun telah disalin!");
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert("No. Akaun Berjaya Disalin!");
         }
 
         var music = document.getElementById("bg-music");
@@ -255,10 +271,8 @@
         function stopAutoScroll() { clearInterval(scrollInterval); autoScrollActive = false; }
         function toggleScroll() { autoScrollActive ? stopAutoScroll() : startAutoScroll(); }
 
-        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
         setInterval(() => {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
+            var distance = new Date("June 28, 2026 11:00:00").getTime() - new Date().getTime();
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -275,7 +289,7 @@
                     if(cols[1]) {
                         var name = cols[1].replace(/"/g, "").trim();
                         var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
-                        list.innerHTML += `<div style="margin-bottom:12px; padding-bottom:5px;"><strong style="color:#d4af37;">${name}</strong><br><span style="font-size:0.85rem; color:#2c3e50;">${msg}</span></div>`;
+                        list.innerHTML += `<div style="margin-bottom:12px;"><strong style="color:#d4af37;">${name}</strong><br><span style="font-size:0.85rem;">${msg}</span></div>`;
                     }
                 });
             });
