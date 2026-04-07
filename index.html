@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- FON KUSTOM --- */
         @font-face { font-family: 'Cintarini'; src: url('Cintarini.ttf') format('truetype'); }
         @font-face { font-family: 'GreatVibesKustom'; src: url('GreatVibes-Regular.ttf') format('truetype'); }
 
@@ -27,19 +26,12 @@
             color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
         }
 
-        /* FIX UNTUK IPHONE BACKGROUND */
         body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('background.png');
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
-            will-change: transform;
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('background.png'); background-size: cover; background-position: center;
+            z-index: -1; will-change: transform;
         }
 
-        /* --- WELCOME SCREEN --- */
         #welcome-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('welcome-bg.png'); background-size: cover; background-position: center;
@@ -50,7 +42,6 @@
         .welcome-names { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 10px 0; color: white; }
         .open-btn { background-color: #eebbc3; color: #2c3e50; padding: 15px 40px; border-radius: 50px; font-size: 1.2rem; cursor: pointer; border: none; margin-top: 30px; font-family: 'Playfair Display', serif; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.3); animation: bounceMain 2s infinite; }
 
-        /* --- MAIN CONTENT --- */
         #main-content { opacity: 0; transition: opacity 1.5s ease-out; }
         .fade-in-up-active { animation: fadeInUp 1.8s ease-out forwards; opacity: 1 !important; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
@@ -70,22 +61,28 @@
         .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); white-space: nowrap; }
         .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
 
+        .parents-container { margin: 25px 0; }
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; text-transform: uppercase; }
+        .ampersand { font-size: 1.2rem; font-weight: bold; color: #2c3e50; margin: 2px 0; display: block; }
+        .serta-text { font-style: italic; margin: 10px 0; color: #888; font-size: 1rem; display: block; }
+
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
-        /* BUTTONS */
         .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
 
-        .agenda-item { display: flex; align-items: flex-start; margin-bottom: 8px; text-align: left; }
+        .agenda-item { display: flex; align-items: flex-start; margin-bottom: 8px; }
         .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
-        .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; }
+        .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; text-align: left; }
 
-        /* --- SALAM RESTU DESIGN (VERTICAL STACK) --- */
-        .salam-restu-box { background: white; border: 2px solid #d4af37; border-radius: 15px; padding: 30px 20px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        /* --- SALAM RESTU DESIGN (REKA BENTUK EKADDIGITAL) --- */
+        .salam-restu-box { 
+            background: white; border: 2px solid #d4af37; border-radius: 15px; 
+            padding: 30px 20px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+        }
         .salam-title { font-family: 'GreatVibes', cursive; font-size: 2.8rem; color: #d4af37; margin-bottom: 10px; }
         .qr-container { margin: 20px auto; width: 200px; height: 200px; border: 6px solid #f9f9f9; border-radius: 10px; }
         .qr-container img { width: 100%; height: 100%; object-fit: contain; }
@@ -94,27 +91,44 @@
 
         /* --- UCAPAN DESIGN (ucapan-bg.png + Frosted Glass) --- */
         .wishes-list { 
-            min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 25px; 
+            min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; 
             background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; 
-            border-radius: 12px; background-color: rgba(255, 255, 255, 0.4); 
+            border-radius: 8px; background-color: rgba(255, 255, 255, 0.4); 
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
             border: 1px solid #eebbc3; position: relative; z-index: 1; 
         }
         .wishes-list::before { display: none; }
         #wishes-list span { color: #2c3e50 !important; font-weight: bold; }
 
-        /* FLOATING CONTROLS */
+        .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+        .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
+        .map-opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
+        .btn-gmaps { background-color: #4285F4; }
+        .btn-waze { background-color: #33CCFF; }
+
         .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
         #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.95); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.4s; overflow: hidden; padding: 0 15px; }
+        #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
+        #scroll-toggle-btn span { font-size: 0.8rem; font-weight: bold; margin-left: 8px; color: #2c3e50; white-space: nowrap; }
         .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.7) !important; }
         .minimized span { display: none !important; }
 
-        @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+        @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } 25%, 75% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
         @keyframes bounceMain { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
+        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @media (max-width: 600px) { .header-names { font-size: 2.1rem; } }
     </style>
 </head>
 <body>
+
+    <div id="mapModal" class="modal">
+        <div class="modal-content">
+            <p style="font-weight:bold; margin-bottom:15px; color:#2c3e50;">Pilih Navigasi</p>
+            <a href="http://googleusercontent.com/maps.google.com/9" target="_blank" class="map-opt-btn btn-gmaps"><i class="fab fa-google"></i> Google Maps</a>
+            <a href="https://waze.com/ul?q=Zahra+Event+Hall+by+The+Chef+Table+Kuching&navigate=yes" target="_blank" class="map-opt-btn btn-waze"><i class="fab fa-waze"></i> Waze</a>
+            <span style="color:#888; cursor:pointer; text-decoration:underline; display:block; margin-top:10px; font-size:0.9rem;" onclick="closeMapModal()">Batal</span>
+        </div>
+    </div>
 
     <div id="welcome-screen">
         <div class="welcome-content">
@@ -141,10 +155,14 @@
             <div class="section-box details-box">
                 <p style="font-size:0.9rem;">Assalamualaikum W.B.T & Salam Sejahtera</p>
                 
-                <div style="margin: 25px 0;">
-                    <p class="parents-name">SAHMINAN BIN SIRAT & INTAN JUNAIDAH BINTI ZULIADIN</p>
-                    <p style="font-style:italic; margin:5px 0; color:#888; font-size:0.9rem;">serta</p>
-                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR & NORULHIDAYAH BINTI ABDUL AZIZ</p>
+                <div class="parents-container">
+                    <p class="parents-name">SAHMINAN BIN SIRAT</p>
+                    <span class="ampersand">&</span>
+                    <p class="parents-name">INTAN JUNAIDAH BINTI ZULIADIN</p>
+                    <span class="serta-text">serta</span>
+                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR</p>
+                    <span class="ampersand">&</span>
+                    <p class="parents-name">NORULHIDAYAH BINTI ABDUL AZIZ</p>
                 </div>
 
                 <p style="font-size:0.95rem; margin: 20px 0; color: #2c3e50; font-style: italic;">
@@ -156,60 +174,65 @@
                 <h2 class="bride-groom-names name-ilham">Mohamad Ilham Bin Mohd Sobri</h2>
                 
                 <hr style="width: 40%; border: 0.5px solid #eebbc3; margin: 20px auto;">
-                <p><strong>AHAD, 28 JUN 2026</strong></p>
-                <p><strong>LOKASI MAJLIS:</strong><br>Zahra Event Hall, Tabuan Jaya, Kuching, Sarawak</p>
-                
-                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
-                    <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 22px; font-size:0.85rem; text-decoration:none;" target="_blank">RSVP</a>
-                    <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="alert('Membuka Peta...')">Petunjuk Arah</button>
+                <div style="margin-bottom: 25px; font-size: 0.9rem;">
+                    <p><strong><i class="far fa-calendar-alt"></i> AHAD, 28 JUN 2026</strong></p>
+                    <p><strong><i class="fas fa-map-marker-alt"></i> LOKASI MAJLIS:</strong><br>
+                    Zahra Event Hall, Tabuan Jaya, Kuching, Sarawak</p>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://forms.gle/XSHFJ9k2bdQSEowu9" class="open-btn" style="padding:10px 22px; font-size:0.85rem; text-decoration:none;" target="_blank"><i class="fas fa-edit"></i> Sila RSVP</a>
+                    <button class="open-btn" style="padding:10px 22px; font-size:0.85rem; background-color:#2c3e50; color:white; border:none;" onclick="openMapModal()">
+                        <i class="fas fa-location-arrow"></i> Petunjuk Arah
+                    </button>
                 </div>
             </div>
 
             <div class="section-box">
                 <h3>Hubungi Kami</h3>
-                <p style="font-weight:bold; color:#2c3e50;">Pihak Perempuan (Mizi)</p>
-                <div class="contact-btn-wrapper">
-                    <a href="tel:+60146602970" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
-                    <a href="https://wa.me/60146602970" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <div style="margin-bottom: 20px;">
+                    <p style="font-weight:bold; color:#2c3e50; margin-bottom:10px;">Pihak Perempuan (Mizi)</p>
+                    <div class="contact-btn-wrapper">
+                        <a href="tel:+60146602970" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
+                        <a href="https://wa.me/60146602970" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
                 </div>
                 <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-                <p style="font-weight:bold; color:#2c3e50;">Pihak Lelaki (Sobri)</p>
-                <div class="contact-btn-wrapper">
-                    <a href="tel:+60173251415" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
-                    <a href="https://wa.me/60173251415" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <div>
+                    <p style="font-weight:bold; color:#2c3e50; margin-bottom:10px;">Pihak Lelaki (Sobri)</p>
+                    <div class="contact-btn-wrapper">
+                        <a href="tel:+60173251415" class="btn-funky btn-call"><i class="fas fa-phone-alt"></i> Telefon</a>
+                        <a href="https://wa.me/60173251415" class="btn-funky btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    </div>
                 </div>
             </div>
 
             <div class="section-box">
-                <h3>Atur Cara Majlis</h3>
+                <h3 class="title-schedule">Atur Cara Majlis</h3>
                 <table style="width:100%; border-collapse:collapse; font-size:0.95rem;">
-                    <tr><td style="padding:10px; font-weight:bold; width:30%;">10:00 PAGI</td><td><div class="agenda-item"><span class="agenda-divider">-</span>Ketibaan keluarga dan jemputan</div></td></tr>
+                    <tr><td style="padding:10px; font-weight:bold; width:30%;">10:00 PAGI</td><td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Ketibaan keluarga dan jemputan</span></div></td></tr>
                     <tr><td style="padding:10px; font-weight:bold;">11:00 PAGI</td><td>
-                        <div class="agenda-item"><span class="agenda-divider">-</span>Ketibaan pasangan pengantin</div>
-                        <div class="agenda-item"><span class="agenda-divider">-</span>Bacaan doa</div>
-                        <div class="agenda-item"><span class="agenda-divider">-</span>Merenjis</div>
-                        <div class="agenda-item"><span class="agenda-divider">-</span>Makan nasi temuan & memotong kek</div>
+                        <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Ketibaan pasangan pengantin</span></div>
+                        <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Bacaan doa</span></div>
+                        <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Merenjis</span></div>
+                        <div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Makan nasi temuan & memotong kek</span></div>
                     </td></tr>
-                    <tr><td style="padding:10px; font-weight:bold;">12:00 TGH</td><td><div class="agenda-item"><span class="agenda-divider">-</span>Jamuan makan</div></td></tr>
+                    <tr><td style="padding:10px; font-weight:bold;">12:00 TGH</td><td><div class="agenda-item"><span class="agenda-divider">-</span><span class="agenda-text">Jamuan makan</span></div></td></tr>
                 </table>
             </div>
 
             <div class="salam-restu-box">
                 <div class="salam-title">Salam Restu</div>
-                <p style="font-size:0.9rem; margin-bottom:15px;">Kehadiran anda adalah hadiah terbesar buat kami. Namun jika ingin memberi tanda ingatan:</p>
-                
+                <p style="font-size:0.9rem;">Kehadiran anda adalah hadiah terbesar buat kami. Namun jika ingin memberi tanda ingatan:</p>
                 <div class="qr-container">
                     <img src="qrcode.jpg" alt="DuitNow QR">
                 </div>
-
                 <div class="acc-card">
                     <p style="margin:0; font-weight:bold; color:#d4af37;">Maybank / DuitNow</p>
-                    <p style="margin:5px 0; font-size:1.1rem; font-weight:bold; letter-spacing:1px;" id="accNum">1234567890</p>
+                    <p style="margin:5px 0; font-size:1.1rem; font-weight:bold;" id="accNum">1234567890</p>
                     <p style="margin:0; font-size:0.85rem; font-weight:bold; color:#2c3e50;">MOHAMAD ILHAM / JASMIN</p>
-                    <button class="copy-btn" onclick="copyToClipboard('1234567890')">Salin No. Akaun</button>
+                    <button class="copy-btn" onclick="copyAcc()">Salin No. Akaun</button>
                 </div>
-                
-                <p style="margin-top:20px; font-weight:bold; color:#2c3e50;">Terima Kasih <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
+                <p style="margin-top:15px; font-weight:bold;">Terima Kasih <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
             </div>
 
             <div class="section-box">
@@ -219,6 +242,10 @@
                     <a href="https://docs.google.com/forms/d/1k_qCxFeFkN6QaUdN3GoAKzi0DDfrs5B6TBWCBgjTqFc/viewform" class="open-btn" style="padding:10px 25px; font-size:0.9rem; text-decoration:none;" target="_blank">Hantar Ucapan</a>
                 </div>
             </div>
+        </div>
+
+        <div style="height: 350px; width: 100%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358245841443!2d110.3752!3d1.5285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba766c8a7b975%3A0x7d87f58a7e786b86!2sZahra%20Event%20Hall!5e0!3m2!1sen!2smy!4v1712210000000!5m2!1sen!2smy0" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);">
@@ -232,20 +259,57 @@
     <div id="scroll-toggle-btn" onclick="toggleScroll()"><i id="scroll-icon" class="fas fa-pause"></i><span id="scroll-text">Berhenti Skrol</span></div>
 
     <script>
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text);
-            alert("No. Akaun Berjaya Disalin!");
-        }
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+        window.scrollTo(0, 0);
 
         var music = document.getElementById("bg-music");
         var isPlaying = false;
         var scrollInterval;
         var autoScrollActive = false;
+        var minimizeTimeout;
+
+        function copyAcc() {
+            var num = "1234567890"; // Ganti dengan nombor betul
+            navigator.clipboard.writeText(num);
+            alert("Nombor akaun telah disalin!");
+        }
 
         function toggleMusic() {
             if (isPlaying) { music.pause(); document.getElementById("music-icon").innerHTML = "🔇"; isPlaying = false; }
             else { music.play(); document.getElementById("music-icon").innerHTML = "🎵"; isPlaying = true; }
         }
+
+        function openMapModal() { document.getElementById('mapModal').style.display = 'flex'; if (autoScrollActive) stopAutoScroll(); }
+        function closeMapModal() { document.getElementById('mapModal').style.display = 'none'; }
+        window.onclick = function(e) { if (e.target == document.getElementById('mapModal')) closeMapModal(); }
+
+        function startAutoScroll() {
+            if (autoScrollActive) return;
+            autoScrollActive = true;
+            const btn = document.getElementById('scroll-toggle-btn');
+            btn.style.display = 'flex'; btn.classList.remove('minimized');
+            document.getElementById('scroll-icon').className = "fas fa-pause";
+            document.getElementById('scroll-text').innerText = "Berhenti Skrol";
+            scrollInterval = setInterval(() => {
+                window.scrollBy(0, 1);
+                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) stopAutoScroll();
+            }, 35); 
+            clearTimeout(minimizeTimeout);
+            minimizeTimeout = setTimeout(() => btn.classList.add('minimized'), 3000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(scrollInterval); autoScrollActive = false;
+            const btn = document.getElementById('scroll-toggle-btn');
+            btn.classList.remove('minimized');
+            document.getElementById('scroll-icon').className = "fas fa-play";
+            document.getElementById('scroll-text').innerText = "Teruskan Skrol";
+            clearTimeout(minimizeTimeout);
+            minimizeTimeout = setTimeout(() => btn.classList.add('minimized'), 3000);
+        }
+
+        function toggleScroll() { autoScrollActive ? stopAutoScroll() : startAutoScroll(); }
+        window.addEventListener('touchstart', () => { if (autoScrollActive) stopAutoScroll(); });
 
         function enterSite() {
             document.getElementById('welcome-screen').style.opacity = '0';
@@ -253,26 +317,14 @@
             setTimeout(() => { 
                 document.getElementById('welcome-screen').style.display = 'none'; 
                 document.getElementById('main-content').classList.add('fade-in-up-active');
-                startAutoScroll();
+                setTimeout(startAutoScroll, 1500);
             }, 1000);
         }
 
-        function startAutoScroll() {
-            autoScrollActive = true;
-            const btn = document.getElementById('scroll-toggle-btn');
-            btn.style.display = 'flex';
-            scrollInterval = setInterval(() => {
-                window.scrollBy(0, 1);
-                if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) stopAutoScroll();
-            }, 35); 
-            setTimeout(() => btn.classList.add('minimized'), 3000);
-        }
-
-        function stopAutoScroll() { clearInterval(scrollInterval); autoScrollActive = false; }
-        function toggleScroll() { autoScrollActive ? stopAutoScroll() : startAutoScroll(); }
-
+        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
         setInterval(() => {
-            var distance = new Date("June 28, 2026 11:00:00").getTime() - new Date().getTime();
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -289,10 +341,10 @@
                     if(cols[1]) {
                         var name = cols[1].replace(/"/g, "").trim();
                         var msg = cols.slice(2).join(",").replace(/"/g, "").trim();
-                        list.innerHTML += `<div style="margin-bottom:12px;"><strong style="color:#d4af37;">${name}</strong><br><span style="font-size:0.85rem;">${msg}</span></div>`;
+                        list.innerHTML += `<div style="margin-bottom:12px; padding-bottom:5px;"><strong style="color:#d4af37;">${name}</strong><br><span style="font-size:0.85rem; color:#4a4a4a;">${msg}</span></div>`;
                     }
                 });
-            });
+            }).catch(() => document.getElementById('wishes-list').innerText = "Tiada ucapan setakat ini.");
     </script>
 </body>
 </html>
