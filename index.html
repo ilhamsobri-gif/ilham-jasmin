@@ -81,9 +81,33 @@
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
-        .btn-salam-trigger { background: linear-gradient(45deg, #d4af37, #b8860b); margin: 10px auto; width: fit-content; }
         
-        /* BUTAN SAVE DATE */
+        /* BUTANG SALAM KAUT NOTICEABLE PULSE */
+        .btn-salam-noticeable {
+            background: linear-gradient(45deg, #d4af37, #f2d388);
+            color: white !important;
+            font-weight: bold;
+            padding: 15px 35px !important;
+            font-size: 1.1rem !important;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+            animation: pulse-gold 2s infinite;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: fit-content;
+        }
+
+        @keyframes pulse-gold {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
         .btn-save-date { background: linear-gradient(45deg, #6c757d, #495057); color: white; }
 
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
@@ -197,8 +221,6 @@
                 </p>
                 
                 <h2 class="bride-groom-names name-jasmin">Jasmin Binti Sahminan</h2>
-                </p>
-                </p>
                 <p style="font-size: 0.9rem; color: #888; font-style: italic; margin-top: -10px;">dengan pilihan hatinya</p>
                 <h2 class="bride-groom-names name-ilham">Mohamad Ilham Bin Mohd Sobri</h2>
                 
@@ -253,7 +275,12 @@
                 </table>
             </div>
 
-            <button class="btn-funky btn-salam-trigger" onclick="toggleSalam()"><i class="fas fa-wallet"></i> Salam Kaut / Hadiah</button>
+            <div style="text-align: center; margin: 40px 0;">
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 10px; font-style: italic;">Sumbangan & Hadiah</p>
+                <button class="btn-salam-noticeable" onclick="toggleSalam()">
+                    <i class="fas fa-gift"></i> Klik Untuk Salam Kaut
+                </button>
+            </div>
             
             <div id="salam-restu-section">
                 <div class="salam-restu-box">
@@ -327,9 +354,7 @@ END:VCALENDAR`;
             document.body.removeChild(link);
         }
 
-        window.onclick = function(e) { 
-            if (e.target.className === 'modal') closeModals(); 
-        }
+        window.onclick = function(e) { if (e.target.className === 'modal') closeModals(); }
 
         function toggleSalam() {
             var x = document.getElementById("salam-restu-section");
@@ -377,8 +402,8 @@ END:VCALENDAR`;
             const icon = document.getElementById('scroll-icon');
             const text = document.getElementById('scroll-text');
             btn.classList.remove('minimized');
-            icon.className = "fas fa-play";
-            text.innerText = "Teruskan Skrol";
+            document.getElementById('scroll-icon').className = "fas fa-play";
+            document.getElementById('scroll-text').innerText = "Teruskan Skrol";
             clearTimeout(minimizeTimeout);
             minimizeTimeout = setTimeout(() => { btn.classList.add('minimized'); }, 3000);
         }
@@ -396,10 +421,8 @@ END:VCALENDAR`;
             }, 1000);
         }
 
-        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
         setInterval(() => {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
+            var distance = new Date("June 28, 2026 11:00:00").getTime() - new Date().getTime();
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
