@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* --- INTEGRASI FON KUSTOM ASAL --- */
+        /* --- FON KUSTOM --- */
         @font-face { font-family: 'Cintarini'; src: url('Cintarini.ttf') format('truetype'); }
         @font-face { font-family: 'GreatVibesKustom'; src: url('GreatVibes-Regular.ttf') format('truetype'); }
 
@@ -27,11 +27,16 @@
             color: #4a4a4a; text-align: center; line-height: 1.6; width: 100%; overflow-x: hidden;
         }
 
-        /* FIX UNTUK IPHONE BACKGROUND */
+        /* FIX UNTUK IPHONE BACKGROUND AGAR TIDAK KABUR */
         body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('background.png'); background-size: cover; background-position: center;
-            z-index: -1; will-change: transform;
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            will-change: transform;
         }
 
         /* --- WELCOME SCREEN --- */
@@ -61,19 +66,25 @@
         .section-box { background-color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 12px; padding: 40px 20px; margin-bottom: 30px; border: 2px solid #eebbc3; width: 100%; overflow: hidden; }
         .details-box { margin-top: -50px; }
 
+        /* --- NAMA PENGANTIN --- */
         .bride-groom-names { font-family: 'Cintarini', cursive; color: #2c3e50; line-height: 1.3; margin: 15px auto; display: block; width: 100%; text-align: center; }
         .name-jasmin { font-size: clamp(1.2rem, 5.5vw, 2.2rem); white-space: nowrap; }
         .name-ilham { font-size: clamp(0.9rem, 4.2vw, 2.2rem); white-space: nowrap; letter-spacing: -0.5px; }
 
+        /* --- SUSUNAN NAMA IBU BAPA --- */
+        .parents-container { margin: 25px 0; }
         .parents-name { font-size: 1.1rem; font-weight: bold; color: #2c3e50; margin: 5px 0; text-transform: uppercase; }
+        .ampersand { font-size: 1.2rem; font-weight: bold; color: #2c3e50; margin: 2px 0; display: block; }
+        .serta-text { font-style: italic; margin: 10px 0; color: #888; font-size: 1rem; display: block; }
+
         h3 { font-family: 'GreatVibesKustom', cursive; font-size: clamp(2.2rem, 9.5vw, 4.5rem); color: #d4af37; margin-bottom: 20px; text-align: center; }
 
         .contact-btn-wrapper { margin-top: 30px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border:none; cursor:pointer; }
+        .btn-funky { padding: 10px 20px; font-size: 1rem; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: none; cursor: pointer; }
         .btn-funky i { animation: iconPulse 2s infinite ease-in-out; }
         .btn-call { background: linear-gradient(45deg, #3498db, #2980b9); }
         .btn-whatsapp { background: linear-gradient(45deg, #25d366, #128c7e); }
-        .btn-salam-trigger { background: linear-gradient(45deg, #d4af37, #b8860b); margin: 10px auto; width: fit-content; }
+        .btn-salam-trigger { background: linear-gradient(45deg, #d4af37, #b8860b); margin: 20px auto; width: fit-content; }
 
         .schedule-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
         .schedule-table td { padding: 15px 5px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
@@ -82,46 +93,38 @@
         .agenda-divider { color: #eebbc3; font-weight: bold; width: 20px; flex-shrink: 0; }
         .agenda-text { flex: 1; line-height: 1.4; color: #4a4a4a; white-space: normal; }
 
-        /* --- SALAM KAUT DESIGN (EKADDIGITAL STYLE) --- */
-        #salam-restu-section { display: none; margin-top: 20px; }
-        .salam-kaut-box { 
+        /* --- SALAM KAUT STYLING --- */
+        #salam-restu-section { display: none; } 
+        .salam-restu-box { 
             background: white; border: 2px solid #d4af37; border-radius: 15px; 
             padding: 30px 20px; margin-bottom: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
-            animation: fadeIn 0.6s ease;
+            animation: fadeIn 0.5s ease;
         }
-        .salam-kaut-title { font-family: 'GreatVibes', cursive; font-size: 2.8rem; color: #d4af37; margin-bottom: 10px; }
         .qr-container { margin: 20px auto; width: 200px; height: 200px; border: 6px solid #f9f9f9; border-radius: 10px; }
         .qr-container img { width: 100%; height: 100%; object-fit: contain; }
-        .acc-info-card { background: #fdfaf1; border: 1px dashed #d4af37; border-radius: 10px; padding: 15px; margin-top: 15px; }
-        .copy-button { background: #d4af37; color: white; border: none; padding: 6px 20px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; margin-top: 10px; font-weight: bold; }
+        .acc-card { background: #fdfaf1; border: 1px dashed #d4af37; border-radius: 10px; padding: 15px; margin-top: 15px; }
+        .copy-btn { background: #d4af37; color: white; border: none; padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; margin-top: 8px; font-weight: bold; }
 
-        /* --- UCAPAN DESIGN (ucapan-bg.png + Frosted Glass) --- */
-        .wishes-list { 
-            min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 25px; 
-            background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; 
-            border-radius: 12px; background-color: rgba(255, 255, 255, 0.4); 
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            border: 1px solid #eebbc3; position: relative; z-index: 1; 
-        }
-        .wishes-list::before { display: none; }
-        #wishes-list span { color: #2c3e50 !important; font-weight: bold; }
+        /* --- UCAPAN DESIGN --- */
+        .wishes-list { min-height: 400px; max-height: 550px; overflow-y: auto; text-align: left; padding: 20px; background-color: #fff; background-image: url('ucapan-bg.png'); background-position: center; background-size: cover; border-radius: 8px; position: relative; z-index: 1; border: 1px solid #eebbc3; }
+        .wishes-list::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.85); z-index: -1; }
 
-        /* --- CONTROLS --- */
-        .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; cursor: pointer; }
-        #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.95); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.4s; overflow: hidden; padding: 0 15px; cursor: pointer; }
-        #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
-        #scroll-toggle-btn span { font-size: 0.8rem; font-weight: bold; margin-left: 8px; color: #2c3e50; white-space: nowrap; }
-        .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.7) !important; }
-        .minimized span { display: none !important; }
-
-        /* MODAL MAPS */
+        /* --- MODAL MAPS --- */
         .modal { display: none; position: fixed; z-index: 10002; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
         .modal-content { background-color: white; padding: 25px; border-radius: 15px; width: 85%; max-width: 300px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: scaleUp 0.3s ease; }
         .map-opt-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; margin-bottom: 10px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; }
         .btn-gmaps { background-color: #4285F4; }
         .btn-waze { background-color: #33CCFF; }
 
-        @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+        /* --- CONTROLS --- */
+        .music-control { position: fixed; bottom: 20px; right: 20px; background: rgba(255, 255, 255, 0.8); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; }
+        #scroll-toggle-btn { position: fixed; bottom: 75px; right: 20px; background: rgba(255, 255, 255, 0.95); height: 45px; min-width: 45px; border-radius: 50px; display: none; align-items: center; justify-content: center; z-index: 1000; border: 2px solid #eebbc3; transition: all 0.4s; overflow: hidden; padding: 0 15px; }
+        #scroll-toggle-btn i { color: #d4af37; font-size: 1.1rem; }
+        #scroll-toggle-btn span { font-size: 0.8rem; font-weight: bold; margin-left: 8px; color: #2c3e50; white-space: nowrap; }
+        .minimized { min-width: 45px !important; width: 45px !important; padding: 0 !important; background: rgba(255, 255, 255, 0.7) !important; }
+        .minimized span { display: none !important; }
+
+        @keyframes iconPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } 25%, 75% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
         @keyframes bounceMain { 0%, 100% {transform: translateY(0);} 50% {transform: translateY(-10px);} }
         @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -133,7 +136,7 @@
     <div id="mapModal" class="modal">
         <div class="modal-content">
             <p style="font-weight:bold; margin-bottom:15px; color:#2c3e50;">Pilih Navigasi</p>
-            <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.420803517454!2d110.3752174!3d1.5164805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba73c4d7e8293%3A0xc319760773d12644!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711234567890!5m2!1sen!2smy0" target="_blank" class="map-opt-btn btn-gmaps"><i class="fab fa-google"></i> Google Maps</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Zahra+Event+Hall+by+The+Chef+Table+Kuching" target="_blank" class="map-opt-btn btn-gmaps"><i class="fab fa-google"></i> Google Maps</a>
             <a href="https://waze.com/ul?q=Zahra+Event+Hall+by+The+Chef+Table+Kuching&navigate=yes" target="_blank" class="map-opt-btn btn-waze"><i class="fab fa-waze"></i> Waze</a>
             <span style="color:#888; cursor:pointer; text-decoration:underline; display:block; margin-top:10px; font-size:0.9rem;" onclick="closeMapModal()">Batal</span>
         </div>
@@ -164,11 +167,15 @@
             <div class="section-box details-box">
                 <p style="font-size:0.9rem;">Assalamualaikum W.B.T & Salam Sejahtera</p>
                 
-                <p style="font-size: 1rem; color: #d4af37; font-weight: bold; margin-top: 15px; margin-bottom: 5px;">PIHAK PENGANTIN PEREMPUAN:</p>
-                <div style="margin-bottom: 25px;">
-                    <p class="parents-name">SAHMINAN BIN SIRAT & INTAN JUNAIDAH BINTI ZULIADIN</p>
-                    <p style="font-style:italic; margin:5px 0; color:#888; font-size:0.9rem;">serta</p>
-                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR & NORULHIDAYAH BINTI ABDUL AZIZ</p>
+                <p style="font-size: 1rem; color: #4a4a4a; font-weight: bold; margin-top: 15px; margin-bottom: 5px;">PIHAK PENGANTIN PEREMPUAN:</p>
+                <div class="parents-container">
+                    <p class="parents-name">SAHMINAN BIN SIRAT</p>
+                    <span class="ampersand">&</span>
+                    <p class="parents-name">INTAN JUNAIDAH BINTI ZULIADIN</p>
+                    <span class="serta-text">serta</span>
+                    <p class="parents-name">MOHD SOBRI BIN MOKHTAR</p>
+                    <span class="ampersand">&</span>
+                    <p class="parents-name">NORULHIDAYAH BINTI ABDUL AZIZ</p>
                 </div>
 
                 <p style="font-size:0.95rem; margin: 20px 0; color: #2c3e50; font-style: italic;">
@@ -229,17 +236,17 @@
             <button class="btn-funky btn-salam-trigger" onclick="toggleSalam()"><i class="fas fa-wallet"></i> Salam Kaut / Hadiah</button>
             
             <div id="salam-restu-section">
-                <div class="salam-kaut-box">
-                    <div class="salam-kaut-title">Salam Kaut</div>
+                <div class="salam-restu-box">
+                    <h3 style="margin-bottom: 10px;">Salam Kaut</h3>
                     <p style="font-size:0.9rem; margin-bottom:15px;">Kehadiran anda adalah hadiah terbesar buat kami. Namun jika ingin memberi tanda ingatan:</p>
                     <div class="qr-container">
                         <img src="qrcode (2).jpg" alt="DuitNow QR">
                     </div>
-                    <div class="acc-info-card">
+                    <div class="acc-card">
                         <p style="margin:0; font-weight:bold; color:#d4af37;">Maybank / DuitNow</p>
                         <p style="margin:5px 0; font-size:1.1rem; font-weight:bold; letter-spacing:1px;" id="accNum">161033331632</p>
                         <p style="margin:0; font-size:0.85rem; font-weight:bold; color:#2c3e50;">JASMIN BINTI SAHMINAN</p>
-                        <button class="copy-button" onclick="copyAcc()">Salin No. Akaun</button>
+                        <button class="copy-btn" onclick="copyAcc()">Salin No. Akaun</button>
                     </div>
                     <p style="margin-top:20px; font-weight:bold; color:#2c3e50;">Terima Kasih <i class="fas fa-heart" style="color: #eebbc3;"></i></p>
                 </div>
@@ -254,8 +261,8 @@
             </div>
         </div>
 
-        <div style="height: 400px; width: 100%;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.420803517454!2d110.3752174!3d1.5164805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba73c4d7e8293%3A0xc319760773d12644!2sZahra%20Event%20Hall%20by%20The%20Chef%20Table!5e0!3m2!1sen!2smy!4v1711234567890!5m2!1sen!2smy0" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div style="height: 350px; width: 100%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.358245841443!2d110.3752!3d1.5285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31fba766c8a7b975%3A0x7d87f58a7e786b86!2sZahra%20Event%20Hall!5e0!3m2!1sen!2smy!4v1712210000000!5m2!1sen!2smy0" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
 
         <footer style="padding: 50px 20px; background: rgba(255, 238, 242, 0.9);">
@@ -341,8 +348,10 @@
             }, 1000);
         }
 
+        var countDownDate = new Date("June 28, 2026 11:00:00").getTime();
         setInterval(() => {
-            var distance = new Date("June 28, 2026 11:00:00").getTime() - new Date().getTime();
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
             document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
             document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -362,7 +371,7 @@
                         list.innerHTML += `<div style="margin-bottom:12px; padding-bottom:5px;"><strong style="color:#d4af37;">${name}</strong><br><span style="font-size:0.85rem; color:#4a4a4a;">${msg}</span></div>`;
                     }
                 });
-            });
+            }).catch(() => document.getElementById('wishes-list').innerText = "Tiada ucapan setakat ini.");
     </script>
 </body>
 </html>
