@@ -156,9 +156,22 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @media (max-width: 600px) { .header-names { font-size: 2.1rem; } }
     </style>
+      <style>
+    /* Canvas styling for background petals */
+    #petalCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* allow clicks through */
+      z-index: 1;          /* keep behind content */
+    }
+  </style>
 </head>
 <body>
-
+  <!-- Canvas for petals -->
+  <canvas id="petalCanvas"></canvas>
     <div id="mapModal" class="modal">
         <div class="modal-content">
             <p style="font-weight:bold; margin-bottom:15px; color:#2c3e50;">Pilih Navigasi</p>
@@ -444,5 +457,80 @@ END:VCALENDAR`;
                 });
             }).catch(() => document.getElementById('wishes-list').innerText = "Tiada ucapan setakat ini.");
     </script>
+      <script>
+const canvas = document.getElementById("petalCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const petals = [];
+const petalImg = new Image();
+petalImg.src = "01.png"; // replace with your choice petal image path, try use transparent background PNG image
+
+class Petal {
+  constructor() {
+    this.reset();
+  }
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * -canvas.height; // start above screen
+    this.speedY = 0.4 + Math.random() * 0.02; // fall speed
+    this.speedX = -0.5 + Math.random() * 1; // horizontal drift
+    this.baseSize = 15 + Math.random() * 20; // define baseSize
+    this.size = this.baseSize;               // start with baseSize
+    this.angle = Math.random() * Math.PI * 2; // starting angle for wiggle
+    this.swing = 20 + Math.random() * 30; // horizontal swing amplitude
+    this.angularSpeed = 0.01 + Math.random() * 0.02; // wiggle speed
+    this.rotation = Math.random() * Math.PI * 2; // initial rotation
+    this.rotationSpeed = (Math.random() - 0.5) * 0.02; // faster spin
+    this.depth = 0.4 + Math.random(); // simulate near/far petals
+    this.flipAngle = Math.random() * Math.PI * 2;
+    this.flipSpeed = 0.02 + Math.random() * 0.02; //simulate petal flipping in the air
+  }
+  update() {
+    this.y += this.speedY * this.depth;
+    this.x += this.speedX + Math.sin(this.angle) * 0.3;
+    this.angle += this.angularSpeed;
+    this.rotation += this.rotationSpeed;
+
+    // occasional flip to mimic flutter
+    if (Math.random() < 0.005) this.rotationSpeed *= -1;
+
+    // update flip angle
+    this.flipAngle += this.flipSpeed;
+
+    if (this.y > canvas.height + this.size) {
+      this.reset();
+      this.y = -this.size;
+    }
+  }
+  draw() {
+    ctx.save();
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.rotation);
+    const flipScale = Math.sin(this.flipAngle);  // simulate flip by scaling X
+    ctx.scale(flipScale, 1);
+    ctx.globalAlpha = this.depth; // lighter for distant petals
+    ctx.drawImage(petalImg, -this.size / 2, -this.size / 2, this.size, this.size);
+    ctx.restore();
+  }
+}
+
+for (let i = 0; i < 50; i++) petals.push(new Petal()); //adjust petal amount here, current is 50
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  petals.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(animate);
+}
+
+petalImg.onload = animate;
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+  </script>
 </body>
 </html>
